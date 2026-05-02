@@ -1,45 +1,230 @@
-<!-- HERO CAROUSEL -->
-<section class="hero-carousel">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidinma Portfolio</title>
 
-    <div class="carousel-track">
+    <style>
+        /* HERO CAROUSEL */
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
 
-        <!-- SLIDE 1 -->
-        <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract1.jpg');">
-            <div class="overlay"></div>
+        .carousel-track {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 1s ease;
+        }
 
-            <!-- YOUR PICTURE -->
-            <div class="slide-image">
-                <img src="assets/img/person/my_image.jpeg" alt="Chidinma">
+        .carousel-slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 6%;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 40, 90, 0.45); /* soft blue overlay */
+        }
+
+        /* TEXT CONTENT */
+        .slide-content {
+            position: relative;
+            max-width: 550px;
+            color: white;
+            z-index: 2;
+        }
+
+        .slide-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            padding: 0.9rem 1.8rem;
+            background: #00aaff;
+            color: white;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #0088cc;
+        }
+
+        /* YOUR PICTURE */
+        .slide-image {
+            position: absolute;
+            right: 5%;
+            bottom: 0;
+            height: 90%;
+            display: flex;
+            align-items: flex-end;
+            z-index: 3;
+        }
+
+        .slide-image img {
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
+        }
+
+        /* DOTS */
+        .carousel-nav {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: white;
+            opacity: 0.5;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            opacity: 1;
+        }
+
+        /* ARROWS */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.4);
+            border: none;
+            padding: 12px 18px;
+            font-size: 2rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(255,255,255,0.7);
+        }
+
+        .carousel-arrow.left {
+            left: 20px;
+        }
+
+        .carousel-arrow.right {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO CAROUSEL -->
+    <section class="hero-carousel">
+
+        <div class="carousel-track">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract1.jpg');">
+                <div class="overlay"></div>
+
+                <!-- YOUR PICTURE -->
+                <div class="slide-image">
+                    <img src="assets/img/person/my_image.jpeg" alt="Chidinma">
+                </div>
+
+                <div class="slide-content">
+                    <h1>Empowering Business Decisions Through Insight</h1>
+                    <p>Transforming complex data into clear, actionable intelligence that drives smarter business outcomes.</p>
+                    <a href="#case-studies" class="cta-btn">Explore My Work</a>
+                </div>
             </div>
 
-            <div class="slide-content">
-                <h1>Empowering Business Decisions Through Insight</h1>
-                <p>Transforming complex data into clear, actionable intelligence that drives smarter business outcomes.</p>
-                <a href="#case-studies" class="cta-btn">Explore My Work</a>
+            <!-- SLIDE 2 -->
+            <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract2.jpg');">
+                <div class="overlay"></div>
+
+                <div class="slide-content">
+                    <h1>Turning Requirements Into Real, Scalable Solutions</h1>
+                    <p>Bridging the gap between business needs and technical execution with clarity, structure, and precision.</p>
+                    <a href="#case-studies" class="cta-btn">View Case Studies</a>
+                </div>
             </div>
+
         </div>
 
-        <!-- SLIDE 2 -->
-        <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract2.jpg');">
-            <div class="overlay"></div>
-
-            <div class="slide-content">
-                <h1>Turning Requirements Into Real, Scalable Solutions</h1>
-                <p>Bridging the gap between business needs and technical execution with clarity, structure, and precision.</p>
-                <a href="#case-studies" class="cta-btn">View Case Studies</a>
-            </div>
+        <!-- NAVIGATION DOTS -->
+        <div class="carousel-nav">
+            <span class="dot active"></span>
+            <span class="dot"></span>
         </div>
 
-    </div>
+        <!-- ARROWS -->
+        <button class="carousel-arrow left">&#10094;</button>
+        <button class="carousel-arrow right">&#10095;</button>
 
-    <!-- NAVIGATION DOTS -->
-    <div class="carousel-nav">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-    </div>
+    </section>
 
-    <!-- ARROWS -->
-    <button class="carousel-arrow left">&#10094;</button>
-    <button class="carousel-arrow right">&#10095;</button>
+    <script>
+        /* HERO CAROUSEL */
+        let currentSlide = 0;
+        const track = document.querySelector(".carousel-track");
+        const dots = document.querySelectorAll(".dot");
+        const totalSlides = 2;
 
-</section>
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
+        }
+
+        document.querySelector(".carousel-arrow.right").addEventListener("click", () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        document.querySelector(".carousel-arrow.left").addEventListener("click", () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-rotate every 6 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 6000);
+    </script>
+
+</body>
+</html>
