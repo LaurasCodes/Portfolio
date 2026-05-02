@@ -9,12 +9,13 @@
 }
 
 body {
-    background: #f7f9fc;
+    background: linear-gradient(135deg, #e8f0ff, #f7f9fc);
     color: #1a1a1a;
     line-height: 1.6;
     overflow-x: hidden;
     transition: background 0.3s, color 0.3s;
 }
+
 
 img {
     width: 100%;
