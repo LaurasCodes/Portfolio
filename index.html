@@ -3,140 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style.css">
-    <title>Laura Ikwechegh | Business Analyst </title>
-   
-    
+    <title>Chidinma Laura Ikwechegh | Business Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
 
 <body>
-<header>
-    <div class="hero">
-        <img src="assets/img/person/my_image.jpeg" alt="Laura Ikwechegh">
 
-        <div class="hero-text">
-            <h1>Chidinma Laura Ikwechegh</h1>
-            <p class="subtitle">Business Analyst | Data Analytics | Power BI | SQL</p>
-            <p>
-                Translating business needs into data-driven solutions that improve 
-                decision-making and performance.
-            </p>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">Laura Ikwechegh</h2>
+
+        <ul class="nav-links">
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="toggle-darkmode">🌙</div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Chidinma Laura Ikwechegh</h1>
+        <p class="hero-title"><span class="typing"></span></p>
+
+        <p class="hero-subtitle">
+            Business Analyst specializing in transforming business needs into structured, data‑driven solutions that improve performance, efficiency, and decision‑making.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#case-studies" class="btn-primary">View Case Studies</a>
+            <a href="Laura_CV.pdf" class="btn-secondary">Download CV</a>
         </div>
+    </div>
+
+    <div class="hero-image">
+        <div class="glow"></div>
+        <img src="assets/img/person/my_image.jpeg" alt="Laura">
     </div>
 </header>
 
-<main>
-
-<section>
-    <h2>About Me</h2>
+<!-- EXECUTIVE SUMMARY -->
+<section id="summary" class="section fade-in">
+    <h2>Executive Summary</h2>
     <p>
-        Business-focused Data Analyst with 3+ years of experience in requirements analysis, 
-        stakeholder collaboration, and data-driven decision-making. Skilled in translating 
-        business needs into analytical solutions that improve workflows and support strategy.
-        Strong foundation in Power BI, SQL, and Excel, with growing expertise in business systems 
-        and case management solutions.
+        Business-focused Analyst with experience in requirements gathering, process optimization, 
+        stakeholder engagement, and data-driven decision-making. Skilled in Power BI, SQL, Excel, 
+        and business systems such as Dynamics 365. Passionate about improving workflows, supporting 
+        digital transformation, and delivering measurable business impact.
     </p>
 </section>
 
-<section>
-    <h2>Featured Projects</h2>
+<!-- KPI COUNTERS -->
+<section class="kpi-section fade-in">
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <h3 class="kpi-number" data-target="25">0</h3>
+            <p>Projects Delivered</p>
+        </div>
 
-    <div class="projects-grid">
+        <div class="kpi-card">
+            <h3 class="kpi-number" data-target="40">0</h3>
+            <p>Stakeholders Supported</p>
+        </div>
 
-        <!-- CASE MANAGEMENT -->
-        <div class="project-card">
-            <img src="images/case-system.png" alt="Case Management System">
+        <div class="kpi-card">
+            <h3 class="kpi-number" data-target="18">0</h3>
+            <p>Process Improvements</p>
+        </div>
 
-            <div class="project-content">
-                <h3>Case Management System Analysis (Business Analyst Project)</h3>
+        <div class="kpi-card">
+            <h3 class="kpi-number" data-target="12">0</h3>
+            <p>Tools & Platforms</p>
+        </div>
+    </div>
+</section>
 
-                <p><strong>Problem:</strong> Support teams lacked a centralized system to manage technical cases efficiently.</p>
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience" class="section fade-in">
+    <h2>Experience Timeline</h2>
 
-                <p><strong>Objective:</strong> Design a structured case management solution to improve workflow and visibility.</p>
+    <div class="timeline">
 
-                <p><strong>Approach:</strong> Defined requirements, mapped workflows, and aligned solution with Dynamics 365 capabilities.</p>
-
-                <p><strong>Key Insight:</strong> Manual processes caused delays and lack of visibility across teams.</p>
-
-                <p><strong>Impact:</strong> Improved efficiency, standardization, and scalability of support operations.</p>
-
-                <span class="tag">Business Analysis • Requirements • Dynamics 365</span>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Business Intelligence MSc</h3>
+                <p class="timeline-date">2025 – 2026 | Dalarna University, Sweden</p>
+                <p>Advanced analytics, BI systems, data modeling, and decision-support solutions.</p>
             </div>
         </div>
 
-        <!-- RETAIL DASHBOARD -->
-        <div class="project-card">
-            <img src="assets/img/portfolio/Amazon E-commerce 1.jpg" alt="Retail Dashboard">
-
-            <div class="project-content">
-                <h3>Retail Performance Dashboard</h3>
-
-                <p><strong>Problem:</strong> Limited visibility into how discounts affected profitability.</p>
-
-                <p><strong>Approach:</strong> Built Power BI dashboard analyzing sales, profit, and discount data.</p>
-
-                <p><strong>Key Insight:</strong> High discounts increased sales but reduced profit margins.</p>
-
-                <p><strong>Impact:</strong> Enabled better pricing and profitability decisions.</p>
-
-                <span class="tag">Power BI • DAX • Data Modeling</span>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Data Analyst</h3>
+                <p class="timeline-date">2024 – 2025 | Sweden</p>
+                <p>Developed dashboards, analyzed business performance, and supported reporting workflows.</p>
             </div>
         </div>
 
-        <!-- AIR TRAFFIC -->
-        <div class="project-card">
-            <img src="assets/img/portfolio/U.S international Powerbi project.jpg" alt="Air Traffic Analysis">
-
-            <div class="project-content">
-                <h3>US International Air Traffic Analysis</h3>
-
-                <p><strong>Problem:</strong> Lack of visibility into long-term air traffic trends.</p>
-
-                <p><strong>Approach:</strong> Built interactive dashboards analyzing passengers and flights over time.</p>
-
-                <p><strong>Key Insight:</strong> Traffic trends showed growth with seasonal fluctuations.</p>
-
-                <p><strong>Impact:</strong> Supported strategic planning and performance analysis.</p>
-
-                <span class="tag">Power BI • Data Analysis • Visualization</span>
-            </div>
-        </div>
-
-        <!-- MARKETING -->
-        <div class="project-card">
-            <img src="images/marketing.png" alt="Marketing Analysis">
-
-            <div class="project-content">
-                <h3>Marketing Campaign Analysis</h3>
-
-                <p><strong>Problem:</strong> Unclear campaign performance and ROI.</p>
-
-                <p><strong>Approach:</strong> Analyzed campaign data and segmented customers.</p>
-
-                <p><strong>Key Insight:</strong> High-value segments drove most revenue.</p>
-
-                <p><strong>Impact:</strong> Improved targeting and marketing efficiency.</p>
-
-                <span class="tag">Power BI • Excel • Data Analysis</span>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Mass Communication (BA)</h3>
+                <p class="timeline-date">2009 – 2013 | Babcock University, Nigeria</p>
+                <p>Strong foundation in communication, research, and stakeholder engagement.</p>
             </div>
         </div>
 
     </div>
 </section>
 
-<section>
-    <h2>Skills</h2>
-    <p>
-        Requirements Gathering • Process Mapping • Stakeholder Communication • 
-        Data Analysis • Power BI • SQL • Excel • Data Modeling
-    </p>
+<!-- SKILLS -->
+<section id="skills" class="section fade-in">
+    <h2>Skills & Tools</h2>
+
+    <div class="skills-container">
+
+        <div class="skills-box">
+            <h3>Business Skills</h3>
+            <ul>
+                <li>Requirements Gathering</li>
+                <li>Process Mapping</li>
+                <li>Stakeholder Communication</li>
+                <li>Workflow Optimization</li>
+                <li>Business Case Development</li>
+            </ul>
+        </div>
+
+        <div class="skills-box">
+            <h3>Technical Tools</h3>
+            <ul>
+                <li>Power BI</li>
+                <li>SQL</li>
+                <li>Excel</li>
+                <li>Dynamics 365</li>
+                <li>Jira / Confluence</li>
+            </ul>
+        </div>
+
+    </div>
 </section>
 
-</main>
+<!-- CASE STUDIES -->
+<section id="case-studies" class="section fade-in">
+    <h2>Case Studies</h2>
 
-<footer>
-    <p>Contact: lauraikwechegh@gmail.com</p>
+    <div class="case-grid">
+
+        <div class="case-card" data-case="case1">
+            <img src="assets/img/portfolio/case-system.png">
+            <h3>Case Management System Analysis</h3>
+            <p>Improved support team efficiency through workflow redesign and system requirements.</p>
+        </div>
+
+        <div class="case-card" data-case="case2">
+            <img src="assets/img/portfolio/Amazon E-commerce 1.jpg">
+            <h3>Retail Performance Dashboard</h3>
+            <p>Delivered insights on discount impact and pricing strategy.</p>
+        </div>
+
+        <div class="case-card" data-case="case3">
+            <img src="assets/img/portfolio/U.S international Powerbi project.jpg">
+            <h3>US Air Traffic Analysis</h3>
+            <p>Identified long-term trends to support planning decisions.</p>
+        </div>
+
+        <div class="case-card" data-case="case4">
+            <img src="assets/img/portfolio/marketing.png">
+            <h3>Marketing Campaign Analysis</h3>
+            <p>Improved targeting and ROI visibility through segmentation.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section fade-in">
+    <h2>Testimonials</h2>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+            <p>“Laura is highly analytical, detail-oriented, and consistently delivers high-quality insights.”</p>
+            <h4>— Team Lead, Sweden</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Her dashboards transformed how we understand performance and make decisions.”</p>
+            <h4>— Retail Manager</h4>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>lauraikwechegh@gmail.com</strong></p>
 </footer>
 
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
+</html>
+
 </html>
