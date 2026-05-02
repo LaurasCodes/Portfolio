@@ -34,7 +34,7 @@ dots.forEach((dot, index) => {
 setInterval(() => {
     currentSlide = (currentSlide + 1) % totalSlides;
     updateCarousel();
-}, 6000);
+}, 4500);
 
 
 // ===============================
