@@ -1,4 +1,6 @@
-/* ===== GLOBAL ===== */
+/* =======================
+   GLOBAL
+======================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,7 +9,9 @@ body {
     scroll-behavior: smooth;
 }
 
-/* ===== NAVBAR ===== */
+/* =======================
+   NAVBAR
+======================= */
 nav {
     position: fixed;
     top: 0;
@@ -19,20 +23,24 @@ nav {
     gap: 30px;
     border-bottom: 1px solid #e6eef8;
     z-index: 100;
+    transition: 0.3s;
 }
 
 nav a {
     text-decoration: none;
     color: #002F6C;
     font-weight: 600;
-    transition: 0.3s;
 }
 
-nav a:hover {
+nav a.active {
     color: #005EB8;
+    border-bottom: 2px solid #005EB8;
+    padding-bottom: 4px;
 }
 
-/* ===== HERO ===== */
+/* =======================
+   HERO
+======================= */
 .hero-carousel {
     position: relative;
     height: 75vh;
@@ -47,7 +55,7 @@ nav a:hover {
 }
 
 .carousel-slide {
-    width: 100%;
+    min-width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -81,7 +89,6 @@ nav a:hover {
     margin-bottom: 2rem;
 }
 
-/* HERO IMAGE */
 .slide-image {
     position: absolute;
     right: 5%;
@@ -96,7 +103,7 @@ nav a:hover {
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
 }
 
-/* CTA BUTTON */
+/* CTA */
 .cta-btn {
     background: #005EB8;
     color: white;
@@ -104,7 +111,7 @@ nav a:hover {
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .cta-btn:hover {
@@ -152,15 +159,12 @@ nav a:hover {
     background: rgba(255,255,255,0.8);
 }
 
-.carousel-arrow.left {
-    left: 20px;
-}
+.carousel-arrow.left { left: 20px; }
+.carousel-arrow.right { right: 20px; }
 
-.carousel-arrow.right {
-    right: 20px;
-}
-
-/* ===== SECTIONS ===== */
+/* =======================
+   SECTIONS
+======================= */
 section {
     padding: 90px 10%;
 }
@@ -171,7 +175,9 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* ===== SKILLS ===== */
+/* =======================
+   SKILLS
+======================= */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -184,10 +190,11 @@ h2 {
     color: #005EB8;
     padding: 8px 14px;
     border-radius: 20px;
-    font-size: 0.9rem;
 }
 
-/* ===== PROJECTS ===== */
+/* =======================
+   PROJECTS
+======================= */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -201,12 +208,11 @@ h2 {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
 .project-card img {
@@ -219,11 +225,6 @@ h2 {
     padding: 18px;
 }
 
-.project-content h3 {
-    margin-top: 0;
-    color: #002F6C;
-}
-
 .tag {
     display: inline-block;
     margin-top: 10px;
@@ -234,7 +235,9 @@ h2 {
     border-radius: 12px;
 }
 
-/* ===== MODAL ===== */
+/* =======================
+   MODAL
+======================= */
 .modal {
     display: none;
     position: fixed;
@@ -250,54 +253,18 @@ h2 {
     padding: 30px;
     max-width: 600px;
     border-radius: 12px;
-    animation: fadeIn 0.3s ease;
 }
 
-.modal-content h3 {
-    color: #002F6C;
-}
-
-.close-btn {
-    float: right;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeIn {
-    from {opacity: 0; transform: scale(0.95);}
-    to {opacity: 1; transform: scale(1);}
-}
-
-/* ===== SCROLL REVEAL ===== */
+/* =======================
+   ANIMATION FIX (IMPORTANT)
+======================= */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.9s ease;
+    transition: all 0.8s ease;
 }
 
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-
-    nav {
-        padding: 15px 25px;
-        gap: 20px;
-    }
-
-    .slide-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .slide-image {
-        display: none;
-    }
-
-    section {
-        padding: 70px 20px;
-    }
 }
