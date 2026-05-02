@@ -1,186 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chidinma Laura Ikwechegh | Business Analyst Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<!-- HERO CAROUSEL -->
+<section class="hero-carousel">
 
-<body>
+    <div class="carousel-track">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-        <h2 class="logo">Laura Ikwechegh</h2>
+        <!-- SLIDE 1 -->
+        <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract1.jpg');">
+            <div class="overlay"></div>
 
-        <ul class="nav-links">
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#case-studies">Case Studies</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+            <!-- YOUR PICTURE -->
+            <div class="slide-image">
+                <img src="assets/img/person/my_image.jpeg" alt="Chidinma">
+            </div>
 
-        <div class="toggle-darkmode">🌙</div>
-    </div>
-</nav>
-
-<!-- HERO (PARALLAX) -->
-<header class="hero parallax">
-    <div class="parallax-bg"></div>
-
-    <div class="hero-left">
-        <h1 class="hero-name">Chidinma Laura Ikwechegh</h1>
-
-        <p class="hero-role">
-            <span class="typing"></span>
-        </p>
-
-        <p class="hero-summary">
-            Business Analyst specializing in transforming business needs into structured, 
-            data‑driven solutions that improve performance, efficiency, and decision‑making.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#case-studies" class="btn-primary">View Case Studies</a>
-            <a href="Laura_CV.pdf" class="btn-secondary">Download CV</a>
-        </div>
-    </div>
-
-    <div class="hero-right">
-        <div class="hero-image-wrapper">
-            <img src="assets/img/person/my_image.png" alt="Laura">
-        </div>
-    </div>
-</header>
-
-<!-- EXECUTIVE SUMMARY -->
-<section id="summary" class="section fade-in">
-    <h2>Professional Summary</h2>
-    <p>
-        Business-focused Analyst with experience in requirements gathering, process optimization, 
-        stakeholder engagement, and data-driven decision-making. Skilled in Power BI, SQL, Excel, 
-        and business systems such as Dynamics 365. Passionate about improving workflows, supporting 
-        digital transformation, and delivering measurable business impact.
-    </p>
-</section>
-
-<!-- EXPERIENCE TIMELINE -->
-<section id="experience" class="section fade-in">
-    <h2>Experience </h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Business Intelligence MSc</h3>
-                <p class="timeline-date">2025 – 2026 | Dalarna University, Sweden</p>
-                <p>Advanced analytics, BI systems, data modeling, and decision-support solutions.</p>
+            <div class="slide-content">
+                <h1>Empowering Business Decisions Through Insight</h1>
+                <p>Transforming complex data into clear, actionable intelligence that drives smarter business outcomes.</p>
+                <a href="#case-studies" class="cta-btn">Explore My Work</a>
             </div>
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Data Analyst</h3>
-                <p class="timeline-date">2024 – 2025 | Sweden</p>
-                <p>Developed dashboards, analyzed business performance, and supported reporting workflows.</p>
-            </div>
-        </div>
+        <!-- SLIDE 2 -->
+        <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract2.jpg');">
+            <div class="overlay"></div>
 
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Mass Communication (BA)</h3>
-                <p class="timeline-date">2009 – 2013 | Babcock University, Nigeria</p>
-                <p>Strong foundation in communication, research, and stakeholder engagement.</p>
+            <div class="slide-content">
+                <h1>Turning Requirements Into Real, Scalable Solutions</h1>
+                <p>Bridging the gap between business needs and technical execution with clarity, structure, and precision.</p>
+                <a href="#case-studies" class="cta-btn">View Case Studies</a>
             </div>
         </div>
 
     </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills" class="section fade-in">
-    <h2>Skills & Tools</h2>
-
-    <div class="skills-container">
-
-        <div class="skills-box">
-            <h3>Business Skills</h3>
-            <ul>
-                <li>Requirements Gathering</li>
-                <li>Process Mapping</li>
-                <li>Stakeholder Communication</li>
-                <li>Workflow Optimization</li>
-                <li>Business Case Development</li>
-            </ul>
-        </div>
-
-        <div class="skills-box">
-            <h3>Technical Tools</h3>
-            <ul>
-                <li>Power BI</li>
-                <li>SQL</li>
-                <li>Excel</li>
-                <li>Dynamics 365</li>
-                <li>Jira / Confluence</li>
-            </ul>
-        </div>
-
+    <!-- NAVIGATION DOTS -->
+    <div class="carousel-nav">
+        <span class="dot active"></span>
+        <span class="dot"></span>
     </div>
+
+    <!-- ARROWS -->
+    <button class="carousel-arrow left">&#10094;</button>
+    <button class="carousel-arrow right">&#10095;</button>
+
 </section>
-
-<!-- CASE STUDIES -->
-<section id="case-studies" class="section fade-in">
-    <h2>Case Studies</h2>
-
-    <div class="case-grid">
-
-        <div class="case-card" data-case="case1">
-            <img src="assets/img/portfolio/case-system.png">
-            <h3>Case Management System Analysis</h3>
-            <p>Improved support team efficiency through workflow redesign and system requirements.</p>
-        </div>
-
-        <div class="case-card" data-case="case2">
-            <img src="assets/img/portfolio/Amazon E-commerce 1.jpg">
-            <h3>Retail Performance Dashboard</h3>
-            <p>Delivered insights on discount impact and pricing strategy.</p>
-        </div>
-
-        <div class="case-card" data-case="case3">
-            <img src="assets/img/portfolio/U.S international Powerbi project.jpg">
-            <h3>US Air Traffic Analysis</h3>
-            <p>Identified long-term trends to support planning decisions.</p>
-        </div>
-
-        <div class="case-card" data-case="case4">
-            <img src="assets/img/portfolio/marketing.png">
-            <h3>Marketing Campaign Analysis</h3>
-            <p>Improved targeting and ROI visibility through segmentation.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<footer id="contact">
-    <h2>Contact</h2>
-    <p>Email: <strong>lauraikwechegh@gmail.com</strong></p>
-</footer>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div id="modal-body"></div>
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
