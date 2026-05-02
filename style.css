@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
 /* BODY */
 body {
@@ -77,39 +78,69 @@ h2::after {
     border-radius: 2px;
 }
 
-/* GLASS CARD */
-.project {
-    background: rgba(255, 255, 255, 0.6);
+/* =========================
+   NEW PROJECT GRID SYSTEM
+   (REPLACES OLD .project)
+========================= */
+
+/* GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARD */
+.project-card {
+    background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
-    border-radius: 14px;
-    padding: 22px;
-    margin-top: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
 }
 
-.project:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+/* HOVER */
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* PROJECT TEXT */
-.project h3 {
-    font-size: 18px;
+/* IMAGE */
+.project-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.project-content {
+    padding: 16px;
+}
+
+/* TITLE */
+.project-content h3 {
+    font-size: 16px;
     margin-bottom: 10px;
+    color: #0f172a;
 }
 
-.project p {
-    font-size: 14px;
+/* TEXT */
+.project-content p {
+    font-size: 13px;
     margin-bottom: 6px;
     color: #475569;
 }
 
 /* TAGS */
-.tags {
+.tag {
+    display: inline-block;
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 12px;
     color: #6366f1;
+    font-weight: 500;
 }
 
 /* ABOUT TEXT */
@@ -118,7 +149,7 @@ section p {
     max-width: 700px;
 }
 
-/* SKILLS */
+/* SKILLS BOX */
 section:last-of-type p {
     background: rgba(255, 255, 255, 0.6);
     padding: 15px;
@@ -134,7 +165,8 @@ footer {
     font-size: 14px;
     color: #64748b;
 }
-/* MOBILE */
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
     .hero {
         flex-direction: column;
@@ -144,6 +176,4 @@ footer {
     .hero-text p {
         margin: auto;
     }
-}
-
 }
