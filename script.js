@@ -1,59 +1,92 @@
-<script>
-/* HERO CAROUSEL */
-let currentSlide = 0;
-const track = document.querySelector(".carousel-track");
-const dots = document.querySelectorAll(".dot");
-const totalSlides = document.querySelectorAll(".carousel-slide").length;
+// ===============================
+// Smooth scrolling for nav links
+// ===============================
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
 
-function updateCarousel() {
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
 
-    dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentSlide);
-    });
-}
-
-/* ARROWS */
-document.querySelector(".carousel-arrow.right").addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-});
-
-document.querySelector(".carousel-arrow.left").addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-});
-
-/* DOT NAVIGATION */
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        currentSlide = index;
-        updateCarousel();
+        window.scrollTo({
+            top: targetSection.offsetTop - 70,
+            behavior: 'smooth'
+        });
     });
 });
 
-/* AUTO SLIDE */
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-}, 6000);
 
+// ===============================
+// Active nav link on scroll
+// ===============================
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
 
-/* SCROLL REVEAL (SMOOTHER + MORE PROFESSIONAL) */
-const revealElements = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', () => {
+    let current = '';
 
-function revealOnScroll() {
-    const triggerPoint = window.innerHeight * 0.85;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
 
-    revealElements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-
-        if (top < triggerPoint) {
-            el.classList.add('visible');
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
         }
     });
-}
 
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-</script>
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+
+        if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
+// ===============================
+// Fade-in animation on scroll (IIBA-style subtle reveal)
+// ===============================
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll('.project-card, .section-title, .about-content')
+    .forEach(el => {
+        el.classList.add('hidden');
+        observer.observe(el);
+    });
+
+
+// ===============================
+// Button hover micro-interaction
+// ===============================
+document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'translateY(-2px)';
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translateY(0)';
+    });
+});
+
+
+// ===============================
+// Optional: Navbar shadow on scroll (premium feel)
+// ===============================
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+
+    if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+    } else {
+        nav.style.boxShadow = 'none';
+    }
+});
