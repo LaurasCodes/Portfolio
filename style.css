@@ -10,8 +10,9 @@
 
 
 body {
-    background: linear-gradient(135deg, #4f8bff, #dbeafe);
+    background: red !important;
 }
+
 
 
 img {
