@@ -1,340 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chidinma Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chidinma Portfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: white;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #003366;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        nav a:hover {
-            color: #0077cc;
-        }
-
-        /* HERO CAROUSEL */
-        .hero-carousel {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            margin-top: 70px; /* space for navbar */
-        }
-
-        .carousel-track {
-            display: flex;
-            width: 200%;
-            height: 100%;
-            transition: transform 1s ease;
-        }
-
-        .carousel-slide {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 6%;
-        }
-
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 40, 90, 0.45);
-        }
-
-        .slide-content {
-            position: relative;
-            max-width: 550px;
-            color: white;
-            z-index: 2;
-        }
-
-        .slide-content h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .slide-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-btn {
-            padding: 0.9rem 1.8rem;
-            background: #00aaff;
-            color: white;
-            font-weight: 600;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .cta-btn:hover {
-            background: #0088cc;
-        }
-
-        /* YOUR PICTURE */
-        .slide-image {
-            position: absolute;
-            right: 5%;
-            bottom: 0;
-            height: 60%;
-            display: flex;
-            align-items: flex-end;
-            z-index: 3;
-        }
-
-        .slide-image img {
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
-        }
-
-        /* DOTS */
-        .carousel-nav {
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            background: white;
-            opacity: 0.5;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .dot.active {
-            opacity: 1;
-        }
-
-        /* ARROWS */
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.4);
-            border: none;
-            padding: 12px 18px;
-            font-size: 2rem;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        .carousel-arrow:hover {
-            background: rgba(255,255,255,0.7);
-        }
-
-        .carousel-arrow.left {
-            left: 20px;
-        }
-
-        .carousel-arrow.right {
-            right: 20px;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 80px 10%;
-        }
-
-        h2 {
-            color: #003366;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* ANIMATION: Fade + Slide Up */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s ease-out;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#summary">Summary</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<!-- NAVBAR -->
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
 
-    <!-- HERO CAROUSEL -->
-    <section class="hero-carousel">
+<!-- HERO -->
+<section class="hero-carousel">
 
-        <div class="carousel-track">
+<div class="carousel-track">
 
-            <!-- SLIDE 1 -->
-            <div class="carousel-slide" style="background-image: url('assets/img/bg/abstract1.jpg');">
-                <div class="overlay"></div>
+<div class="carousel-slide" style="background-image: url('assets/img/bg/abstract1.jpg');">
+<div class="overlay"></div>
 
-                <div class="slide-image">
-                    <img src="assets/img/person/my_image.png" alt="Chidinma">
-                </div>
+<div class="slide-image">
+<img src="assets/img/person/my_image.png" alt="Chidinma">
+</div>
 
-                <div class="slide-content">
-                    <h1>Empowering Business Decisions Through Insight</h1>
-                    <p>Transforming complex data into clear, actionable intelligence that drives smarter business outcomes.</p>
-                    <a href="#projects" class="cta-btn">Explore My Work</a>
-                </div>
-            </div>
+<div class="slide-content">
+<h1>Empowering Business Decisions Through Insight</h1>
+<p>Transforming complex data into clear, actionable intelligence.</p>
+<a href="#projects" class="cta-btn">Explore My Work</a>
+</div>
+</div>
 
-            <!-- SLIDE 2 -->
-            <div class="carousel-slide" style="background-image: url('assets/img/bg/blue_bg2.jpeg');">
-                <div class="overlay"></div>
+<div class="carousel-slide" style="background-image: url('assets/img/bg/blue_bg2.jpeg');">
+<div class="overlay"></div>
 
-                <div class="slide-content">
-                    <h1>Turning Requirements Into Real, Scalable Solutions</h1>
-                    <p>Bridging the gap between business needs and technical execution with clarity, structure, and precision.</p>
-                    <a href="#projects" class="cta-btn">View Case Studies</a>
-                </div>
-            </div>
+<div class="slide-content">
+<h1>Turning Requirements Into Scalable Solutions</h1>
+<p>Bridging business needs with technical execution.</p>
+<a href="#projects" class="cta-btn">View Case Studies</a>
+</div>
+</div>
 
-        </div>
+</div>
 
-        <div class="carousel-nav">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-        </div>
+<div class="carousel-nav">
+<span class="dot active"></span>
+<span class="dot"></span>
+</div>
 
-        <button class="carousel-arrow left">&#10094;</button>
-        <button class="carousel-arrow right">&#10095;</button>
+<button class="carousel-arrow left">&#10094;</button>
+<button class="carousel-arrow right">&#10095;</button>
 
-    </section>
+</section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="reveal">
-        <h2>About Me</h2>
-        <p>I am a Business Analyst passionate about transforming data into meaningful insights, improving processes, and supporting decision-making across organizations.</p>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<p>
+Business-focused Data Analyst with 3+ years of experience in requirements analysis, stakeholder collaboration, and data-driven decision-making. Skilled in translating business needs into analytical solutions that improve workflows and support strategy.
+</p>
+</section>
 
-    <!-- SUMMARY SECTION -->
-    <section id="summary" class="reveal">
-        <h2>Summary</h2>
-        <p>With experience in data analysis, reporting, requirements gathering, and workflow optimization, I help teams understand problems clearly and implement effective solutions.</p>
-    </section>
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+<h2>Skills</h2>
+<div class="skills-grid">
+<span class="skill">Requirements Gathering</span>
+<span class="skill">Process Mapping</span>
+<span class="skill">Stakeholder Communication</span>
+<span class="skill">Power BI</span>
+<span class="skill">SQL</span>
+<span class="skill">Excel</span>
+<span class="skill">Data Modeling</span>
+<span class="skill">Business Analysis</span>
+</div>
+</section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="reveal">
-        <h2>Skills</h2>
-        <p>Power BI, SQL, Excel, Requirements Gathering, Process Mapping, Stakeholder Communication, Data Modeling, Dashboard Design.</p>
-    </section>
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+<h2>Featured Projects</h2>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="reveal">
-        <h2>Projects</h2>
-        <p>Case studies, dashboards, business analysis documentation, and process improvement initiatives.</p>
-    </section>
+<div class="projects-grid">
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="reveal">
-        <h2>Contact</h2>
-        <p>Email: yourname@example.com</p>
-    </section>
+<div class="project-card" onclick="openModal('case1')">
+<img src="assets/img/portfolio/case-system.png">
+<div class="project-content">
+<h3>Case Management System</h3>
+<p>Improved efficiency & visibility</p>
+<span class="tag">Business Analysis</span>
+</div>
+</div>
 
-    <script>
-        /* HERO CAROUSEL */
-        let currentSlide = 0;
-        const track = document.querySelector(".carousel-track");
-        const dots = document.querySelectorAll(".dot");
-        const totalSlides = 2;
+<div class="project-card" onclick="openModal('case2')">
+<img src="assets/img/portfolio/Amazon E-commerce 1.jpg">
+<div class="project-content">
+<h3>Retail Dashboard</h3>
+<p>Better pricing decisions</p>
+<span class="tag">Power BI</span>
+</div>
+</div>
 
-        function updateCarousel() {
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, i) => dot.classList.toggle("active", i === currentSlide));
-        }
+<div class="project-card" onclick="openModal('case3')">
+<img src="assets/img/portfolio/U.S international Powerbi project.jpg">
+<div class="project-content">
+<h3>Air Traffic Analysis</h3>
+<p>Trend insights</p>
+<span class="tag">Visualization</span>
+</div>
+</div>
 
-        document.querySelector(".carousel-arrow.right").addEventListener("click", () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        });
+<div class="project-card" onclick="openModal('case4')">
+<img src="assets/img/portfolio/marketing.png">
+<div class="project-content">
+<h3>Marketing Analysis</h3>
+<p>Improved targeting</p>
+<span class="tag">Excel</span>
+</div>
+</div>
 
-        document.querySelector(".carousel-arrow.left").addEventListener("click", () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        });
+</div>
+</section>
 
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                currentSlide = index;
-                updateCarousel();
-            });
-        });
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+<h2>Contact</h2>
+<p>Email: yourname@example.com</p>
+</section>
 
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }, 6000);
+<!-- MODALS -->
+<div id="case1" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('case1')">&times;</span>
+<h3>Case Management System Analysis</h3>
+<p><strong>Problem:</strong> No centralized support system.</p>
+<p><strong>Action:</strong> Defined workflows.</p>
+<p><strong>Result:</strong> Improved efficiency.</p>
+</div>
+</div>
 
-        /* SECTION REVEAL ANIMATION */
-        const revealElements = document.querySelectorAll('.reveal');
+<div id="case2" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('case2')">&times;</span>
+<h3>Retail Dashboard</h3>
+<p><strong>Problem:</strong> Poor visibility.</p>
+<p><strong>Action:</strong> Built Power BI dashboard.</p>
+<p><strong>Result:</strong> Better pricing decisions.</p>
+</div>
+</div>
 
-        function revealOnScroll() {
-            const triggerPoint = window.innerHeight * 0.85;
+<div id="case3" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('case3')">&times;</span>
+<h3>Air Traffic Analysis</h3>
+<p><strong>Problem:</strong> No trends.</p>
+<p><strong>Action:</strong> Built dashboards.</p>
+<p><strong>Result:</strong> Supported planning.</p>
+</div>
+</div>
 
-            revealElements.forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                if (top < triggerPoint) {
-                    el.classList.add('visible');
-                }
-            });
-        }
+<div id="case4" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal('case4')">&times;</span>
+<h3>Marketing Analysis</h3>
+<p><strong>Problem:</strong> Unclear ROI.</p>
+<p><strong>Action:</strong> Analysis.</p>
+<p><strong>Result:</strong> Improved targeting.</p>
+</div>
+</div>
 
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-    </script>
-
+<script src="script.js"></script>
 </body>
 </html>
