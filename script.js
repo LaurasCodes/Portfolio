@@ -1,10 +1,8 @@
-// ===============================
-// HERO CAROUSEL
-// ===============================
 let currentSlide = 0;
+
 const track = document.querySelector(".carousel-track");
+const slides = document.querySelectorAll(".carousel-slide");
 const dots = document.querySelectorAll(".dot");
-const totalSlides = document.querySelectorAll(".carousel-slide").length;
 
 function updateCarousel() {
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -14,91 +12,32 @@ function updateCarousel() {
     });
 }
 
-document.querySelector(".carousel-arrow.right").addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
+// arrows
+document.querySelector(".right").onclick = () => {
+    currentSlide = (currentSlide + 1) % slides.length;
     updateCarousel();
-});
+};
 
-document.querySelector(".carousel-arrow.left").addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+document.querySelector(".left").onclick = () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     updateCarousel();
-});
+};
 
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        currentSlide = index;
+// dots
+dots.forEach((dot, i) => {
+    dot.onclick = () => {
+        currentSlide = i;
         updateCarousel();
-    });
+    };
 });
 
+// faster autoplay
 setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
+    currentSlide = (currentSlide + 1) % slides.length;
     updateCarousel();
-}, 4500);
+}, 3000);
 
-
-// ===============================
-// SMOOTH SCROLL NAV
-// ===============================
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", e => {
-        e.preventDefault();
-
-        const target = document.getElementById(link.getAttribute("href").substring(1));
-
-        window.scrollTo({
-            top: target.offsetTop - 70,
-            behavior: "smooth"
-        });
-    });
-});
-
-
-// ===============================
-// NAV ACTIVE STATE
-// ===============================
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-        const top = section.offsetTop - 120;
-
-        if (pageYOffset >= top) {
-            current = section.id;
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.toggle(
-            "active",
-            link.getAttribute("href").substring(1) === current
-        );
-    });
-});
-
-
-// ===============================
-// REVEAL ON SCROLL (FIXED)
-// ===============================
-const revealEls = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-        }
-    });
-}, { threshold: 0.15 });
-
-revealEls.forEach(el => observer.observe(el));
-
-
-// ===============================
-// MODAL FUNCTIONS
-// ===============================
+// MODAL
 function openModal(id) {
     document.getElementById(id).style.display = "flex";
 }
@@ -106,16 +45,3 @@ function openModal(id) {
 function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
-
-
-// ===============================
-// NAV SHADOW ON SCROLL
-// ===============================
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-
-    nav.style.boxShadow =
-        window.scrollY > 50
-            ? "0 4px 20px rgba(0,0,0,0.08)"
-            : "none";
-});
