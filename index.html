@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chidinma Portfolio</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,156 +11,112 @@
 
 <!-- NAVBAR -->
 <nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero-carousel">
+    <div class="carousel-track">
 
-<div class="carousel-track">
+        <!-- SLIDE 1 -->
+        <div class="carousel-slide">
+            <div class="slide-left">
+                <h1>Empowering Business Decisions Through Insight</h1>
+                <p>Transforming complex data into clear, actionable intelligence.</p>
+                <a href="#projects" class="cta-btn">Explore My Work</a>
+            </div>
 
-<!-- SLIDE 1 -->
-<div class="carousel-slide">
-    <div class="slide-left">
-        <h1>Empowering Business Decisions Through Insight</h1>
-        <p>Transforming complex data into clear, actionable intelligence.</p>
-        <a href="#projects" class="cta-btn">Explore My Work</a>
+            <div class="slide-right">
+                <img src="assets/img/person/my_image.png" alt="Chidinma">
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-slide gradient">
+            <div class="slide-left">
+                <h1>Turning Requirements Into Scalable Solutions</h1>
+                <p>Bridging business needs with technical execution.</p>
+                <a href="#projects" class="cta-btn">View Case Studies</a>
+            </div>
+
+            <div class="slide-right"></div>
+        </div>
+
     </div>
 
-    <div class="slide-right">
-        <img src="assets/img/person/my_image.png" alt="Chidinma">
-    </div>
-</div>
-
-<!-- SLIDE 2 -->
-<div class="carousel-slide gradient">
-    <div class="slide-left">
-        <h1>Turning Requirements Into Scalable Solutions</h1>
-        <p>Bridging business needs with technical execution.</p>
-        <a href="#projects" class="cta-btn">View Case Studies</a>
+    <div class="carousel-nav">
+        <span class="dot active"></span>
+        <span class="dot"></span>
     </div>
 
-    <div class="slide-right"></div>
-</div>
-
-</div>
-
-<div class="carousel-nav">
-<span class="dot active"></span>
-<span class="dot"></span>
-</div>
-
-<button class="carousel-arrow left">&#10094;</button>
-<button class="carousel-arrow right">&#10095;</button>
-
+    <button class="carousel-arrow left">&#10094;</button>
+    <button class="carousel-arrow right">&#10095;</button>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="reveal">
-<h2>About Me</h2>
-<p>
-Business-focused Data Analyst with 3+ years of experience in requirements analysis, stakeholder collaboration, and data-driven decision-making.
-</p>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Business-focused Data Analyst with 3+ years of experience in requirements analysis,
+        stakeholder collaboration, and data-driven decision-making.
+    </p>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="reveal">
-<h2>Skills</h2>
-<div class="skills-grid">
-<span class="skill">Requirements Gathering</span>
-<span class="skill">Process Mapping</span>
-<span class="skill">Stakeholder Communication</span>
-<span class="skill">Power BI</span>
-<span class="skill">SQL</span>
-<span class="skill">Excel</span>
-<span class="skill">Data Modeling</span>
-<span class="skill">Business Analysis</span>
-</div>
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <span class="skill">Requirements Gathering</span>
+        <span class="skill">Process Mapping</span>
+        <span class="skill">Stakeholder Communication</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Excel</span>
+        <span class="skill">Data Modeling</span>
+        <span class="skill">Business Analysis</span>
+    </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="reveal">
-<h2>Featured Projects</h2>
+<section id="projects">
+    <h2>Featured Projects</h2>
 
-<div class="projects-grid">
+    <div class="projects-grid">
 
-<div class="project-card" onclick="openModal('case1')">
-<img src="assets/img/portfolio/case-system.png">
-<h3>Case Management System</h3>
-<p>Improved efficiency & visibility</p>
-</div>
+        <div class="project-card" onclick="openModal('case1')">
+            <img src="assets/img/portfolio/case-system.png">
+            <h3>Case Management System</h3>
+            <p>Improved efficiency & visibility</p>
+        </div>
 
-<div class="project-card" onclick="openModal('case2')">
-<img src="assets/img/portfolio/Amazon E-commerce 1.jpg">
-<h3>Retail Dashboard</h3>
-<p>Better pricing decisions</p>
-</div>
+        <div class="project-card" onclick="openModal('case2')">
+            <img src="assets/img/portfolio/Amazon E-commerce 1.jpg">
+            <h3>Retail Dashboard</h3>
+            <p>Better pricing decisions</p>
+        </div>
 
-<div class="project-card" onclick="openModal('case3')">
-<img src="assets/img/portfolio/U.S international Powerbi project.jpg">
-<h3>Air Traffic Analysis</h3>
-<p>Trend insights</p>
-</div>
+        <div class="project-card" onclick="openModal('case3')">
+            <img src="assets/img/portfolio/U.S international Powerbi project.jpg">
+            <h3>Air Traffic Analysis</h3>
+            <p>Trend insights</p>
+        </div>
 
-<div class="project-card" onclick="openModal('case4')">
-<img src="assets/img/portfolio/marketing.png">
-<h3>Marketing Analysis</h3>
-<p>Improved targeting</p>
-</div>
+        <div class="project-card" onclick="openModal('case4')">
+            <img src="assets/img/portfolio/marketing.png">
+            <h3>Marketing Analysis</h3>
+            <p>Improved targeting</p>
+        </div>
 
-</div>
+    </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="reveal">
-<h2>Contact</h2>
-<p>Email: yourname@example.com</p>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-<p>© 2026 Chidinma Laura Ikwechegh | Data Analyst Portfolio</p>
-</footer>
-
-<!-- MODALS -->
-<div id="case1" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('case1')">&times;</span>
-<h3>Case Management System</h3>
-<p>Improved workflow efficiency and visibility.</p>
-</div>
-</div>
-
-<div id="case2" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('case2')">&times;</span>
-<h3>Retail Dashboard</h3>
-<p>Better pricing decisions using Power BI.</p>
-</div>
-</div>
-
-<div id="case3" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('case3')">&times;</span>
-<h3>Air Traffic Analysis</h3>
-<p>Trend insights for planning.</p>
-</div>
-</div>
-
-<div id="case4" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeModal('case4')">&times;</span>
-<h3>Marketing Analysis</h3>
-<p>Improved campaign targeting.</p>
-</div>
-</div>
-<!-- CONTACT -->
-<section id="contact" class="reveal">
-<h2>Contact</h2>
-<p>Email: yourname@example.com</p>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: yourname@example.com</p>
 </section>
 
 <!-- FOOTER -->
@@ -181,7 +136,6 @@ Business-focused Data Analyst with 3+ years of experience in requirements analys
     </div>
 </footer>
 
-<script src="script.js"></script>
 <script src="script.js"></script>
 
 </body>
