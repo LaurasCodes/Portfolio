@@ -12,32 +12,47 @@ function updateCarousel() {
     });
 }
 
-// arrows
+// AUTOPLAY
+let autoPlay;
+
+function startAutoPlay() {
+    autoPlay = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }, 6000); // smoother timing
+}
+
+function resetAutoPlay() {
+    clearInterval(autoPlay);
+    startAutoPlay();
+}
+
+// ARROWS
 document.querySelector(".right").onclick = () => {
     currentSlide = (currentSlide + 1) % slides.length;
     updateCarousel();
+    resetAutoPlay();
 };
 
 document.querySelector(".left").onclick = () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     updateCarousel();
+    resetAutoPlay();
 };
 
-// dots
+// DOTS
 dots.forEach((dot, i) => {
     dot.onclick = () => {
         currentSlide = i;
         updateCarousel();
+        resetAutoPlay();
     };
 });
 
-// faster autoplay
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-}, 3000);
+// START AUTOPLAY
+startAutoPlay();
 
-// MODAL
+// MODALS
 function openModal(id) {
     document.getElementById(id).style.display = "flex";
 }
@@ -45,3 +60,21 @@ function openModal(id) {
 function closeModal(id) {
     document.getElementById(id).style.display = "none";
 }
+
+// CLICK OUTSIDE TO CLOSE
+window.onclick = function(e) {
+    document.querySelectorAll(".modal").forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
+
+// ESC KEY CLOSE
+document.onkeydown = function(e) {
+    if (e.key === "Escape") {
+        document.querySelectorAll(".modal").forEach(modal => {
+            modal.style.display = "none";
+        });
+    }
+};
