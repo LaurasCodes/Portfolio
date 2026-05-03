@@ -1,9 +1,18 @@
+/* =======================
+   GLOBAL
+======================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f5f9ff;
     color: #2d3748;
     scroll-behavior: smooth;
+}
+
+h2 {
+    margin-top: 60px;
+    text-align: center;
+    color: #002F6C;
 }
 
 /* =======================
@@ -19,6 +28,7 @@ nav {
     justify-content: flex-end;
     gap: 30px;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav a {
@@ -50,7 +60,7 @@ nav a {
     align-items: center;
     justify-content: space-between;
     padding: 0 8%;
-    position: relative;
+    gap: 40px;
 }
 
 /* BLUE BASE SLIDE */
@@ -75,29 +85,26 @@ nav a {
     margin-bottom: 10px;
 }
 
-/* RIGHT IMAGE (FIXED — NO MORE EXTREME POSITIONING) */
+/* RIGHT IMAGE — PERFECT POSITIONING */
 .slide-right {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    z-index: 2;
 }
 
 .slide-right img {
-    width: 380px;
+    width: 420px;
     max-width: 100%;
     height: auto;
-
     border-radius: 20px;
-    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.4));
-
-    transform: translateX(10px) scale(1.05);
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.35));
+    transform: scale(1.03);
     transition: 0.3s ease;
 }
 
 .slide-right img:hover {
-    transform: translateX(5px) scale(1.08);
+    transform: scale(1.07);
 }
 
 /* BUTTON */
@@ -153,13 +160,22 @@ nav a {
     background: rgba(255,255,255,0.8);
 }
 
+.carousel-arrow.left {
+    left: 20px;
+}
+
+.carousel-arrow.right {
+    right: 20px;
+}
+
 /* =======================
-   SKILLS (STYLED)
+   SKILLS
 ======================= */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 }
 
 .skill {
@@ -184,12 +200,32 @@ nav a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 0 8%;
 }
 
 .project-card {
     background: white;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =======================
+   CONTACT
+======================= */
+#contact {
+    padding: 40px 8%;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #002F6C;
 }
 
 /* =======================
@@ -207,10 +243,24 @@ nav a {
 .modal-content {
     background: white;
     padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    float: right;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #005EB8;
 }
 
 /* =======================
-   FOOTER (FIXED + CLEAN)
+   FOOTER
 ======================= */
 .footer {
     background: linear-gradient(135deg, #002F6C, #005EB8);
@@ -218,16 +268,6 @@ nav a {
     padding: 60px 10%;
     margin-top: 80px;
     text-align: center;
-}
-
-.footer-inner h3 {
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-}
-
-.footer-inner p {
-    color: #cfe3ff;
-    margin: 5px 0;
 }
 
 .footer-links {
@@ -256,5 +296,20 @@ nav a {
     font-size: 0.85rem;
     opacity: 0.7;
 }
-    transform: translateY(0);
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+    .carousel-slide {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .slide-right img {
+        width: 70%;
+        margin-top: 20px;
+        transform: scale(1);
+    }
 }
