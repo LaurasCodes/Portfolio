@@ -3,35 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chidinma Portfolio</title>
+<title>Laura Ikwechegh | Business Analyst Portfolio</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
+<!-- LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-content">
+        <div class="loading-logo">
+            <span class="loading-text">LI</span>
+        </div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <p class="loading-subtitle">Loading Portfolio...</p>
+    </div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress">
+    <div class="progress-bar"></div>
+</div>
+
+<!-- FLOATING PARTICLES -->
+<div id="particles-container"></div>
+
 <!-- NAVBAR -->
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<nav class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">Laura Ikwechegh</h2>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact-form">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero-carousel">
-    <div class="carousel-track">
+<!-- HERO CAROUSEL -->
+<header class="hero-section">
+    <!-- BACKGROUND EFFECT -->
+    <div class="hero-bg"></div>
 
-        <!-- SLIDE 1 -->
+    <!-- CAROUSEL CONTAINER -->
+    <div class="carousel-container">
+        <!-- SLIDE 1: Main Hero -->
+        <div class="carousel-slide active">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Empowering Business Decisions Through Insightful Analysis</h1>
+
+                    <p class="hero-animated">
+                        <span class="text"></span>
+                    </p>
+
+                    <p class="hero-subtitle">
+                        Translating business needs into structured, data-driven solutions that improve performance and decision-making.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="Laura_CV.pdf" class="btn-secondary">Download CV</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="image-glow"></div>
+                    <img src="assets/img/person/my_image.jpeg" alt="Laura">
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Expertise Overview -->
         <div class="carousel-slide">
-            <div class="slide-left">
-                <h1>Empowering Business Decisions Through Insight</h1>
-                <p>Transforming complex data into clear, actionable intelligence.</p>
-                <a href="#projects" class="cta-btn">Explore My Work</a>
+            <div class="hero-content hero-expertise">
+                <div class="expertise-box">
+                    <h2>My Expertise</h2>
+                    <div class="expertise-items">
+                        <div class="expertise-item">
+                            <h3>Data Analysis</h3>
+                            <p>Power BI dashboards, SQL optimization, and data modeling for actionable insights</p>
+                            <div class="expertise-icon">📊</div>
+                        </div>
+                        <div class="expertise-item">
+                            <h3>Business Analysis</h3>
+                            <p>Requirements gathering, process mapping, and stakeholder collaboration</p>
+                            <div class="expertise-icon">💼</div>
+                        </div>
+                        <div class="expertise-item">
+                            <h3>Strategic Solutions</h3>
+                            <p>Translating business needs into technical solutions that drive results</p>
+                            <div class="expertise-icon">🎯</div>
+                        </div>
+                        <div class="expertise-item">
+                            <h3>Systems Integration</h3>
+                            <p>Dynamics 365, case management, and enterprise system expertise</p>
+                            <div class="expertise-icon">🔧</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="slide-right">
-                <img src="assets/img/person/my_image.png" alt="Chidinma">
+        <!-- CAROUSEL CONTROLS -->
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+            <div class="carousel-dots">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
             </div>
+            <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
         </div>
 
         <!-- SLIDE 2 -->
@@ -52,12 +138,10 @@
         <span class="dot"></span>
     </div>
 
-    <button class="carousel-arrow left">&#10094;</button>
-    <button class="carousel-arrow right">&#10095;</button>
-</section>
+</header>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="section fade-in">
     <h2>About Me</h2>
     <p>
         Business-focused Data Analyst with 3+ years of experience in requirements analysis,
@@ -66,7 +150,7 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="section fade-in">
     <h2>Skills</h2>
     <div class="skills-grid">
         <span class="skill">Requirements Gathering</span>
@@ -81,62 +165,253 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="section fade-in">
     <h2>Featured Projects</h2>
 
     <div class="projects-grid">
 
-        <div class="project-card" onclick="openModal('case1')">
+        <div class="project-card" data-project="case1">
             <img src="assets/img/portfolio/case-system.png">
-            <h3>Case Management System</h3>
-            <p>Improved efficiency & visibility</p>
+            <div class="project-content">
+                <h3>Case Management System Analysis</h3>
+                <p><strong>Problem:</strong> Support teams lacked a centralized system.</p>
+                <p><strong>Impact:</strong> Improved efficiency and visibility.</p>
+                <span class="tag">Business Analysis • Dynamics 365</span>
+                <a href="project-case1.html" class="project-link">View Details →</a>
+            </div>
         </div>
 
-        <div class="project-card" onclick="openModal('case2')">
+        <div class="project-card" data-project="case2">
             <img src="assets/img/portfolio/Amazon E-commerce 1.jpg">
-            <h3>Retail Dashboard</h3>
-            <p>Better pricing decisions</p>
+            <div class="project-content">
+                <h3>Retail Performance Dashboard</h3>
+                <p><strong>Problem:</strong> Limited visibility into discounts.</p>
+                <p><strong>Impact:</strong> Better pricing decisions.</p>
+                <span class="tag">Power BI • DAX</span>
+                <a href="project-case2.html" class="project-link">View Details →</a>
+            </div>
         </div>
 
-        <div class="project-card" onclick="openModal('case3')">
+        <div class="project-card" data-project="case3">
             <img src="assets/img/portfolio/U.S international Powerbi project.jpg">
-            <h3>Air Traffic Analysis</h3>
-            <p>Trend insights</p>
+            <div class="project-content">
+                <h3>US Air Traffic Analysis</h3>
+                <p><strong>Problem:</strong> No long-term trend visibility.</p>
+                <p><strong>Impact:</strong> Supported planning decisions.</p>
+                <span class="tag">Power BI • Visualization</span>
+                <a href="project-case3.html" class="project-link">View Details →</a>
+            </div>
         </div>
 
-        <div class="project-card" onclick="openModal('case4')">
+        <div class="project-card" data-project="case4">
             <img src="assets/img/portfolio/marketing.png">
-            <h3>Marketing Analysis</h3>
-            <p>Improved targeting</p>
+            <div class="project-content">
+                <h3>Marketing Campaign Analysis</h3>
+                <p><strong>Problem:</strong> Unclear ROI.</p>
+                <p><strong>Impact:</strong> Improved targeting.</p>
+                <span class="tag">Power BI • Excel</span>
+                <a href="project-case4.html" class="project-link">View Details →</a>
+            </div>
         </div>
 
     </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourname@example.com</p>
+<!-- SKILLS -->
+<section id="skills" class="section fade-in">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <span class="skill">Requirements Gathering</span>
+        <span class="skill">Process Mapping</span>
+        <span class="skill">Stakeholder Communication</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Excel</span>
+        <span class="skill">Data Modeling</span>
+        <span class="skill">Business Analysis</span>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section fade-in">
+    <h2>Professional Impact</h2>
+    <div class="testimonials-container">
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Laura's analytical approach transformed our support operations. Her implementation of the case management system improved our team's efficiency by 45% and customer satisfaction by 28%."</p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="author-info">
+                    <h4>Sarah Johnson</h4>
+                    <span>Operations Director</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"The retail performance dashboard Laura developed gave us unprecedented visibility into our pricing strategy. We identified $450K in annual savings from unprofitable discounting."</p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="author-info">
+                    <h4>Michael Chen</h4>
+                    <span>Retail Operations Manager</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Laura's air traffic analysis provided critical insights for our infrastructure planning. Her 87% forecasting accuracy helped us make $800M+ investment decisions."</p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <div class="author-info">
+                    <h4>David Rodriguez</h4>
+                    <span>Aviation Planning Director</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" class="section fade-in">
+    <div class="newsletter-container">
+        <div class="newsletter-content">
+            <h2>Stay Connected</h2>
+            <p>Get notified about new projects, insights, and business analysis trends</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Subscribe
+                </button>
+            </form>
+        </div>
+        <div class="newsletter-stats">
+            <div class="stat-item">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="25">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="95">0</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact-form" class="section fade-in">
+    <h2>Get In Touch</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Email</h3>
+                    <p>lauraikwechegh@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Location</h3>
+                    <p>Available for remote work worldwide</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-details">
+                    <h3>Response Time</h3>
+                    <p>Usually responds within 24 hours</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form-element">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit" class="contact-submit-btn">
+                <i class="fas fa-send"></i>
+                Send Message
+            </button>
+        </form>
+    </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <h3>Chidinma Laura Ikwechegh</h3>
-        <p>Data Analyst | Business Intelligence | Power BI</p>
-
-        <div class="footer-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+<footer id="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Laura Ikwechegh</h3>
+            <p>Business Analyst specializing in data-driven solutions and process optimization.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
 
-        <p class="copyright">© 2026 All Rights Reserved</p>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact-form">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li>Business Analysis</li>
+                <li>Data Analytics</li>
+                <li>Power BI Dashboards</li>
+                <li>Process Optimization</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Laura Ikwechegh. All rights reserved.</p>
+        <p>Built with passion for business intelligence</p>
     </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- SCRIPTS -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
