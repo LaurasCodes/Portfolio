@@ -418,6 +418,9 @@ header.hero-section {
 
 .hero-image img:hover {
     transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(96, 165, 250, 0.8), 0 0 80px rgba(167, 139, 250, 0.5);
+}
 }
 
 /* EXPERTISE SECTION (Slide 2) */
