@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retail Performance Dashboard | Laura Ikwechegh</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -13,10 +14,11 @@
     <div class="nav-container">
         <h2 class="logo">Laura Ikwechegh</h2>
         <ul class="nav-links">
+            <li><a href="index.html#hero-section">Home</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#projects">Projects</a></li>
             <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#contact-form">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -29,64 +31,65 @@
         <h1>Retail Performance Dashboard</h1>
         <p>Transforming pricing, discount visibility, and margin analytics for retail stakeholders.</p>
         <div style="margin-top: 20px;">
-            <a href="retail-dashboard.html" class="btn-primary" style="margin-right: 15px;">
-                <i class="fas fa-play-circle" style="margin-right: 8px;"></i>View Dashboard Video
+            <a href="assets/img/portfolio/Retail%20Performance.mp4" class="btn-primary" style="margin-right: 15px;" target="_blank" rel="noopener">
+                <i class="fas fa-play-circle" style="margin-right: 8px;"></i>Watch Dashboard Video
             </a>
-            <a href="assets/img/portfolio/Retail Performance.pdf" class="btn-secondary" target="_blank" rel="noopener">
-                <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>Download Case Study PDF
+            <a href="assets/img/portfolio/Retail Performance.jpg" class="btn-secondary" target="_blank" rel="noopener">
+                <i class="fas fa-image" style="margin-right: 8px;"></i>View Dashboard Image
             </a>
         </div>
     </div>
 
     <!-- CONTENT -->
     <div class="project-detail-content">
-        <!-- PROBLEM SECTION -->
         <div class="detail-section">
-            <h2>The Problem</h2>
-            <p>
-                Retail leadership lacked a single source of truth for discount effectiveness and category profitability. This created challenges across pricing, inventory, and promotional planning:
-            </p>
+            <h2>Retail Performance Dashboard — Full Case Study Storytelling</h2>
+            <p><strong>Problem Identified</strong></p>
+            <p>The retail business was generating millions in sales across the United States, yet leadership lacked a clear, unified understanding of performance. Data lived in scattered spreadsheets, making it difficult to answer critical questions:</p>
             <ul>
-                <li><strong>Unclear Discount Impact:</strong> No clear signal of which promotions improved revenue vs. eroded margin.</li>
-                <li><strong>Inventory Pressure:</strong> Overstock and clearance risk due to misaligned pricing decisions.</li>
-                <li><strong>Fragmented Reporting:</strong> Manual reports from multiple systems delayed decisions by days.</li>
-                <li><strong>Limited Category Insights:</strong> The business could not reliably compare product category performance.</li>
-                <li><strong>Reactive Pricing:</strong> Pricing decisions were driven by intuition rather than data.</li>
+                <li>Which regions and cities were truly driving growth</li>
+                <li>Whether high sales were actually translating into high profit</li>
+                <li>Which product categories were eroding margins</li>
+                <li>How discounting behavior was impacting profitability</li>
+                <li>Where to focus marketing, inventory, and pricing efforts</li>
             </ul>
+            <p>Without a centralized view, decisions were reactive, slow, and often based on assumptions rather than evidence. The organization needed a single source of truth that could turn raw data into actionable insights.</p>
         </div>
 
-        <!-- SOLUTION SECTION -->
         <div class="detail-section">
-            <h2>My Solution</h2>
-            <h3>Integrated Data Model</h3>
-            <p>
-                I built an end-to-end retail analytics model that combined sales, inventory, product, and discount data in a single view.
-            </p>
+            <h2>My Role & Approach</h2>
+            <p>I designed and developed an interactive Retail Performance Dashboard that transformed fragmented data into a strategic decision-making tool. My approach followed a structured analytics workflow:</p>
+
+            <h3>a. Data Preparation</h3>
             <ul>
-                <li>Created a star schema with sales transactions, product hierarchy, pricing, and calendar dimensions.</li>
-                <li>Brought together discounted and non-discounted revenue streams for clear margin comparison.</li>
-                <li>Added calculated metrics for gross profit, discount lift, and price elasticity.</li>
-                <li>Validated data quality through sales reconciliation and inventory consistency checks.</li>
+                <li>Consolidated sales, profit, discount, and regional datasets.</li>
+                <li>Cleaned inconsistencies and standardized formats.</li>
+                <li>Engineered metrics such as Profit Margin, Predicted Profit, and Discount Impact.</li>
             </ul>
 
-            <h3>Interactive Dashboard Experience</h3>
-            <p>
-                Developed a consumer-facing Power BI dashboard that connected executive metrics with tactical insights.
-            </p>
+            <h3>b. Exploratory Data Analysis</h3>
+            <p>I explored patterns in:</p>
             <ul>
-                <li><strong>Executive KPIs:</strong> Revenue, margin, discount effectiveness, and trend performance.</li>
-                <li><strong>Category Performance:</strong> Compare product lines and identify underperforming promotions.</li>
-                <li><strong>Discount Analysis:</strong> Evaluate the profitability of every promotion by SKU and category.</li>
-                <li><strong>Price Optimization:</strong> Visualize recommended pricing adjustments against historical demand.</li>
-                <li><strong>Real-Time Insight:</strong> Embedded refresh logic to keep analytics aligned with daily inventory updates.</li>
+                <li>Regional performance</li>
+                <li>Category and sub-category profitability</li>
+                <li>Discount behavior</li>
+                <li>City-level revenue concentration</li>
             </ul>
 
-            <h3>Advanced Retail Analytics</h3>
+            <h3>c. Dashboard Development</h3>
+            <p>I built a multi-layered dashboard featuring:</p>
             <ul>
-                <li>Built trend-based forecasts to estimate demand response to pricing changes.</li>
-                <li>Implemented ROI measurements for promotional spend and margin impact.</li>
-                <li>Created competitor-style benchmark views to highlight pricing gaps.</li>
+                <li><strong>Executive KPI Cards</strong> — Total Sales: $2.30M, Total Profit: $286.40K, Average Discount: 16%.</li>
+                <li><strong>Scenario Analysis Tool</strong> — showed how a –0.53 discount change raised predicted profit to $1.50M.</li>
+                <li><strong>Top 10 Cities by Sales</strong> — highlighted New York, Los Angeles, Seattle, and San Francisco.</li>
+                <li><strong>Regional Sales Comparison</strong> — showed West and East as top performers.</li>
+                <li><strong>Sub-Category Profitability Table</strong> — revealed high-margin and loss-making lines.</li>
+                <li><strong>Category Trend Visualization</strong> — compared sales and profit margins across Technology, Furniture, and Office Supplies.</li>
+                <li><strong>Geographical Map</strong> — visualized sales and profit distribution across U.S. states.</li>
             </ul>
+
+            <h3>d. Insight Extraction & Storytelling</h3>
+            <p>I translated the visuals into clear, strategic insights that leadership could act on immediately.</p>
 
             <div class="tech-stack">
                 <span class="tech-tag">Power BI</span>
@@ -97,66 +100,43 @@
             </div>
         </div>
 
-        <!-- IMPACT SECTION -->
         <div class="detail-section">
-            <h2>Impact & Results</h2>
-            <div class="impact-metrics">
-                <div class="metric">
-                    <h4>Profit Visibility</h4>
-                    <p>Sharpened margin analysis across 3 product categories.</p>
-                </div>
-                <div class="metric">
-                    <h4>Pricing Decisions</h4>
-                    <p>Reduced unprofitable discounting by 42%.</p>
-                </div>
-                <div class="metric">
-                    <h4>Forecast Confidence</h4>
-                    <p>Shifted planning from weekly to daily reviews.</p>
-                </div>
-                <div class="metric">
-                    <h4>Operational Speed</h4>
-                    <p>Cut reporting time from days to real-time insights.</p>
-                </div>
-            </div>
-            <br>
-            <h3>Key Outcomes:</h3>
+            <h2>Key Insights Uncovered</h2>
+            <ol>
+                <li><strong>High Sales ≠ High Profit Margin.</strong> Top-selling products were not always the most profitable. For example, chairs generated $328K in sales but delivered only a 3.02% margin, while low-sales categories like envelopes, furnishings, and fasteners delivered 31–44% margins.</li>
+                <li><strong>Discounting Was Reducing Profit.</strong> The scenario tool showed that a –0.53 change in discount level increased predicted profit to $1.50M, proving the company was over-discounting in several categories.</li>
+                <li><strong>Regional Performance Was Uneven.</strong> West and East outperformed other regions with $0.4M–$0.8M in sales, while Central and South lagged, highlighting where to invest marketing and supply chain capacity.</li>
+                <li><strong>Revenue Was Concentrated in a Few Cities.</strong> New York, Los Angeles, Seattle, and San Francisco drove a disproportionate share of sales, supporting targeted regional strategies instead of broad national campaigns.</li>
+                <li><strong>Category Trend Performance Varied.</strong> Technology led in sales but had fluctuating margins; Furniture was inconsistent due to loss-making sub-categories; Office Supplies delivered stable margins.</li>
+                <li><strong>Sub-Category Profitability Exposed Hidden Opportunities.</strong> High-margin lines were under-prioritized, creating opportunities to expand profitable SKUs and reduce or redesign low-margin offerings.</li>
+            </ol>
+        </div>
+
+        <div class="detail-section">
+            <h2>Solution Impact</h2>
             <ul>
-                <li>Delivered improved pricing decisions that supported higher margin product mix.</li>
-                <li>Enabled merchandising teams to identify and remove low-ROI promotions.</li>
-                <li>Provided a unified dashboard view for commercial, supply chain, and finance stakeholders.</li>
-                <li>Created a strong foundation for future dynamic pricing and inventory optimization.</li>
+                <li>Centralized reporting reduced analysis time from hours to minutes.</li>
+                <li>Leadership gained real-time visibility into sales, profit, discounts, and regional performance.</li>
+                <li>Pricing and discount strategies became evidence-based.</li>
+                <li>Inventory decisions aligned with profitability, not just sales.</li>
+                <li>Teams collaborated better around a shared, interactive tool.</li>
+                <li>The business shifted from reactive reporting to proactive strategy.</li>
             </ul>
         </div>
 
-        <!-- RECOMMENDATIONS SECTION -->
         <div class="detail-section">
-            <h2>Recommendations & Next Steps</h2>
-            <h3>Short-term Enhancements (0-3 months):</h3>
+            <h2>Results</h2>
             <ul>
-                <li>Expand the dashboard to include customer segment profitability.</li>
-                <li>Introduce alerting for below-target margin and clearance risk.</li>
-                <li>Implement a pricing feedback loop for promotions and markdowns.</li>
+                <li>Higher profitability through optimized discounting.</li>
+                <li>Better resource allocation to high-performing regions and categories.</li>
+                <li>Clear identification of loss-making products.</li>
+                <li>Improved decision-making speed.</li>
+                <li>A reliable single source of truth for sales and profit performance.</li>
             </ul>
-
-            <h3>Medium-term Growth (3-6 months):</h3>
-            <ul>
-                <li>Build dynamic pricing scenarios based on elasticity and inventory levels.</li>
-                <li>Integrate competitor price intelligence for category benchmarking.</li>
-                <li>Incorporate customer basket analysis to support cross-sell decisions.</li>
-            </ul>
-
-            <h3>Long-term Strategy (6+ months):</h3>
-            <ul>
-                <li>Deploy machine-learning models to recommend optimal discount levels.</li>
-                <li>Roll out mobile dashboards for store managers and field analysts.</li>
-                <li>Establish automated pricing governance and approval workflows.</li>
-            </ul>
-
             <p style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-                This retail performance dashboard replaced fragmented reporting with an integrated analytics experience, empowering the business to make data-driven pricing choices and protect margin.
+                This dashboard gives leadership a real-time view of sales, profit, discount behavior, and regional performance across the U.S. It proved that high sales do not always equal high profit and helped the business optimize pricing, improve profitability, and make faster, data-driven decisions.
             </p>
         </div>
-
     </div>
 
 </div>
