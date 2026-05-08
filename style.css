@@ -13,7 +13,7 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+    background: linear-gradient(135deg, #a4aec5 0%, #697d9c 25%, #435166 50%, #3e4e65 75%, #64748b 100%);
     color: #f1f5f9;
     line-height: 1.6;
     overflow-x: hidden;
@@ -243,7 +243,7 @@ body {
 header.hero-section {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: none;
     padding: 60px 0;
     min-height: 600px;
     display: flex;
@@ -257,11 +257,18 @@ header.hero-section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background: url(assets/img/portfolio/Copilot_20260508_010809.png)center/cover no-repeat,
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
     pointer-events: none;
 }
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
 
 .carousel-container {
     position: relative;
