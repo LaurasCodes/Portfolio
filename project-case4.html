@@ -1,128 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Campaign Analysis | Laura Ikwechegh</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Campaign Analysis | Case Study — Laura Ikwechegh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="case-study.css">
+<style>
+  body { background: #071410; }
+  .cs-hero { background: linear-gradient(160deg,#071410 0%,#0c1f18 50%,#071812 100%); }
+  .cs-hero::before { background-image: linear-gradient(rgba(62,207,142,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(62,207,142,0.035) 1px,transparent 1px);background-size:60px 60px; }
+  .cs-hero-orb { background: radial-gradient(circle,rgba(62,207,142,0.09),transparent 70%); }
+  .cs-hero-tag { color:#3ECF8E;border-color:rgba(62,207,142,0.28);background:rgba(62,207,142,0.05); }
+  .cs-section-label { color:#3ECF8E; }
+  .cs-section ul li::before { background:#3ECF8E;opacity:0.5; }
+  .cs-insight { border-left-color:#3ECF8E; }
+  .cs-insight strong { color:#3ECF8E!important; }
+  .cs-kpi-val { color:#3ECF8E; }
+  .cs-result-num { color:#3ECF8E; }
+  .cs-btn-primary { background:#3ECF8E;color:#071410; }
+  .cs-btn-primary:hover { background:#2db87a;box-shadow:0 8px 28px rgba(62,207,142,0.28); }
+  .cs-btn-outline:hover { border-color:#3ECF8E;color:#3ECF8E; }
+  .cs-nav-back:hover { color:#3ECF8E;border-color:#3ECF8E; }
+  .cs-toc-list a:hover { color:#3ECF8E; }
+  .cs-toc-list a::before { background:rgba(62,207,142,0.4); }
+  .cs-nav-logo span,.cs-footer-logo span,.cs-footer a { color:#3ECF8E; }
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-        <h2 class="logo">Laura Ikwechegh</h2>
-        <ul class="nav-links">
-            <li><a href="index.html#hero-section">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact-form">Contact</a></li>
-        </ul>
-    </div>
+<nav class="cs-nav">
+  <a href="index.html" class="cs-nav-logo">LI<span>.</span></a>
+  <a href="index.html#projects" class="cs-nav-back">
+    <i class="fas fa-arrow-left"></i> Back to Projects
+  </a>
 </nav>
 
-<!-- PROJECT DETAIL PAGE -->
-<div class="project-detail">
-    <!-- HEADER -->
-    <div class="project-detail-header">
-        <a href="index.html#projects" class="back-link">← Back to Projects</a>
-        <h1>Marketing Campaign Analysis</h1>
-        <p>ROI Optimization Through Data-Driven Customer Segmentation and Targeting</p>
+<section class="cs-hero">
+  <div class="cs-hero-orb" style="background:radial-gradient(circle,rgba(11,206,175,0.09),transparent 70%);left:-100px;right:auto;"></div>
+
+  <a href="index.html#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
+
+  <div class="cs-hero-tag">Case Study · Marketing Analytics</div>
+
+  <h1>Marketing Campaign Analysis</h1>
+
+  <p class="cs-hero-sub">
+    Turning unclear campaign ROI into precise, data-driven marketing intelligence — identifying the highest-value customer segments and unlocking significant budget efficiency across a multi-channel operation.
+  </p>
+
+  <div class="cs-kpi-row">
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">Improved</div>
+      <div class="cs-kpi-label">Marketing ROI</div>
     </div>
-
-    <!-- CONTENT -->
-    <div class="project-detail-content">
-        <div class="detail-section">
-            <h2>Marketing Campaign Analysis — Full Case Study Storytelling</h2>
-            <p><strong>Problem Identified</strong></p>
-            <p>The marketing team could not demonstrate campaign ROI or identify the highest-value audience segments. Key challenges included:</p>
-            <ul>
-                <li>Unclear return on marketing spend</li>
-                <li>Inefficient targeting across customer segments</li>
-                <li>Poor attribution of conversions and channel contribution</li>
-                <li>Difficulty identifying campaign winners and losers</li>
-                <li>Limited insight into customer behavior and lifetime value</li>
-            </ul>
-            <p>Without a unified view, leadership was making investment decisions based on partial data and assumptions.</p>
-        </div>
-
-        <div class="detail-section">
-            <h2>My Role & Approach</h2>
-            <p>I built an analytics framework and Power BI dashboard that turned campaign data into actionable marketing intelligence.</p>
-            <h3>a. Data Preparation</h3>
-            <ul>
-                <li>Integrated campaign, customer, sales, and channel datasets.</li>
-                <li>Standardized KPIs for spend, conversions, and revenue.</li>
-                <li>Created calculated metrics for CAC, LTV, conversion rate, and campaign ROI.</li>
-            </ul>
-            <h3>b. Exploratory Analysis</h3>
-            <ul>
-                <li>Identified high-value customer segments and their performance drivers.</li>
-                <li>Compared campaign effectiveness by channel and segment.</li>
-                <li>Analyzed funnel drop-off points and conversion gaps.</li>
-            </ul>
-            <h3>c. Dashboard Development</h3>
-            <p>The dashboard included:</p>
-            <ul>
-                <li>Executive KPI cards for ROI, CAC, revenue, and conversions.</li>
-                <li>Attribution analysis across channels and campaign touchpoints.</li>
-                <li>Funnel and conversion tracking for campaign performance.</li>
-                <li>Segment performance views that linked customer behavior to revenue impact.</li>
-            </ul>
-            <h3>d. Insight Storytelling</h3>
-            <p>I converted campaign data into clear, prioritized recommendations for marketing, budget, and growth.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">Excel Analytics</span>
-                <span class="tech-tag">SQL Server</span>
-                <span class="tech-tag">Customer Analytics</span>
-                <span class="tech-tag">Attribution</span>
-            </div>
-        </div>
-
-        <div class="detail-section">
-            <h2>Key Insights Uncovered</h2>
-            <ol>
-                <li><strong>Top campaigns were not always most profitable.</strong> Some high-spending channels generated volume but delivered low ROI.</li>
-                <li><strong>High-value segments drove the best returns.</strong> Winners were identifiable by purchase behavior, not just reach.</li>
-                <li><strong>Attribution gaps hid underperforming spend.</strong> Better tracking revealed channels that added little incremental value.</li>
-                <li><strong>Funnel drop-offs limited conversion.</strong> Optimizing the mid-funnel delivered measurable gains.</li>
-                <li><strong>Budget shifts could unlock growth.</strong> Redirecting spend to top-performing segments increased expected revenue and lowered CAC.</li>
-            </ol>
-        </div>
-
-        <div class="detail-section">
-            <h2>Solution Impact</h2>
-            <ul>
-                <li>Provided a single source of truth for campaign performance.</li>
-                <li>Enabled marketing leadership to prioritize high-value segments.</li>
-                <li>Reduced wasted spend by identifying low-performing channels.</li>
-                <li>Improved collaboration between analytics, marketing, and finance.</li>
-                <li>Turned campaign data into a repeatable decision process.</li>
-            </ul>
-        </div>
-
-        <div class="detail-section">
-            <h2>Results</h2>
-            <ul>
-                <li>Improved marketing ROI by 156%.</li>
-                <li>Reduced customer acquisition cost by 35%.</li>
-                <li>Increased conversion rates by 3.2x.</li>
-                <li>Generated 42% more revenue from the same budget.</li>
-                <li>Enabled a $2.1M budget shift to the best-performing segments.</li>
-            </ul>
-            <p style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-                This dashboard made campaign performance transparent and helped the team move from intuition-based decisions to data-driven marketing strategies.
-            </p>
-        </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val gold">Lower</div>
+      <div class="cs-kpi-label">Reduction in CAC</div>
     </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">Higher</div>
+      <div class="cs-kpi-label">Conversion Rate</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val gold">Reallocated</div>
+      <div class="cs-kpi-label">Budget to High-Value Segments</div>
+    </div>
+  </div>
 
+  <div class="cs-hero-btns">
+    <a href="assets/img/portfolio/power BI Assignment 1.jpg" class="cs-btn-primary" target="_blank" rel="noopener">
+      <i class="fas fa-chart-line"></i> View Dashboard
+    </a>
+    <a href="index.html#projects" class="cs-btn-outline">
+      <i class="fas fa-arrow-left"></i> All Projects
+    </a>
+  </div>
+
+  <div class="cs-tags" style="margin-top:28px;">
+    <span class="cs-tag">Power BI</span>
+    <span class="cs-tag">Excel Analytics</span>
+    <span class="cs-tag">SQL Server</span>
+    <span class="cs-tag">Customer Analytics</span>
+    <span class="cs-tag">Attribution Modelling</span>
+  </div>
+</section>
+
+<div class="cs-body">
+  <main>
+
+    <section class="cs-section" id="problem">
+      <div class="cs-section-label">01 — Challenge</div>
+      <h2>The Problem</h2>
+      <p>The marketing team had no reliable way to demonstrate ROI on campaign spend or identify which customer segments were actually generating profitable revenue. Key challenges included:</p>
+      <ul>
+        <li>Unclear return on marketing investment across channels and campaigns</li>
+        <li>Inefficient targeting — budgets spread broadly rather than focused on value segments</li>
+        <li>Poor attribution of conversions and channel contribution to actual revenue</li>
+        <li>No reliable method to identify campaign winners vs. underperformers quickly</li>
+        <li>Limited visibility into customer lifetime value and long-term behaviour patterns</li>
+      </ul>
+      <div class="cs-insight">
+        <p><strong>Core issue:</strong> Without a unified analytics view, leadership was making multi-million dollar investment decisions based on partial data and gut feel — rather than evidence.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="approach">
+      <div class="cs-section-label">02 — Approach</div>
+      <h2>My Role &amp; Approach</h2>
+      <p>I built a comprehensive analytics framework and Power BI dashboard that transformed raw campaign data into actionable marketing intelligence — connecting spend, behaviour, and revenue in one unified view.</p>
+
+      <h3>a. Data Preparation</h3>
+      <ul>
+        <li>Integrated campaign, customer, sales, and channel datasets from multiple sources</li>
+        <li>Standardised KPI definitions for spend, conversions, and attributed revenue</li>
+        <li>Created calculated metrics for CAC, LTV, conversion rate, and campaign ROI</li>
+      </ul>
+
+      <h3>b. Exploratory Analysis</h3>
+      <ul>
+        <li>Identified high-value customer segments and mapped their behavioural performance drivers</li>
+        <li>Compared campaign effectiveness across channels, segments, and budget levels</li>
+        <li>Analysed funnel drop-off points to locate conversion gaps and wasted spend</li>
+      </ul>
+
+      <h3>c. Dashboard Development</h3>
+      <ul>
+        <li><strong>Executive KPI Cards</strong> — ROI, CAC, total revenue, and conversion rates at a glance</li>
+        <li><strong>Attribution Analysis</strong> — channel and touchpoint contribution to each conversion</li>
+        <li><strong>Funnel &amp; Conversion Tracking</strong> — stage-by-stage visibility into campaign performance</li>
+        <li><strong>Segment Performance Views</strong> — linking customer behaviour directly to revenue impact</li>
+        <li><strong>Budget Scenario Tool</strong> — modelling expected revenue from spend reallocation options</li>
+      </ul>
+    </section>
+
+    <section class="cs-section" id="insights">
+      <div class="cs-section-label">03 — Insights</div>
+      <h2>Key Insights Uncovered</h2>
+      <ol>
+        <li><strong>Top-spending campaigns were not the most profitable.</strong> Several high-spend channels generated strong volume but low ROI — budget was flowing to channels that looked good on surface metrics but underdelivered on margin.</li>
+        <li><strong>High-value segments were identifiable by behaviour, not reach.</strong> The most profitable customers could be isolated using purchase behaviour signals — enabling far more precise targeting than the existing demographic-only approach.</li>
+        <li><strong>Attribution gaps were hiding underperforming spend.</strong> Better multi-touch tracking revealed entire channels that contributed little incremental value — significant budget was being allocated based on flawed last-click logic.</li>
+        <li><strong>Mid-funnel drop-offs were the biggest conversion killer.</strong> The analysis pinpointed where prospects were disengaging — optimising these specific stages delivered measurable conversion gains without increasing spend.</li>
+        <li><strong>Budget reallocation was a fast path to growth.</strong> Redirecting spend from low-ROI channels to top-performing segments projected higher expected revenue with a materially lower CAC.</li>
+      </ol>
+    </section>
+
+    <section class="cs-section" id="impact">
+      <div class="cs-section-label">04 — Impact</div>
+      <h2>Solution Impact</h2>
+      <ul>
+        <li>Provided a single, reliable source of truth for all campaign performance data</li>
+        <li>Enabled marketing leadership to prioritise and double down on high-value segments</li>
+        <li>Reduced wasted spend by identifying and cutting low-performing channels</li>
+        <li>Improved cross-functional collaboration between analytics, marketing, and finance</li>
+        <li>Turned campaign data into a repeatable, scalable decision-making process</li>
+      </ul>
+    </section>
+
+    <section class="cs-section" id="results">
+      <div class="cs-section-label">05 — Results</div>
+      <h2>Measurable Results</h2>
+
+      <div class="cs-results-grid">
+        <div class="cs-result-card">
+          <div class="cs-result-num">Better</div>
+          <div class="cs-result-label">Marketing ROI through smarter targeting</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num gold">Lower</div>
+          <div class="cs-result-label">Customer acquisition cost after reallocation</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num">Higher</div>
+          <div class="cs-result-label">Conversion rates after funnel optimisation</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num gold">More</div>
+          <div class="cs-result-label">Revenue efficiency from same budget</div>
+        </div>
+      </div>
+
+      <div class="cs-summary">
+        <p>This dashboard made campaign performance fully transparent and transformed how the marketing team operated — shifting from intuition-based decisions to precise, data-driven strategies. A $2.1M budget reallocation to top-performing segments directly followed the analysis, producing measurable revenue growth at a significantly lower cost per customer.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-card">
+      <h4>Table of Contents</h4>
+      <ul class="cs-toc-list">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#approach">My Approach</a></li>
+        <li><a href="#insights">Key Insights</a></li>
+        <li><a href="#impact">Solution Impact</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-meta-list">
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Industry</span>
+          <span class="cs-meta-val">Marketing</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Focus</span>
+          <span class="cs-meta-val">ROI &amp; Attribution Analysis</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Tools</span>
+          <span class="cs-meta-val">Power BI, Excel, SQL Server</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">ROI Uplift</span>
+          <span class="cs-meta-val">+156%</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Budget Shifted</span>
+          <span class="cs-meta-val">$2.1M to top segments</span>
+        </div>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Technologies Used</h4>
+      <div class="cs-tags">
+        <span class="cs-tag">Power BI</span>
+        <span class="cs-tag">Excel</span>
+        <span class="cs-tag">SQL Server</span>
+        <span class="cs-tag">Attribution</span>
+        <span class="cs-tag">Customer Analytics</span>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>View Project</h4>
+      <a href="assets/img/portfolio/power BI Assignment 1.jpg" class="cs-btn-primary" target="_blank" rel="noopener" style="justify-content:center;display:inline-flex;width:100%;box-sizing:border-box;">
+        <i class="fas fa-chart-line"></i> View Dashboard
+      </a>
+    </div>
+  </aside>
 </div>
 
-<!-- FOOTER -->
-<footer id="contact">
-    <p>Contact: <strong><a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></strong></p>
+<footer class="cs-footer">
+  <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
+  <p><a href="index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
 </footer>
 
 </body>

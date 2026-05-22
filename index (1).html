@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Ikwechegh | Business Intelligence Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- SCROLL BAR -->
+<div id="scroll-bar"></div>
+
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="loader-sub">Business Intelligence Analyst</p>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-mobile" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#projects" onclick="closeMobileNav()">Projects</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Testimonials</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">LI<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="assets/img/portfolio/Laura_Ikwecheghs_Resume.pdf" class="nav-cta" target="_blank">Download CV</a>
+  <div class="hamburger" onclick="openMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ========== HERO SECTION (Sliding) ========== -->
+<section id="hero">
+
+  <!-- Slider track — holds both slides side by side -->
+  <div class="hero-slider" id="heroSlider">
+
+    <!-- ====== SLIDE 1: Photo + Text ====== -->
+    <div class="hero-slide slide-1">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+
+      <div class="slide-1-inner">
+
+        <!-- LEFT: Text content -->
+        <div class="hero-text-col">
+          <div class="hero-badge">Available for opportunities in Sweden</div>
+
+          <h1 class="hero-title">
+            Turning data into<br>
+            <span class="teal">decisions</span> that<br>
+            <span class="gold">drive results.</span>
+          </h1>
+
+          <p class="hero-sub">
+            Business Intelligence Analyst with expertise in Power BI, SQL, and data-driven strategy.
+            I build the dashboards, models, and insights that help organisations move faster and smarter.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#projects" class="btn-primary">
+              <i class="fas fa-chart-bar"></i> View Projects
+            </a>
+            <a href="assets/img/portfolio/Laura_Ikwecheghs_Resume.pdf" class="btn-outline" target="_blank">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-number">4<span>+</span></div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">4<span>+</span></div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">3<span>+</span></div>
+              <div class="stat-label">Industries Served</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Professional photo -->
+        <div class="hero-photo-col">
+          <div class="hero-photo-frame">
+            <img src="assets/img/person/my_imaage.png" alt="Laura Ikwechegh">
+
+            <!-- Floating BI mini-chart card -->
+            <div class="hero-accent-card">
+              <div class="accent-card-title">Live Metrics</div>
+              <div class="accent-bars">
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end SLIDE 1 -->
+
+    <!-- ====== SLIDE 2: Warm Charcoal / Minimal ====== -->
+    <div class="hero-slide slide-2">
+      <div class="slide-2-line"></div>
+
+      <div class="slide-2-inner">
+
+        <div class="slide-2-eyebrow">Business Intelligence · Power BI · SQL</div>
+
+        <h2 class="slide-2-title">
+          Where data meets<br>
+          <span class="s2-accent">strategic impact.</span>
+        </h2>
+
+        <p class="slide-2-desc">
+          I translate raw data into confident decisions — from retail pricing dashboards
+          to aviation forecasting. My work sits at the intersection of analytics,
+          technology, and measurable business outcomes.
+        </p>
+
+        <div class="slide-2-ctas">
+          <a href="#about" class="btn-warm">
+            <i class="fas fa-user"></i> About Me
+          </a>
+          <a href="#contact" class="btn-warm-outline">
+            <i class="fas fa-paper-plane"></i> Get In Touch
+          </a>
+        </div>
+
+        <div class="slide-2-stats">
+          <div class="s2-stat">
+            <div class="s2-stat-num">4+</div>
+            <div class="s2-stat-label">Years<br>Experience</div>
+          </div>
+          <div class="s2-stat">
+            <div class="s2-stat-num">4+</div>
+            <div class="s2-stat-label">Projects<br>Delivered</div>
+          </div>
+          <div class="s2-stat">
+            <div class="s2-stat-num">3+</div>
+            <div class="s2-stat-label">Industries<br>Served</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating quote — right side decoration -->
+      <div class="slide-2-quote">
+        <span class="s2-quote-mark">"</span>
+        <p class="s2-quote-text">Data is the new oil — but only when refined into insight.</p>
+        <div class="s2-quote-author">BI Philosophy</div>
+      </div>
+
+    </div>
+    <!-- end SLIDE 2 -->
+
+  </div>
+  <!-- end .hero-slider -->
+
+  <!-- Slider navigation dots -->
+  <div class="hero-nav-dots">
+    <button class="hero-dot active" aria-label="Slide 1"></button>
+    <button class="hero-dot" aria-label="Slide 2"></button>
+  </div>
+
+  <!-- Arrow buttons -->
+  <button class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Previous slide">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="hero-arrow hero-arrow-right" id="heroNext" aria-label="Next slide">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+
+</section>
+<!-- end #hero -->
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="section">
+  <div class="section-label reveal">Who I Am</div>
+  <h2 class="section-title reveal">Business intelligence<br>with a human lens.</h2>
+
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I am a <strong>Business Intelligence Analyst</strong> with over four years of experience translating
+        complex data into clear, actionable insights. My background spans financial analysis, customer
+        behaviour analytics, competitive monitoring, and BI dashboard development.
+      </p>
+      <p>
+        I am currently <strong>transitioning into the Swedish market</strong> and completing an MSc in Business
+        Intelligence at Dalarna University. I bring both the technical depth and the stakeholder communication
+        skills to make data work for the whole organisation — not just the data team.
+      </p>
+      <p>
+        What drives me is the intersection of <strong>analytics, technology, and real business impact</strong>.
+        I do not build dashboards for dashboards' sake. I build tools that help people make faster, smarter,
+        more confident decisions.
+      </p>
+
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <i class="fas fa-chart-line"></i>
+          <h4>BI Development</h4>
+          <p>End-to-end Power BI solutions</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-database"></i>
+          <h4>Data Modelling</h4>
+          <p>SQL, DAX, relational schemas</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-robot"></i>
+          <h4>AI Analytics</h4>
+          <p>AI-assisted analytical workflows</p>
+        </div>
+        <div class="highlight-item">
+          <i class="fas fa-users"></i>
+          <h4>Stakeholder Comms</h4>
+          <p>Cross-functional collaboration</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-skills reveal">
+      <h3>Technical Arsenal</h3>
+
+      <div class="skill-group">
+        <div class="skill-group-title">BI & Visualisation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">DAX</span>
+          <span class="skill-tag">Data Visualisation</span>
+          <span class="skill-tag">Reporting</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Data & Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Data Modelling</span>
+          <span class="skill-tag">Statistical Analysis</span>
+          <span class="skill-tag">Excel Advanced</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Business Analysis</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Requirements Gathering</span>
+          <span class="skill-tag">Process Mapping</span>
+          <span class="skill-tag">KPI Development</span>
+          <span class="skill-tag">Competitive Monitoring</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Emerging</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AI Analytical Tools</span>
+          <span class="skill-tag">Forecasting</span>
+          <span class="skill-tag">Customer Insights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="projects" class="section">
+  <div class="projects-header">
+    <div>
+      <div class="section-label reveal">My Work</div>
+      <h2 class="section-title reveal">Featured projects.</h2>
+    </div>
+    <p class="section-sub reveal" style="margin-bottom:0;">Each project follows a clear business problem → analysis → impact structure.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- FEATURED: Retail -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/Retail Performance.jpg" alt="Retail Performance Dashboard" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">DAX</span>
+          <span class="ptag">SQL</span>
+          <span class="ptag">Featured</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>Retail Performance Dashboard</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Retail &amp; E-commerce</span>
+          <span><i class="fas fa-circle"></i> Pricing Analysis</span>
+        </div>
+        <p>Unified pricing, discount, and margin analytics into one actionable retail dashboard. Gave management real-time visibility into category profitability and discount performance — enabling data-driven pricing decisions that protected profit margins while growing sales.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/Retail%20Performance.mp4" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-play"></i> Watch Demo
+          </a>
+          <a href="project-case1.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- US Air Traffic -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/U.S international Powerbi project.jpg" alt="US Air Traffic Analysis" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">Forecasting</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>US Air Traffic Analysis</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Aviation</span>
+          <span><i class="fas fa-circle"></i> Capacity Planning</span>
+        </div>
+        <p>Built long-term trend visibility across US aviation traffic data. Developed forecasting models that enabled strategic capacity planning and supported major infrastructure investment decisions.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/U.S international Powerbi project.jpg" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="project-case3.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Campaign -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/power BI Assignment 1.jpg" alt="Marketing Campaign Analysis" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">Excel</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>Marketing Campaign Analysis</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Marketing</span>
+          <span><i class="fas fa-circle"></i> ROI Analysis</span>
+        </div>
+        <p>Resolved unclear campaign ROI and channel performance across a multi-channel marketing operation. Improved targeting precision, optimised spend allocation, and enabled measurable, data-backed marketing decisions.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/power BI Assignment 1.jpg" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="project-case4.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amazon -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/Amazon E-commerce 1.jpg" alt="Amazon E-commerce Analytics" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">Sales Analytics</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>Amazon E-commerce Analytics</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> E-commerce</span>
+          <span><i class="fas fa-circle"></i> Customer Insights</span>
+        </div>
+        <p>Connected Amazon sales, customer behaviour, and fulfilment metrics in a single integrated dashboard. Resolved inconsistent reporting and gave the team clear visibility into buy-box performance and category trends.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/Amazon E-commerce 1.jpg" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="project-case5.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials" class="section">
+  <div class="section-label reveal">Social Proof</div>
+  <h2 class="section-title reveal">What colleagues say.</h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card reveal">
+      <p>Laura helped us sharpen campaign measurement and ROI reporting through clear Power BI dashboards and Excel analysis. Her work made channel performance transparent, improved targeting, and supported faster budget decisions for our marketing team.</p>
+      <div class="t-author">
+        <div class="t-avatar"><i class="fas fa-bullhorn"></i></div>
+        <div>
+          <div class="t-name">Chinyeaka Osondu</div>
+          <div class="t-role">Marketing Strategy Lead, Synaegis Limited</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <p>Working with Laura on our retail analytics was a turning point. Her Power BI and SQL work created pricing visibility we had never had before. The dashboard directly supported better pricing decisions and stronger margin outcomes across our product range.</p>
+      <div class="t-author">
+        <div class="t-avatar"><i class="fas fa-store"></i></div>
+        <div>
+          <div class="t-name">Samuel Odum-Igwe</div>
+          <div class="t-role">Retail Operations Manager, Synaegis Limited</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <p>Laura's data visualisation and business intelligence skills were instrumental in our aviation planning work. Her Power BI dashboards and forecasting models gave us long-term trend visibility that directly supported our strategic infrastructure decisions.</p>
+      <div class="t-author">
+        <div class="t-avatar"><i class="fas fa-plane"></i></div>
+        <div>
+          <div class="t-name">Aviation Planning Lead</div>
+          <div class="t-role">Infrastructure & Capacity Team</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="section">
+  <div class="section-label reveal">Get In Touch</div>
+  <h2 class="section-title reveal">Let's work together.</h2>
+  <p class="section-sub reveal">Open to graduate program opportunities and analyst roles in Sweden. Currently based in Stockholm, open to relocating to Malmö.</p>
+
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-info-items">
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-envelope"></i></div>
+          <div class="c-text">
+            <h4>Email</h4>
+            <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="c-text">
+            <h4>Location</h4>
+            <p>Stockholm, Sweden · Open to relocate to Malmö</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-phone"></i></div>
+          <div class="c-text">
+            <h4>Phone</h4>
+            <a href="tel:+46761538102">+46 761 538 102</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="c-text">
+            <h4>Portfolio</h4>
+            <a href="https://laurascodes.github.io/Portfolio/index.html#hero-section" target="_blank">laurascodes.github.io/Portfolio</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="http://www.linkedin.com/in/chidinma-ikwechegh-4619a311b" class="soc-btn" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/laurascodes" class="soc-btn" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:lauraikwechegh@gmail.com" class="soc-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fsubject">Subject</label>
+        <input type="text" id="fsubject" name="subject" placeholder="What is this about?" required>
+      </div>
+      <div class="form-group">
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" name="message" rows="6" placeholder="Tell me about the opportunity..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start;">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      <p id="form-msg" style="font-size:13px;color:var(--teal);display:none;margin-top:8px;">
+        ✓ Message sent! I will get back to you within 24 hours.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2025 Laura Ikwechegh · Built with passion for business intelligence</p>
+  <p>
+    <a href="https://laurascodes.github.io/Portfolio/index.html#hero-section">Portfolio</a> ·
+    <a href="http://www.linkedin.com/in/chidinma-ikwechegh-4619a311b" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

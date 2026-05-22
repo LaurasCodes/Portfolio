@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon E-commerce Analytics | Case Study — Laura Ikwechegh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="case-study.css">
+<style>
+  /* Amazon case study — deep blue-black with orange/gold tint */
+  body { background: #0d0f14; }
+  .cs-hero { background: linear-gradient(160deg,#0d0f14 0%,#141820 50%,#0f1218 100%); }
+  .cs-hero::before {
+    background-image: linear-gradient(rgba(244,185,66,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(244,185,66,0.03) 1px,transparent 1px);
+    background-size:60px 60px;
+  }
+  .cs-hero-orb { background: radial-gradient(circle,rgba(244,185,66,0.09),transparent 70%); left:-80px; right:auto; top:auto; bottom:-60px; }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="index.html" class="cs-nav-logo">LI<span>.</span></a>
+  <a href="index.html#projects" class="cs-nav-back">
+    <i class="fas fa-arrow-left"></i> Back to Projects
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-orb"></div>
+
+  <a href="index.html#projects" class="cs-breadcrumb">
+    <i class="fas fa-arrow-left"></i> Portfolio &nbsp;/&nbsp; Case Studies
+  </a>
+
+  <div class="cs-hero-tag">Case Study · E-commerce Analytics</div>
+
+  <h1>Amazon E-commerce Analytics</h1>
+
+  <p class="cs-hero-sub">
+    Driving sales performance and customer insights with Amazon marketplace analytics — connecting sales, margin, buy box performance, and fulfilment data into one integrated view.
+  </p>
+
+  <div class="cs-kpi-row">
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">Unified</div>
+      <div class="cs-kpi-label">Single Dashboard View</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val" style="color:var(--gold);">SKU-level</div>
+      <div class="cs-kpi-label">Margin Visibility</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">Buy Box</div>
+      <div class="cs-kpi-label">Health Monitoring</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val" style="color:var(--gold);">Faster</div>
+      <div class="cs-kpi-label">Pricing &amp; Inventory Decisions</div>
+    </div>
+  </div>
+
+  <div class="cs-hero-btns">
+    <a href="assets/img/portfolio/Amazon E-commerce 1.jpg" class="cs-btn-primary" target="_blank" rel="noopener">
+      <i class="fas fa-chart-line"></i> View Dashboard
+    </a>
+    <a href="index.html#projects" class="cs-btn-outline">
+      <i class="fas fa-arrow-left"></i> All Projects
+    </a>
+  </div>
+
+  <div class="cs-tags" style="margin-top:28px;">
+    <span class="cs-tag">Power BI</span>
+    <span class="cs-tag">Excel</span>
+    <span class="cs-tag">SQL</span>
+    <span class="cs-tag">E-commerce Analytics</span>
+    <span class="cs-tag">Customer Insights</span>
+    <span class="cs-tag">Amazon Marketplace</span>
+  </div>
+</section>
+
+<div class="cs-body">
+  <main>
+
+    <section class="cs-section" id="problem">
+      <div class="cs-section-label">01 — Challenge</div>
+      <h2>The Problem</h2>
+      <p>Amazon marketplace reporting was fragmented, making it difficult to understand which products, channels, and fulfilment paths were truly profitable.</p>
+      <ul>
+        <li>Sales, buy box, and advertising metrics were in separate, unconnected reports</li>
+        <li>Profitability and margin signals were unclear at the individual SKU level</li>
+        <li>Customer behaviour and conversion performance were difficult to connect to revenue outcomes</li>
+        <li>Fulfilment issues were silently impacting buy box health and sales continuity</li>
+      </ul>
+      <div class="cs-insight">
+        <p><strong>Core issue:</strong> Without a consolidated view, the team was making pricing, inventory, and advertising decisions based on isolated, partial data — optimising one metric while inadvertently damaging another.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="approach">
+      <div class="cs-section-label">02 — Approach</div>
+      <h2>My Role &amp; Approach</h2>
+      <p>I built an Amazon analytics dashboard that consolidated marketplace data and surfaced the most important sales and margin signals in one clear, actionable format.</p>
+
+      <h3>a. Data Preparation</h3>
+      <ul>
+        <li>Combined sales, advertising, buy box, inventory, and fulfilment datasets from Amazon Seller Central</li>
+        <li>Standardised product identifiers, channel names, and date dimensions across all sources</li>
+        <li>Created calculated metrics for margin contribution, buy box share, and conversion performance</li>
+      </ul>
+
+      <h3>b. Exploratory Analysis</h3>
+      <ul>
+        <li>Identified which SKUs were high-revenue but low-margin — a common but costly blind spot</li>
+        <li>Analysed buy box win rates and correlated them with listing health indicators</li>
+        <li>Reviewed advertising spend efficiency against actual conversion and net margin contribution</li>
+      </ul>
+
+      <h3>c. Dashboard Development</h3>
+      <ul>
+        <li><strong>Revenue &amp; Margin View</strong> — performance by SKU and category, with margin clearly surfaced</li>
+        <li><strong>Buy Box Health Monitor</strong> — real-time listing quality and win rate tracking</li>
+        <li><strong>Sales Trend Analysis</strong> — channel and customer segment breakdowns over time</li>
+        <li><strong>Fulfilment &amp; Inventory Impact</strong> — stock availability and its effect on sales continuity</li>
+        <li><strong>Advertising Efficiency Report</strong> — spend vs. conversion vs. margin contribution</li>
+      </ul>
+
+      <h3>d. Insight Storytelling</h3>
+      <p>I turned the dashboard into a narrative that clarified where the business should invest, optimise, and improve — connecting each data point directly to a commercial decision.</p>
+    </section>
+
+    <section class="cs-section" id="insights">
+      <div class="cs-section-label">03 — Insights</div>
+      <h2>Key Insights Uncovered</h2>
+      <ol>
+        <li><strong>High sales did not equal high margin.</strong> Several top-selling SKUs generated strong revenue but poor margin contribution — they were being promoted at a hidden cost to overall profitability.</li>
+        <li><strong>Buy box health was a leading performance signal.</strong> Listings with low buy box share consistently underperformed on conversion, even when traffic was healthy — a metric that had been largely invisible before this project.</li>
+        <li><strong>Advertising spend had mixed and uneven returns.</strong> Some campaigns drove volume but generated little profitable revenue after fees and cost of goods — growing sales, not the business.</li>
+        <li><strong>Fulfilment risk was a silent revenue disruptor.</strong> Poor inventory visibility created stock-outs that directly cost buy box share — a chain reaction starting in the warehouse and ending in lost sales and rankings.</li>
+      </ol>
+    </section>
+
+    <section class="cs-section" id="impact">
+      <div class="cs-section-label">04 — Impact</div>
+      <h2>Solution Impact</h2>
+      <ul>
+        <li>Centralised all Amazon performance reporting into a single, integrated dashboard</li>
+        <li>Made profitability visible at the SKU level for the first time — shifting focus from revenue to margin</li>
+        <li>Reduced reporting friction and improved operational alignment across teams</li>
+        <li>Enabled faster, evidence-based decisions on pricing, inventory management, and ad spend</li>
+        <li>Established a reliable analytics foundation for ongoing marketplace optimisation</li>
+      </ul>
+    </section>
+
+    <section class="cs-section" id="results">
+      <div class="cs-section-label">05 — Results</div>
+      <h2>Measurable Results</h2>
+
+      <div class="cs-results-grid">
+        <div class="cs-result-card">
+          <div class="cs-result-num">Unified</div>
+          <div class="cs-result-label">Single dashboard for sales, margin &amp; fulfilment</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num" style="color:var(--gold);">SKU</div>
+          <div class="cs-result-label">Profitability visible at individual product level</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num">Faster</div>
+          <div class="cs-result-label">Pricing, inventory &amp; advertising decisions</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num" style="color:var(--gold);">Clear</div>
+          <div class="cs-result-label">Buy box health monitoring &amp; listing optimisation</div>
+        </div>
+      </div>
+
+      <div class="cs-summary">
+        <p>This dashboard helped Amazon marketplace stakeholders move from fragmented, reactive reporting to a clear, integrated view of what was actually driving performance. For the first time, sales, margin, buy box health, and fulfilment risk lived in one place — enabling the team to prioritise high-margin SKUs, manage underperforming listings proactively, and make faster, more confident decisions across the entire marketplace operation.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-card">
+      <h4>Table of Contents</h4>
+      <ul class="cs-toc-list">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#approach">My Approach</a></li>
+        <li><a href="#insights">Key Insights</a></li>
+        <li><a href="#impact">Solution Impact</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-meta-list">
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Industry</span>
+          <span class="cs-meta-val">E-commerce</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Focus</span>
+          <span class="cs-meta-val">Sales &amp; Margin Analytics</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Tools</span>
+          <span class="cs-meta-val">Power BI, Excel, SQL</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Platform</span>
+          <span class="cs-meta-val">Amazon Marketplace</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Output</span>
+          <span class="cs-meta-val">Unified executive dashboard</span>
+        </div>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Technologies Used</h4>
+      <div class="cs-tags">
+        <span class="cs-tag">Power BI</span>
+        <span class="cs-tag">Excel</span>
+        <span class="cs-tag">SQL</span>
+        <span class="cs-tag">E-commerce Analytics</span>
+        <span class="cs-tag">Customer Insights</span>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>View Project</h4>
+      <a href="assets/img/portfolio/Amazon E-commerce 1.jpg" class="cs-btn-primary" target="_blank" rel="noopener" style="justify-content:center;display:inline-flex;width:100%;box-sizing:border-box;">
+        <i class="fas fa-chart-line"></i> View Dashboard
+      </a>
+    </div>
+  </aside>
+</div>
+
+<footer class="cs-footer">
+  <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
+  <p><a href="index.html#projects">← All Projects</a></p>
+</footer>
+
+</body>
+</html>

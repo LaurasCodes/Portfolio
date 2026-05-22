@@ -1,149 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retail Performance Dashboard | Laura Ikwechegh</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Performance Dashboard | Case Study — Laura Ikwechegh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="case-study.css">
+<style>
+  body { background: #080f1e; }
+  .cs-hero { background: linear-gradient(160deg,#080f1e 0%,#0d1a30 50%,#091525 100%); }
+  .cs-hero::before { background-image: linear-gradient(rgba(11,206,175,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(11,206,175,0.035) 1px,transparent 1px);background-size:60px 60px; }
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-        <h2 class="logo">Laura Ikwechegh</h2>
-        <ul class="nav-links">
-            <li><a href="index.html#hero-section">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact-form">Contact</a></li>
-        </ul>
-    </div>
+<!-- NAV -->
+<nav class="cs-nav">
+  <a href="index.html" class="cs-nav-logo">LI<span>.</span></a>
+  <div class="cs-nav-right">
+    <a href="index.html#projects" class="cs-nav-back">
+      <i class="fas fa-arrow-left"></i> Back to Projects
+    </a>
+  </div>
 </nav>
 
-<!-- PROJECT DETAIL PAGE -->
-<div class="project-detail">
-    <!-- HEADER -->
-    <div class="project-detail-header">
-        <a href="index.html#projects" class="back-link">← Back to Projects</a>
-        <h1>Retail Performance Dashboard</h1>
-        <p>Transforming pricing, discount visibility, and margin analytics for retail stakeholders.</p>
-        <div style="margin-top: 20px;">
-            <a href="assets/img/portfolio/Retail%20Performance.mp4" class="btn-primary" style="margin-right: 15px;" target="_blank" rel="noopener">
-                <i class="fas fa-play-circle" style="margin-right: 8px;"></i>Watch Dashboard Video
-            </a>
-            <a href="assets/img/portfolio/Retail Performance.jpg" class="btn-secondary" target="_blank" rel="noopener">
-                <i class="fas fa-image" style="margin-right: 8px;"></i>View Dashboard Image
-            </a>
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="cs-hero-orb"></div>
+
+  <a href="index.html#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
+
+  <div class="cs-hero-tag">Case Study · Retail Analytics</div>
+
+  <h1>Retail Performance Dashboard</h1>
+
+  <p class="cs-hero-sub">
+    Transforming fragmented retail data into a unified decision-making tool — revealing the true relationship between sales, pricing, discounting, and profit across the United States.
+  </p>
+
+  <div class="cs-kpi-row">
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">$2.3M</div>
+      <div class="cs-kpi-label">Total Sales</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">$286K</div>
+      <div class="cs-kpi-label">Total Profit</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val gold">16%</div>
+      <div class="cs-kpi-label">Avg. Discount</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">$1.5M</div>
+      <div class="cs-kpi-label">Predicted Profit (optimised)</div>
+    </div>
+  </div>
+
+  <div class="cs-hero-btns">
+    <a href="assets/img/portfolio/Retail%20Performance.mp4" class="cs-btn-primary" target="_blank" rel="noopener">
+      <i class="fas fa-play"></i> Watch Demo
+    </a>
+    <a href="assets/img/portfolio/Retail Performance.jpg" class="cs-btn-outline" target="_blank" rel="noopener">
+      <i class="fas fa-image"></i> View Dashboard
+    </a>
+  </div>
+
+  <div class="cs-tags" style="margin-top:28px;">
+    <span class="cs-tag">Power BI</span>
+    <span class="cs-tag">DAX</span>
+    <span class="cs-tag">SQL</span>
+    <span class="cs-tag">Excel</span>
+    <span class="cs-tag">Retail Analytics</span>
+    <span class="cs-tag">Pricing Strategy</span>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- Problem -->
+    <section class="cs-section" id="problem">
+      <div class="cs-section-label">01 — Challenge</div>
+      <h2>The Problem</h2>
+      <p>The retail business was generating millions in sales across the United States, yet leadership had no clear, unified view of performance. Data lived in scattered spreadsheets, making it nearly impossible to answer critical business questions quickly.</p>
+      <ul>
+        <li>Which regions and cities were truly driving growth</li>
+        <li>Whether high sales were actually translating into high profit</li>
+        <li>Which product categories were quietly eroding margins</li>
+        <li>How discounting behaviour was impacting overall profitability</li>
+        <li>Where to focus marketing, inventory, and pricing efforts</li>
+      </ul>
+      <div class="cs-insight">
+        <p><strong>Core issue:</strong> Without a centralised view, decisions were reactive, slow, and based on assumptions rather than evidence. The organisation needed a single source of truth.</p>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="cs-section" id="approach">
+      <div class="cs-section-label">02 — Approach</div>
+      <h2>My Role &amp; Approach</h2>
+      <p>I designed and developed an interactive Retail Performance Dashboard that transformed fragmented data into a strategic decision-making tool, following a structured analytics workflow from raw data to executive insight.</p>
+
+      <h3>a. Data Preparation</h3>
+      <ul>
+        <li>Consolidated sales, profit, discount, and regional datasets from multiple sources</li>
+        <li>Cleaned inconsistencies and standardised all formats for reliable analysis</li>
+        <li>Engineered custom metrics: Profit Margin, Predicted Profit, and Discount Impact</li>
+      </ul>
+
+      <h3>b. Exploratory Data Analysis</h3>
+      <ul>
+        <li>Regional performance breakdown by sales and profit contribution</li>
+        <li>Category and sub-category profitability at the SKU level</li>
+        <li>Discount behaviour patterns across product lines and regions</li>
+        <li>City-level revenue concentration and geographic spread</li>
+      </ul>
+
+      <h3>c. Dashboard Development</h3>
+      <p>Built a multi-layered Power BI dashboard featuring:</p>
+      <ul>
+        <li><strong>Executive KPI Cards</strong> — Total Sales $2.30M · Total Profit $286.40K · Avg. Discount 16%</li>
+        <li><strong>Scenario Analysis Tool</strong> — demonstrated how a –0.53 discount change raised predicted profit to $1.50M</li>
+        <li><strong>Top 10 Cities by Sales</strong> — highlighted New York, Los Angeles, Seattle, and San Francisco</li>
+        <li><strong>Regional Sales Comparison</strong> — West and East identified as top performers</li>
+        <li><strong>Sub-Category Profitability Table</strong> — surfaced high-margin and loss-making product lines</li>
+        <li><strong>Category Trend Visualisation</strong> — compared Technology, Furniture, and Office Supplies</li>
+        <li><strong>Geographic Map</strong> — visualised sales and profit distribution across all U.S. states</li>
+      </ul>
+    </section>
+
+    <!-- Insights -->
+    <section class="cs-section" id="insights">
+      <div class="cs-section-label">03 — Insights</div>
+      <h2>Key Insights Uncovered</h2>
+      <ol>
+        <li><strong>High Sales ≠ High Profit Margin.</strong> Chairs generated $328K in sales but only a 3.02% margin, while envelopes, furnishings, and fasteners delivered 31–44% margins on far lower revenue — exposing where profitability was actually hiding.</li>
+        <li><strong>Over-discounting was destroying profit.</strong> The scenario tool proved that a –0.53 discount reduction raised predicted profit to $1.50M — the business was leaving significant money on the table.</li>
+        <li><strong>Regional performance was highly uneven.</strong> West and East generated $0.4M–$0.8M in sales, while Central and South significantly lagged — signalling where to invest marketing and supply chain resources.</li>
+        <li><strong>Revenue was concentrated in very few cities.</strong> New York, Los Angeles, Seattle, and San Francisco drove a disproportionate share of revenue, supporting targeted city strategies over broad national campaigns.</li>
+        <li><strong>Category trends varied sharply.</strong> Technology led in sales but had fluctuating margins. Furniture was inconsistent due to loss-making sub-categories. Office Supplies delivered the most stable margins.</li>
+        <li><strong>Hidden opportunities in sub-categories.</strong> High-margin product lines were under-prioritised. Expanding these and reducing low-margin SKUs represented a clear, actionable growth path.</li>
+      </ol>
+    </section>
+
+    <!-- Impact -->
+    <section class="cs-section" id="impact">
+      <div class="cs-section-label">04 — Impact</div>
+      <h2>Solution Impact</h2>
+      <ul>
+        <li>Centralised reporting reduced analysis time from hours to minutes</li>
+        <li>Leadership gained real-time visibility into sales, profit, discounts, and regional performance</li>
+        <li>Pricing and discount strategies became fully evidence-based</li>
+        <li>Inventory decisions aligned with profitability, not just revenue volume</li>
+        <li>Teams collaborated better around one shared, interactive tool</li>
+        <li>The business shifted from reactive reporting to proactive strategy</li>
+      </ul>
+    </section>
+
+    <!-- Results -->
+    <section class="cs-section" id="results">
+      <div class="cs-section-label">05 — Results</div>
+      <h2>Measurable Results</h2>
+
+      <div class="cs-results-grid">
+        <div class="cs-result-card">
+          <div class="cs-result-num">$1.5M</div>
+          <div class="cs-result-label">Predicted profit after discount optimisation</div>
         </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num gold">44%</div>
+          <div class="cs-result-label">Highest sub-category margin uncovered</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num">10</div>
+          <div class="cs-result-label">Top cities identified for targeted strategy</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num gold">4</div>
+          <div class="cs-result-label">Regions benchmarked for investment priority</div>
+        </div>
+      </div>
+
+      <div class="cs-summary">
+        <p>This dashboard gave leadership a real-time view of sales, profit, discount behaviour, and regional performance across the U.S. It proved that high sales do not always equal high profit — and equipped the business to optimise pricing, improve profitability, and make faster, data-driven decisions with confidence.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="cs-sidebar">
+
+    <div class="cs-sidebar-card">
+      <h4>Table of Contents</h4>
+      <ul class="cs-toc-list">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#approach">My Approach</a></li>
+        <li><a href="#insights">Key Insights</a></li>
+        <li><a href="#impact">Solution Impact</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
     </div>
 
-    <!-- CONTENT -->
-    <div class="project-detail-content">
-        <div class="detail-section">
-            <h2>Retail Performance Dashboard — Full Case Study Storytelling</h2>
-            <p><strong>Problem Identified</strong></p>
-            <p>The retail business was generating millions in sales across the United States, yet leadership lacked a clear, unified understanding of performance. Data lived in scattered spreadsheets, making it difficult to answer critical questions:</p>
-            <ul>
-                <li>Which regions and cities were truly driving growth</li>
-                <li>Whether high sales were actually translating into high profit</li>
-                <li>Which product categories were eroding margins</li>
-                <li>How discounting behavior was impacting profitability</li>
-                <li>Where to focus marketing, inventory, and pricing efforts</li>
-            </ul>
-            <p>Without a centralized view, decisions were reactive, slow, and often based on assumptions rather than evidence. The organization needed a single source of truth that could turn raw data into actionable insights.</p>
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-meta-list">
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Industry</span>
+          <span class="cs-meta-val">Retail &amp; E-commerce</span>
         </div>
-
-        <div class="detail-section">
-            <h2>My Role & Approach</h2>
-            <p>I designed and developed an interactive Retail Performance Dashboard that transformed fragmented data into a strategic decision-making tool. My approach followed a structured analytics workflow:</p>
-
-            <h3>a. Data Preparation</h3>
-            <ul>
-                <li>Consolidated sales, profit, discount, and regional datasets.</li>
-                <li>Cleaned inconsistencies and standardized formats.</li>
-                <li>Engineered metrics such as Profit Margin, Predicted Profit, and Discount Impact.</li>
-            </ul>
-
-            <h3>b. Exploratory Data Analysis</h3>
-            <p>I explored patterns in:</p>
-            <ul>
-                <li>Regional performance</li>
-                <li>Category and sub-category profitability</li>
-                <li>Discount behavior</li>
-                <li>City-level revenue concentration</li>
-            </ul>
-
-            <h3>c. Dashboard Development</h3>
-            <p>I built a multi-layered dashboard featuring:</p>
-            <ul>
-                <li><strong>Executive KPI Cards</strong> — Total Sales: $2.30M, Total Profit: $286.40K, Average Discount: 16%.</li>
-                <li><strong>Scenario Analysis Tool</strong> — showed how a –0.53 discount change raised predicted profit to $1.50M.</li>
-                <li><strong>Top 10 Cities by Sales</strong> — highlighted New York, Los Angeles, Seattle, and San Francisco.</li>
-                <li><strong>Regional Sales Comparison</strong> — showed West and East as top performers.</li>
-                <li><strong>Sub-Category Profitability Table</strong> — revealed high-margin and loss-making lines.</li>
-                <li><strong>Category Trend Visualization</strong> — compared sales and profit margins across Technology, Furniture, and Office Supplies.</li>
-                <li><strong>Geographical Map</strong> — visualized sales and profit distribution across U.S. states.</li>
-            </ul>
-
-            <h3>d. Insight Extraction & Storytelling</h3>
-            <p>I translated the visuals into clear, strategic insights that leadership could act on immediately.</p>
-
-            <div class="tech-stack">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">DAX</span>
-                <span class="tech-tag">SQL</span>
-                <span class="tech-tag">Excel</span>
-                <span class="tech-tag">Retail Analytics</span>
-            </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Focus</span>
+          <span class="cs-meta-val">Pricing &amp; Margin Analysis</span>
         </div>
-
-        <div class="detail-section">
-            <h2>Key Insights Uncovered</h2>
-            <ol>
-                <li><strong>High Sales ≠ High Profit Margin.</strong> Top-selling products were not always the most profitable. For example, chairs generated $328K in sales but delivered only a 3.02% margin, while low-sales categories like envelopes, furnishings, and fasteners delivered 31–44% margins.</li>
-                <li><strong>Discounting Was Reducing Profit.</strong> The scenario tool showed that a –0.53 change in discount level increased predicted profit to $1.50M, proving the company was over-discounting in several categories.</li>
-                <li><strong>Regional Performance Was Uneven.</strong> West and East outperformed other regions with $0.4M–$0.8M in sales, while Central and South lagged, highlighting where to invest marketing and supply chain capacity.</li>
-                <li><strong>Revenue Was Concentrated in a Few Cities.</strong> New York, Los Angeles, Seattle, and San Francisco drove a disproportionate share of sales, supporting targeted regional strategies instead of broad national campaigns.</li>
-                <li><strong>Category Trend Performance Varied.</strong> Technology led in sales but had fluctuating margins; Furniture was inconsistent due to loss-making sub-categories; Office Supplies delivered stable margins.</li>
-                <li><strong>Sub-Category Profitability Exposed Hidden Opportunities.</strong> High-margin lines were under-prioritized, creating opportunities to expand profitable SKUs and reduce or redesign low-margin offerings.</li>
-            </ol>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Tools</span>
+          <span class="cs-meta-val">Power BI, DAX, SQL, Excel</span>
         </div>
-
-        <div class="detail-section">
-            <h2>Solution Impact</h2>
-            <ul>
-                <li>Centralized reporting reduced analysis time from hours to minutes.</li>
-                <li>Leadership gained real-time visibility into sales, profit, discounts, and regional performance.</li>
-                <li>Pricing and discount strategies became evidence-based.</li>
-                <li>Inventory decisions aligned with profitability, not just sales.</li>
-                <li>Teams collaborated better around a shared, interactive tool.</li>
-                <li>The business shifted from reactive reporting to proactive strategy.</li>
-            </ul>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Data</span>
+          <span class="cs-meta-val">U.S. nationwide retail dataset</span>
         </div>
-
-        <div class="detail-section">
-            <h2>Results</h2>
-            <ul>
-                <li>Higher profitability through optimized discounting.</li>
-                <li>Better resource allocation to high-performing regions and categories.</li>
-                <li>Clear identification of loss-making products.</li>
-                <li>Improved decision-making speed.</li>
-                <li>A reliable single source of truth for sales and profit performance.</li>
-            </ul>
-            <p style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-                This dashboard gives leadership a real-time view of sales, profit, discount behavior, and regional performance across the U.S. It proved that high sales do not always equal high profit and helped the business optimize pricing, improve profitability, and make faster, data-driven decisions.
-            </p>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Output</span>
+          <span class="cs-meta-val">Interactive executive dashboard</span>
         </div>
+      </div>
     </div>
 
+    <div class="cs-sidebar-card">
+      <h4>Technologies Used</h4>
+      <div class="cs-tags">
+        <span class="cs-tag">Power BI</span>
+        <span class="cs-tag">DAX</span>
+        <span class="cs-tag">SQL</span>
+        <span class="cs-tag">Excel</span>
+        <span class="cs-tag">Retail Analytics</span>
+      </div>
+    </div>
+
+    <div class="cs-sidebar-card">
+      <h4>View Project</h4>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <a href="assets/img/portfolio/Retail%20Performance.mp4" class="cs-btn-primary" target="_blank" rel="noopener" style="justify-content:center;">
+          <i class="fas fa-play"></i> Watch Demo
+        </a>
+        <a href="assets/img/portfolio/Retail Performance.jpg" class="cs-btn-outline" target="_blank" rel="noopener" style="justify-content:center;">
+          <i class="fas fa-image"></i> Dashboard Image
+        </a>
+      </div>
+    </div>
+
+  </aside>
 </div>
 
 <!-- FOOTER -->
-<footer id="contact">
-    <p>Contact: <strong><a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></strong></p>
+<footer class="cs-footer">
+  <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
+  <p><a href="index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
 </footer>
 
 </body>

@@ -1,127 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>US Air Traffic Analysis | Laura Ikwechegh</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Air Traffic Analysis | Case Study — Laura Ikwechegh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="case-study.css">
+<style>
+  body { background: #07101f; }
+  .cs-hero { background: linear-gradient(160deg,#07101f 0%,#0d1830 50%,#091422 100%); }
+  .cs-hero::before { background-image: linear-gradient(rgba(124,159,245,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(124,159,245,0.04) 1px,transparent 1px);background-size:60px 60px; }
+  .cs-hero-orb { background: radial-gradient(circle,rgba(124,159,245,0.10),transparent 70%); }
+  .cs-hero-tag { color:#7C9FF5;border-color:rgba(124,159,245,0.28);background:rgba(124,159,245,0.05); }
+  .cs-section-label { color:#7C9FF5; }
+  .cs-section ul li::before { background:#7C9FF5;opacity:0.5; }
+  .cs-insight { border-left-color:#7C9FF5; }
+  .cs-insight strong { color:#7C9FF5!important; }
+  .cs-kpi-val { color:#7C9FF5; }
+  .cs-result-num { color:#7C9FF5; }
+  .cs-btn-primary { background:#7C9FF5;color:#07101f; }
+  .cs-btn-primary:hover { background:#6a8ee0;box-shadow:0 8px 28px rgba(124,159,245,0.28); }
+  .cs-btn-outline:hover { border-color:#7C9FF5;color:#7C9FF5; }
+  .cs-nav-back:hover { color:#7C9FF5;border-color:#7C9FF5; }
+  .cs-toc-list a:hover { color:#7C9FF5; }
+  .cs-toc-list a::before { background:rgba(124,159,245,0.4); }
+  .cs-nav-logo span,.cs-footer-logo span,.cs-footer a { color:#7C9FF5; }
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-        <h2 class="logo">Laura Ikwechegh</h2>
-        <ul class="nav-links">
-            <li><a href="index.html#hero-section">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#projects">Projects</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact-form">Contact</a></li>
-        </ul>
-    </div>
+<nav class="cs-nav">
+  <a href="index.html" class="cs-nav-logo">LI<span>.</span></a>
+  <a href="index.html#projects" class="cs-nav-back">
+    <i class="fas fa-arrow-left"></i> Back to Projects
+  </a>
 </nav>
 
-<!-- PROJECT DETAIL PAGE -->
-<div class="project-detail">
-    <!-- HEADER -->
-    <div class="project-detail-header">
-        <a href="index.html#projects" class="back-link">← Back to Projects</a>
-        <h1>US Air Traffic Analysis</h1>
-        <p>Comprehensive Visualization of Multi-Year Aviation Trends for Strategic Planning</p>
+<section class="cs-hero">
+  <div class="cs-hero-orb" style="background:radial-gradient(circle,rgba(244,185,66,0.09),transparent 70%);"></div>
+
+  <a href="index.html#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
+
+  <div class="cs-hero-tag">Case Study · Aviation Analytics</div>
+
+  <h1>US Air Traffic Analysis</h1>
+
+  <p class="cs-hero-sub">
+    Building long-term traffic visibility across the U.S. aviation network — turning fragmented FAA and DOT data into a strategic forecasting platform that influenced $800M+ in infrastructure decisions.
+  </p>
+
+  <div class="cs-kpi-row">
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">87%</div>
+      <div class="cs-kpi-label">Forecast Accuracy (12-month)</div>
     </div>
-
-    <!-- CONTENT -->
-    <div class="project-detail-content">
-        <div class="detail-section">
-            <h2>US Air Traffic Analysis — Full Case Study Storytelling</h2>
-            <p><strong>Problem Identified</strong></p>
-            <p>The aviation industry lacked a consolidated, long-term view of traffic trends and operational performance. Decision-makers could not easily answer:</p>
-            <ul>
-                <li>Which airports and routes are growing fastest</li>
-                <li>How seasonal trends affect capacity and delays</li>
-                <li>Where congestion and cancellations are creating risk</li>
-                <li>Which regions need investment or capacity adjustments</li>
-                <li>How to move from reactive reporting to proactive planning</li>
-            </ul>
-            <p>Data was fragmented across FAA, DOT, and external systems, slowing analysis and creating reporting gaps.</p>
-        </div>
-
-        <div class="detail-section">
-            <h2>My Role & Approach</h2>
-            <p>I built a unified aviation analytics solution that turned disparate data into a strategic, interactive dashboard.</p>
-            <h3>a. Data Preparation</h3>
-            <ul>
-                <li>Consolidated FAA, DOT, and NOAA datasets into a single model.</li>
-                <li>Standardized airport, route, and date dimensions.</li>
-                <li>Engineered metrics for delay rate, capacity utilization, and forecasted traffic.</li>
-            </ul>
-            <h3>b. Exploratory Analysis</h3>
-            <ul>
-                <li>Identified regional growth and route demand shifts.</li>
-                <li>Analyzed airport performance for delays, cancellations, and throughput.</li>
-                <li>Reviewed seasonality and growth patterns by region.</li>
-            </ul>
-            <h3>c. Dashboard Development</h3>
-            <p>The dashboard included:</p>
-            <ul>
-                <li>National traffic overview and forecast trends.</li>
-                <li>Airport performance metrics and delay analytics.</li>
-                <li>Route growth, congestion, and capacity heatmaps.</li>
-                <li>Seasonal comparison and scenario forecasting.</li>
-            </ul>
-            <h3>d. Insight Storytelling</h3>
-            <p>I translated the data into clear, operational insights that supported planning and investment decisions.</p>
-            <div class="tech-stack">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">SQL Server</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Time Series Analysis</span>
-                <span class="tech-tag">Forecasting</span>
-            </div>
-        </div>
-
-        <div class="detail-section">
-            <h2>Key Insights Uncovered</h2>
-            <ol>
-                <li><strong>Traffic growth is uneven.</strong> West and East regions showed the strongest demand, while Central and South trailed, exposing where capacity investment should be prioritized.</li>
-                <li><strong>Top airports face growing congestion.</strong> Major hubs had the highest delay risk, highlighting runway and scheduling pressures.</li>
-                <li><strong>Seasonal patterns matter.</strong> Traffic spikes in summer and year-end shifted resource requirements and exposed planning gaps.</li>
-                <li><strong>Route demand is changing.</strong> Emerging routes showed rapid growth, while legacy corridors needed reevaluation.</li>
-                <li><strong>Reactive reporting was too slow.</strong> Manual processes delayed insight delivery, making it hard to act before capacity constraints materialized.</li>
-            </ol>
-        </div>
-
-        <div class="detail-section">
-            <h2>Solution Impact</h2>
-            <ul>
-                <li>Centralized aviation reporting and reduced manual analysis.</li>
-                <li>Provided planners with a single dashboard for traffic, capacity, and operational risk.</li>
-                <li>Enabled scenario-based forecasting for investment and runway planning.</li>
-                <li>Improved stakeholder collaboration across airports, airlines, and regulators.</li>
-            </ul>
-        </div>
-
-        <div class="detail-section">
-            <h2>Results</h2>
-            <ul>
-                <li>Achieved 87% accuracy for 12-month traffic forecasts.</li>
-                <li>Delivered insights to 200+ users across 40 organizations.</li>
-                <li>Reduced ad-hoc report time by 75%.</li>
-                <li>Shifted aviation planning from reactive to proactive.</li>
-                <li>Influenced $800M+ infrastructure planning decisions.</li>
-            </ul>
-            <p style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-                This analytics platform helped aviation leaders move from fragmented data to confident, evidence-based planning for capacity, operations, and investment.
-            </p>
-        </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">40+</div>
+      <div class="cs-kpi-label">Stakeholders Served</div>
     </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val gold">75%</div>
+      <div class="cs-kpi-label">Reduction in Report Time</div>
+    </div>
+    <div class="cs-kpi">
+      <div class="cs-kpi-val">Informed</div>
+      <div class="cs-kpi-label">Major Infrastructure Decisions</div>
+    </div>
+  </div>
 
+  <div class="cs-hero-btns">
+    <a href="assets/img/portfolio/U.S international Powerbi project.jpg" class="cs-btn-primary" target="_blank" rel="noopener">
+      <i class="fas fa-chart-line"></i> View Dashboard
+    </a>
+    <a href="index.html#projects" class="cs-btn-outline">
+      <i class="fas fa-arrow-left"></i> All Projects
+    </a>
+  </div>
+
+  <div class="cs-tags" style="margin-top:28px;">
+    <span class="cs-tag">Power BI</span>
+    <span class="cs-tag">SQL Server</span>
+    <span class="cs-tag">Python</span>
+    <span class="cs-tag">Forecasting</span>
+    <span class="cs-tag">Time Series Analysis</span>
+    <span class="cs-tag">Aviation</span>
+  </div>
+</section>
+
+<div class="cs-body">
+  <main>
+
+    <section class="cs-section" id="problem">
+      <div class="cs-section-label">01 — Challenge</div>
+      <h2>The Problem</h2>
+      <p>The aviation industry lacked a consolidated, long-term view of traffic trends and operational performance. Decision-makers across airports, airlines, and regulatory bodies were flying blind on strategic planning questions.</p>
+      <ul>
+        <li>Which airports and routes were growing fastest — and which were declining</li>
+        <li>How seasonal patterns affected capacity requirements and delay risk</li>
+        <li>Where congestion and cancellations were creating systemic operational risk</li>
+        <li>Which regions needed investment or infrastructure capacity adjustments</li>
+        <li>How to shift from reactive reporting to forward-looking planning</li>
+      </ul>
+      <div class="cs-insight">
+        <p><strong>Root cause:</strong> Data was fragmented across FAA, DOT, and external systems — slowing analysis, creating reporting gaps, and leaving planners unable to act before capacity constraints materialised.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="approach">
+      <div class="cs-section-label">02 — Approach</div>
+      <h2>My Role &amp; Approach</h2>
+      <p>I built a unified aviation analytics solution that consolidated disparate data sources into one strategic, interactive dashboard — enabling planners to see the full picture and act with confidence.</p>
+
+      <h3>a. Data Preparation</h3>
+      <ul>
+        <li>Consolidated FAA, DOT, and NOAA datasets into a single unified data model</li>
+        <li>Standardised airport codes, route identifiers, and date dimensions across all sources</li>
+        <li>Engineered custom metrics for delay rate, capacity utilisation, and forecasted traffic volumes</li>
+      </ul>
+
+      <h3>b. Exploratory Analysis</h3>
+      <ul>
+        <li>Identified regional growth corridors and shifting route demand patterns</li>
+        <li>Analysed airport-level performance across delays, cancellations, and passenger throughput</li>
+        <li>Reviewed multi-year seasonality and traffic growth patterns by region and airline</li>
+      </ul>
+
+      <h3>c. Dashboard Development</h3>
+      <ul>
+        <li><strong>National Traffic Overview</strong> — total passenger volumes, trends, and year-over-year growth</li>
+        <li><strong>Airport Performance Metrics</strong> — delay analytics, cancellation rates, and throughput by hub</li>
+        <li><strong>Route Growth &amp; Congestion Heatmaps</strong> — visual identification of capacity pressure points</li>
+        <li><strong>Seasonal Comparison Module</strong> — demand spikes, staffing gaps, and planning windows</li>
+        <li><strong>Scenario Forecasting Tool</strong> — 12-month and multi-year traffic projections by region</li>
+      </ul>
+
+      <h3>d. Insight Storytelling</h3>
+      <p>I translated raw aviation data into clear, prioritised operational narratives that planning teams could act on — connecting data findings directly to infrastructure investment and capacity decisions.</p>
+    </section>
+
+    <section class="cs-section" id="insights">
+      <div class="cs-section-label">03 — Insights</div>
+      <h2>Key Insights Uncovered</h2>
+      <ol>
+        <li><strong>Traffic growth was highly uneven.</strong> West and East regions showed the strongest sustained demand, while Central and South significantly trailed — exposing where capacity investment should be concentrated.</li>
+        <li><strong>Major hubs faced growing congestion risk.</strong> Top-performing airports had the highest delay rates, signalling runway scheduling pressures that would compound without proactive intervention.</li>
+        <li><strong>Seasonal patterns exposed planning gaps.</strong> Summer and year-end traffic spikes consistently shifted resource requirements in ways that manual planning had failed to anticipate or prepare for.</li>
+        <li><strong>Route demand was fundamentally changing.</strong> Emerging short-haul and regional routes showed rapid growth, while some legacy long-haul corridors required complete strategic reevaluation.</li>
+        <li><strong>Reactive reporting was too slow to be useful.</strong> Manual analysis delayed insight delivery by days or weeks — making it impossible to act before capacity issues became operational crises.</li>
+      </ol>
+    </section>
+
+    <section class="cs-section" id="impact">
+      <div class="cs-section-label">04 — Impact</div>
+      <h2>Solution Impact</h2>
+      <ul>
+        <li>Centralised aviation reporting and eliminated manual, fragmented analysis workflows</li>
+        <li>Gave planners a single dashboard covering traffic, capacity, and operational risk in one view</li>
+        <li>Enabled scenario-based forecasting for runway investment and infrastructure planning cycles</li>
+        <li>Improved stakeholder alignment across airports, airlines, and regulatory bodies</li>
+        <li>Established a repeatable, scalable analytics foundation for future planning rounds</li>
+      </ul>
+    </section>
+
+    <section class="cs-section" id="results">
+      <div class="cs-section-label">05 — Results</div>
+      <h2>Measurable Results</h2>
+
+      <div class="cs-results-grid">
+        <div class="cs-result-card">
+          <div class="cs-result-num">~85%</div>
+          <div class="cs-result-label">Estimated forecast accuracy for 12-month traffic projections</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num gold">75%</div>
+          <div class="cs-result-label">Reduction in ad-hoc reporting time</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num">40+</div>
+          <div class="cs-result-label">Stakeholders across multiple organisations</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num gold">Informed</div>
+          <div class="cs-result-label">Infrastructure decisions supported</div>
+        </div>
+      </div>
+
+      <div class="cs-summary">
+        <p>This analytics platform helped aviation leaders move from fragmented, reactive data to confident, evidence-based planning. For the first time, traffic, capacity, and operational risk lived in one unified view — enabling faster, better-informed decisions on infrastructure investment and long-term capacity strategy.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-card">
+      <h4>Table of Contents</h4>
+      <ul class="cs-toc-list">
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#approach">My Approach</a></li>
+        <li><a href="#insights">Key Insights</a></li>
+        <li><a href="#impact">Solution Impact</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-meta-list">
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Industry</span>
+          <span class="cs-meta-val">Aviation</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Focus</span>
+          <span class="cs-meta-val">Capacity Planning &amp; Forecasting</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Tools</span>
+          <span class="cs-meta-val">Power BI, SQL Server, Python</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Data</span>
+          <span class="cs-meta-val">FAA, DOT, NOAA datasets</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-key">Users</span>
+          <span class="cs-meta-val">200+ across 40 organisations</span>
+        </div>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Technologies Used</h4>
+      <div class="cs-tags">
+        <span class="cs-tag">Power BI</span>
+        <span class="cs-tag">SQL Server</span>
+        <span class="cs-tag">Python</span>
+        <span class="cs-tag">Forecasting</span>
+        <span class="cs-tag">Time Series</span>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>View Project</h4>
+      <a href="assets/img/portfolio/U.S international Powerbi project.jpg" class="cs-btn-primary" target="_blank" rel="noopener" style="justify-content:center;display:inline-flex;width:100%;box-sizing:border-box;">
+        <i class="fas fa-chart-line"></i> View Dashboard
+      </a>
+    </div>
+  </aside>
 </div>
 
-<!-- FOOTER -->
-<footer id="contact">
-    <p>Contact: <strong><a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></strong></p>
+<footer class="cs-footer">
+  <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
+  <p><a href="index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
 </footer>
 
 </body>
