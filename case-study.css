@@ -1,11 +1,9 @@
 /* ===========================
    CASE STUDY — SHARED STYLES
-   Distinct from main portfolio
 =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
 :root {
-  /* Case study uses a warm charcoal — clearly different from portfolio navy */
   --cs-bg:        #111318;
   --cs-bg-mid:    #181c24;
   --cs-bg-card:   rgba(255,255,255,0.04);
@@ -31,6 +29,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+  cursor: auto; /* never hide cursor on case study pages */
+}
+
+/* All links must always be clickable */
+a, button {
+  cursor: pointer !important;
+  pointer-events: all !important;
 }
 
 /* ===========================
@@ -38,13 +43,14 @@ body {
 =========================== */
 .cs-nav {
   position: fixed; top:0; left:0; right:0;
-  z-index: 1000;
+  z-index: 9999;
   height: 64px;
   padding: 0 clamp(20px,5vw,60px);
   display: flex; align-items:center; justify-content:space-between;
   background: rgba(17,19,24,0.96);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--cs-border);
+  pointer-events: all;
 }
 
 .cs-nav-logo {
@@ -52,13 +58,12 @@ body {
   font-weight: 700; font-size: 18px;
   color: var(--white); text-decoration: none;
   letter-spacing: -0.3px;
+  pointer-events: all;
+  cursor: pointer;
 }
 .cs-nav-logo span { color: var(--teal); }
 
-.cs-nav-right {
-  display: flex; align-items: center; gap: 12px;
-}
-
+/* Back button */
 .cs-nav-back {
   display: inline-flex; align-items:center; gap:7px;
   font-size: 13px; font-weight: 400;
@@ -67,6 +72,10 @@ body {
   border: 1px solid var(--cs-border);
   border-radius: 6px;
   transition: all var(--transition);
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+  z-index: 9999;
 }
 .cs-nav-back:hover {
   color: var(--teal);
@@ -76,23 +85,36 @@ body {
 .cs-nav-back i { font-size: 11px; }
 
 /* ===========================
-   HERO BANNER
+   HERO BANNER — starts exactly at navbar bottom
 =========================== */
 .cs-hero {
-  padding: 88px clamp(24px,7vw,100px) 48px;
+  padding: 64px clamp(24px,7vw,100px) 48px;
   position: relative; overflow: hidden;
   background: linear-gradient(160deg, #14171f 0%, #111318 60%, #0e1119 100%);
   border-bottom: 1px solid var(--cs-border);
+  /* Ensure hero never covers the fixed nav */
+  margin-top: 0;
 }
 
-/* Subtle dot grid — different pattern from portfolio */
 .cs-hero::before {
   content: '';
   position: absolute; inset:0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
+  z-index: 0;
 }
+
+.cs-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* All direct children of hero sit above pseudo-elements */
+.cs-hero > * { position: relative; z-index: 1; }
 
 .cs-hero-orb {
   position: absolute; border-radius: 50%;
@@ -100,16 +122,18 @@ body {
   width: 480px; height: 480px;
   background: radial-gradient(circle, rgba(11,206,175,0.09), transparent 70%);
   top: -140px; right: -100px;
+  z-index: 0;
 }
 
 /* Breadcrumb */
 .cs-breadcrumb {
   display: inline-flex; align-items:center; gap:8px;
   font-size: 12px; font-weight: 400; color: var(--slate);
-  text-decoration: none; margin-bottom: 18px;
-  transition: color var(--transition); position: relative; z-index: 1;
+  text-decoration: none; margin-bottom: 10px;
+  transition: color var(--transition);
+  position: relative; z-index: 2;
+  cursor: pointer;
 }
-.cs-breadcrumb span { color: rgba(255,255,255,0.2); }
 .cs-breadcrumb:hover { color: var(--teal); }
 
 /* Category tag */
@@ -119,7 +143,7 @@ body {
   border: 1px solid rgba(11,206,175,0.25); border-radius: 100px;
   font-size: 11.5px; font-weight: 500; color: var(--teal);
   background: rgba(11,206,175,0.05); letter-spacing: 0.3px;
-  margin-bottom: 16px; position: relative; z-index: 1;
+  margin-bottom: 12px; position: relative; z-index: 2;
 }
 .cs-hero-tag::before {
   content: '';
@@ -137,19 +161,19 @@ body {
   font-size: clamp(1.9rem, 4vw, 3rem);
   font-weight: 700; line-height: 1.12;
   letter-spacing: -1.2px; color: var(--white);
-  margin-bottom: 14px; max-width: 720px;
-  position: relative; z-index: 1;
+  margin-bottom: 10px; max-width: 720px;
+  position: relative; z-index: 2;
 }
 .cs-hero-sub {
   font-size: 15px; font-weight: 400; color: var(--slate);
-  line-height: 1.78; max-width: 600px; margin-bottom: 28px;
-  position: relative; z-index: 1;
+  line-height: 1.78; max-width: 600px; margin-bottom: 20px;
+  position: relative; z-index: 2;
 }
 
 /* KPI pills */
 .cs-kpi-row {
   display: flex; gap: 12px; flex-wrap: wrap;
-  margin-bottom: 28px; position: relative; z-index: 1;
+  margin-bottom: 20px; position: relative; z-index: 2;
 }
 .cs-kpi {
   padding: 10px 18px;
@@ -172,9 +196,8 @@ body {
 /* Buttons */
 .cs-hero-btns {
   display: flex; gap: 12px; flex-wrap: wrap;
-  position: relative; z-index: 1; margin-bottom: 28px;
+  position: relative; z-index: 2; margin-bottom: 24px;
 }
-
 .cs-btn-primary {
   display: inline-flex; align-items:center; gap:7px;
   padding: 11px 24px;
@@ -183,14 +206,11 @@ body {
   font-size: 13.5px; font-weight: 600;
   border-radius: var(--radius); text-decoration: none;
   border: none; cursor: pointer; transition: all var(--transition);
-  letter-spacing: 0.1px;
 }
 .cs-btn-primary:hover {
-  background: #09b89c;
-  transform: translateY(-2px);
+  background: #09b89c; transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(11,206,175,0.25);
 }
-
 .cs-btn-outline {
   display: inline-flex; align-items:center; gap:7px;
   padding: 11px 24px;
@@ -200,20 +220,16 @@ body {
   border-radius: var(--radius); text-decoration: none;
   transition: all var(--transition);
 }
-.cs-btn-outline:hover {
-  border-color: var(--teal); color: var(--teal);
-  transform: translateY(-2px);
-}
+.cs-btn-outline:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
 
 /* Tech tags */
-.cs-tags { display: flex; flex-wrap: wrap; gap: 7px; position: relative; z-index:1; }
+.cs-tags { display: flex; flex-wrap: wrap; gap: 7px; position: relative; z-index: 2; }
 .cs-tag {
   padding: 5px 13px; border-radius: 100px;
   font-size: 12px; font-weight: 400;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  color: var(--light);
-  transition: border-color var(--transition);
+  color: var(--light); transition: border-color var(--transition);
 }
 .cs-tag:hover { border-color: var(--cs-border-hi); color: var(--teal); }
 
@@ -313,8 +329,7 @@ body {
   transition: all var(--transition);
 }
 .cs-result-card:hover {
-  border-color: var(--cs-border-hi);
-  transform: translateY(-3px);
+  border-color: var(--cs-border-hi); transform: translateY(-3px);
   background: rgba(11,206,175,0.04);
 }
 .cs-result-num {
@@ -338,10 +353,9 @@ body {
    SIDEBAR
 =========================== */
 .cs-sidebar {
-  position: sticky; top: 76px;
+  position: sticky; top: 72px;
   display: flex; flex-direction: column; gap: 14px;
 }
-
 .cs-sidebar-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--cs-border);
@@ -352,7 +366,6 @@ body {
   font-size: 12px; font-weight: 700; color: var(--white);
   margin-bottom: 12px; padding-bottom: 9px;
   border-bottom: 1px solid var(--cs-border);
-  letter-spacing: 0.2px;
 }
 
 /* TOC */
@@ -362,7 +375,7 @@ body {
 .cs-toc-list a {
   font-size: 12.5px; font-weight: 400; color: var(--slate);
   text-decoration: none; display: flex; align-items:center; gap:8px;
-  padding: 7px 0; transition: color var(--transition);
+  padding: 7px 0; transition: color var(--transition); cursor: pointer;
 }
 .cs-toc-list a:hover { color: var(--teal); }
 .cs-toc-list a::before {
@@ -392,7 +405,7 @@ body {
 .cs-footer-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--white); }
 .cs-footer-logo span { color: var(--teal); }
 .cs-footer p { font-size: 12.5px; color: var(--slate); }
-.cs-footer a { color: var(--teal); text-decoration: none; }
+.cs-footer a { color: var(--teal); text-decoration: none; cursor: pointer; }
 .cs-footer a:hover { text-decoration: underline; }
 
 /* ===========================
@@ -404,22 +417,11 @@ body {
   .cs-results-grid { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 600px) {
-  .cs-hero { padding: 90px 20px 48px; }
-  .cs-body { padding: 48px 20px 80px; }
+  /* On mobile, navbar is still 64px so padding-top stays 64px */
+  .cs-hero { padding: 64px 20px 40px; }
+  .cs-body { padding: 40px 20px 60px; }
   .cs-results-grid { grid-template-columns: 1fr 1fr; }
   .cs-hero h1 { font-size: 1.75rem; }
   .cs-kpi-row { gap: 8px; }
   .cs-footer { flex-direction: column; text-align: center; }
 }
-
-/* ===========================
-   WHITE GRADIENT SHEEN — ALL CASE STUDIES
-=========================== */
-.cs-hero::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 65%);
-  pointer-events: none;
-  z-index: 0;
-}
-.cs-hero > * { position: relative; z-index: 1; }

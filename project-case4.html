@@ -33,8 +33,8 @@
 <body>
 
 <nav class="cs-nav">
-  <a href="index.html" class="cs-nav-logo">LI<span>.</span></a>
-  <a href="index.html#projects" class="cs-nav-back">
+  <a href="https://laurascodes.github.io/Portfolio/" class="cs-nav-logo">LI<span>.</span></a>
+  <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-nav-back" >
     <i class="fas fa-arrow-left"></i> Back to Projects
   </a>
 </nav>
@@ -42,7 +42,7 @@
 <section class="cs-hero">
   <div class="cs-hero-orb" style="background:radial-gradient(circle,rgba(11,206,175,0.09),transparent 70%);left:-100px;right:auto;"></div>
 
-  <a href="index.html#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
+  <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
 
   <div class="cs-hero-tag">Case Study · Marketing Analytics</div>
 
@@ -75,7 +75,7 @@
     <a href="assets/img/portfolio/power BI Assignment 1.jpg" class="cs-btn-primary" target="_blank" rel="noopener">
       <i class="fas fa-chart-line"></i> View Dashboard
     </a>
-    <a href="index.html#projects" class="cs-btn-outline">
+    <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-btn-outline">
       <i class="fas fa-arrow-left"></i> All Projects
     </a>
   </div>
@@ -249,8 +249,26 @@
 <footer class="cs-footer">
   <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
   <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
-  <p><a href="index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
+  <p><a href="https://laurascodes.github.io/Portfolio/#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
 </footer>
+
+
+<script>
+// Fix all back/navigation links on case study pages
+document.addEventListener('DOMContentLoaded', function() {
+  // Back to projects button
+  var backBtns = document.querySelectorAll('.cs-nav-back, .cs-breadcrumb, .cs-footer a');
+  backBtns.forEach(function(btn) {
+    btn.style.cursor = 'pointer';
+    btn.style.pointerEvents = 'all';
+    btn.style.position = 'relative';
+    btn.style.zIndex = '99999';
+  });
+
+  // Ensure body cursor is visible on case study pages
+  document.body.style.cursor = 'auto';
+});
+</script>
 
 </body>
 </html>

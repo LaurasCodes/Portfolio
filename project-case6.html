@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Charging Network Clustering | Case Study — Laura Ikwechegh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="case-study.css">
+<style>
+  body { background: #060b14; }
+  .cs-hero { background: linear-gradient(160deg, #060b14 0%, #0b1628 45%, #071220 100%); }
+  .cs-hero::before {
+    background-image: linear-gradient(rgba(108,142,245,0.04) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(108,142,245,0.04) 1px,transparent 1px);
+    background-size: 60px 60px;
+  }
+  .cs-hero::after {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 60% at 90% 80%, rgba(0,229,180,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cs-hero-orb { background: radial-gradient(circle, rgba(0,229,180,0.10), transparent 70%); top:-100px; right:-80px; }
+
+  /* override accent colour to EV-green */
+  .cs-hero-tag { color:#00e5b4; border-color:rgba(0,229,180,0.28); background:rgba(0,229,180,0.05); }
+  .cs-section-label { color:#00e5b4; }
+  .cs-section ul li::before { background:#00e5b4; }
+  .cs-insight { border-left-color:#00e5b4; }
+  .cs-insight strong { color:#00e5b4 !important; }
+  .cs-kpi-val { color:#00e5b4; }
+  .cs-result-num { color:#00e5b4; }
+  .cs-btn-primary { background:#00e5b4; color:#060b14; }
+  .cs-btn-primary:hover { background:#00c49a; box-shadow:0 8px 28px rgba(0,229,180,0.28); }
+  .cs-btn-outline:hover { border-color:#00e5b4; color:#00e5b4; }
+  .cs-nav-back:hover { color:#00e5b4; border-color:#00e5b4; }
+  .cs-toc-list a:hover { color:#00e5b4; }
+  .cs-toc-list a::before { background:rgba(0,229,180,0.4); }
+  .cs-nav-logo span, .cs-footer-logo span, .cs-footer a { color:#00e5b4; }
+
+  /* Cluster legend pills */
+  .cluster-pills { display:flex; gap:10px; flex-wrap:wrap; margin:18px 0; }
+  .cpill {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 14px; border-radius:8px;
+    font-size:12px; font-weight:500;
+  }
+  .cpill-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+  .cpill.c0 { background:rgba(0,229,180,0.08); border:1px solid rgba(0,229,180,0.2); color:#a0f0e0; }
+  .cpill.c1 { background:rgba(255,169,64,0.08); border:1px solid rgba(255,169,64,0.2); color:#ffd699; }
+  .cpill.c2 { background:rgba(124,110,245,0.08); border:1px solid rgba(124,110,245,0.2); color:#c4bbff; }
+
+  /* Mini metric table */
+  .mini-table { width:100%; border-collapse:collapse; margin:14px 0; }
+  .mini-table th {
+    font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    color:rgba(107,122,153,0.8); padding:8px 10px; border-bottom:1px solid rgba(255,255,255,0.07);
+    text-align:left;
+  }
+  .mini-table td {
+    font-size:13px; color:#c8d4ee; padding:9px 10px;
+    border-bottom:1px solid rgba(255,255,255,0.04);
+    font-family:'DM Sans',sans-serif;
+  }
+  .mini-table tr:last-child td { border-bottom:none; }
+  .mini-table .mono { font-family:'Courier New',monospace; font-size:12px; }
+  .badge-c0 { color:#00e5b4; font-weight:600; }
+  .badge-c1 { color:#ffa940; font-weight:600; }
+  .badge-c2 { color:#7c6ef5; font-weight:600; }
+
+  /* Dashboard CTA box */
+  .dashboard-cta {
+    background: linear-gradient(135deg, rgba(0,229,180,0.07), rgba(0,184,224,0.04));
+    border:1px solid rgba(0,229,180,0.15);
+    border-radius:12px; padding:24px 26px; margin:28px 0;
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .dashboard-cta-text h4 { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; color:#e6f1ff; margin-bottom:5px; }
+  .dashboard-cta-text p { font-size:13px; color:rgba(107,122,153,0.9); }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="https://laurascodes.github.io/Portfolio/" class="cs-nav-logo">LI<span>.</span></a>
+  <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-nav-back" >
+    <i class="fas fa-arrow-left"></i> Back to Projects
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-orb"></div>
+  <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-breadcrumb">
+    <i class="fas fa-arrow-left"></i> Portfolio &nbsp;/&nbsp; Case Studies
+  </a>
+  <div class="cs-hero-tag">Case Study · Machine Learning · Python · Clustering</div>
+  <h1>EV Charging Network<br>Expansion — Clustering Analysis</h1>
+  <p class="cs-hero-sub">
+    Applying K-Means clustering and PCA to 38 U.S. counties to identify which markets are ready for EV charging network expansion — segmenting counties by EV maturity, infrastructure readiness, and economic viability.
+  </p>
+  <div class="cs-kpi-row">
+    <div class="cs-kpi"><div class="cs-kpi-val">38</div><div class="cs-kpi-label">U.S. Counties Analysed</div></div>
+    <div class="cs-kpi"><div class="cs-kpi-val">k = 3</div><div class="cs-kpi-label">Optimal Clusters</div></div>
+    <div class="cs-kpi"><div class="cs-kpi-val" style="color:var(--gold);">0.508</div><div class="cs-kpi-label">Silhouette Score</div></div>
+    <div class="cs-kpi"><div class="cs-kpi-val">81.5%</div><div class="cs-kpi-label">Variance via PCA (2 PCs)</div></div>
+  </div>
+  <div class="cs-hero-btns">
+    <a href="ev-dashboard.html" class="cs-btn-primary">
+      <i class="fas fa-chart-scatter"></i> View Interactive Dashboard
+    </a>
+    <a href="https://laurascodes.github.io/Portfolio/#contact" class="cs-btn-outline">
+      <i class="fas fa-paper-plane"></i> Discuss This Work
+    </a>
+  </div>
+  <div class="cs-tags" style="margin-top:28px;">
+    <span class="cs-tag">Python</span>
+    <span class="cs-tag">K-Means Clustering</span>
+    <span class="cs-tag">PCA</span>
+    <span class="cs-tag">Scikit-learn</span>
+    <span class="cs-tag">Pandas</span>
+    <span class="cs-tag">Seaborn</span>
+    <span class="cs-tag">Business Intelligence</span>
+    <span class="cs-tag">EV Market Analytics</span>
+  </div>
+</section>
+
+<div class="cs-body">
+  <main>
+
+    <!-- PROBLEM -->
+    <section class="cs-section" id="problem">
+      <div class="cs-section-label">01 — Challenge</div>
+      <h2>The Problem</h2>
+      <p>Electric vehicle adoption is accelerating across the United States, but EV charging infrastructure is unevenly distributed. Expanding charging networks efficiently requires understanding which counties are genuinely ready — not just large or prosperous — and which are still developing the conditions that make investment viable.</p>
+      <ul>
+        <li>No data-driven framework existed to segment counties by EV market readiness</li>
+        <li>Manual analysis of 38 counties across 15+ variables was too complex for clear decision-making</li>
+        <li>Existing charging networks were concentrated in 10 counties, leaving 28 unserved</li>
+        <li>Business stakeholders needed a prioritised expansion list, not just raw data</li>
+        <li>Different counties had fundamentally different growth profiles — a single strategy would not work across all 28 targets</li>
+      </ul>
+      <div class="cs-insight">
+        <p><strong>Core question:</strong> Which counties share similar EV market characteristics — and what does each group tell us about the right expansion strategy?</p>
+      </div>
+    </section>
+
+    <!-- DATA -->
+    <section class="cs-section" id="data">
+      <div class="cs-section-label">02 — Data</div>
+      <h2>Dataset &amp; Feature Engineering</h2>
+      <p>The dataset covered 38 U.S. counties for 2024, with 17 raw variables spanning demographics, infrastructure, energy mix, and EV market metrics. Zero missing values. Two ratio features were engineered to improve analytical signal.</p>
+
+      <h3>Engineered Features</h3>
+      <ul>
+        <li><strong>pop_density</strong> = population ÷ land_area_sqmi — separates dense urban cores from sprawling metro areas</li>
+        <li><strong>ev_per_capita</strong> = ev_registrations ÷ population — captures EV market intensity, not just raw volume</li>
+      </ul>
+
+      <h3>Feature Selection Decision: Removing Composite Scores</h3>
+      <p>Four variables in the dataset were analyst-constructed composites rather than raw measurements: <em>charging_demand_index, infrastructure_readiness, market_potential_score,</em> and <em>economic_viability</em>. These were excluded from the final clustering for two principled reasons:</p>
+      <ul>
+        <li><strong>Severe multicollinearity.</strong> Pairwise correlations among the composites reached 0.95–0.98 (e.g. market_potential_score vs. ev_registrations at 0.98). Leaving them in would allow the same underlying signal to vote 3–4 times in the Euclidean distance calculation, inflating its influence disproportionately.</li>
+        <li><strong>Target leakage risk.</strong> All four composites correlate strongly with the validation label has_charging_network (0.65–0.78). Since the methodology for constructing these scores was not disclosed, including them could mean the clusters simply rediscover information already baked into the label.</li>
+      </ul>
+      <p>The final feature set used 11 raw and engineered variables, giving a cleaner, more interpretable clustering solution.</p>
+
+      <h3>Top Correlations with Existing Networks</h3>
+      <table class="mini-table">
+        <thead><tr><th>Feature</th><th>Correlation with has_charging_network</th></tr></thead>
+        <tbody>
+          <tr><td>charging_demand_index</td><td class="mono badge-c0">0.777</td></tr>
+          <tr><td>avg_gas_price</td><td class="mono badge-c0">0.756</td></tr>
+          <tr><td>economic_viability</td><td class="mono badge-c0">0.719</td></tr>
+          <tr><td>ev_adoption_rate</td><td class="mono">0.693</td></tr>
+          <tr><td>ev_per_capita</td><td class="mono">0.693</td></tr>
+          <tr><td>infrastructure_readiness</td><td class="mono">0.669</td></tr>
+          <tr><td>median_income</td><td class="mono">0.587</td></tr>
+          <tr><td>renewable_energy_pct</td><td class="mono">0.550</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="cs-section" id="approach">
+      <div class="cs-section-label">03 — Methodology</div>
+      <h2>Analytical Approach</h2>
+
+      <h3>Step 1 — Standardisation</h3>
+      <p>All 11 features were standardised using StandardScaler (mean=0, std=1) to ensure no single variable dominated distance calculations due to scale differences (e.g. population in millions vs. ev_adoption_rate as a decimal).</p>
+
+      <h3>Step 2 — PCA Dimensionality Reduction</h3>
+      <p>Principal Component Analysis reduced the 11-feature matrix to 2 components, retaining 81.5% of total variance. With only 38 data points, parsimony was critical — each additional component adds degrees of freedom for noise to exploit.</p>
+      <ul>
+        <li><strong>PC1 (57.8%) — "EV Market Maturity"</strong>: All major loadings positive. Heaviest contributors: infrastructure_readiness (0.323), charging_demand_index (0.322), market_potential_score (0.309), ev_registrations (0.297), avg_gas_price (0.286). High-PC1 counties are affluent, EV-ready, with strong charging demand.</li>
+        <li><strong>PC2 (23.8%) — "Scale vs Density"</strong>: Positive loadings on land_area_sqmi (0.396), population (0.391), highway_miles (0.302). Negative on ev_adoption_rate (−0.363), pop_density (−0.087). High-PC2 = large sprawling metros (LA, Cook). Low-PC2 = dense urban cores (SF, Marin) with high per-capita EV.</li>
+      </ul>
+
+      <h3>Step 3 — K Selection</h3>
+      <p>Three methods were used to determine the optimal number of clusters:</p>
+      <ul>
+        <li><strong>Elbow method (SSE):</strong> The curve kinks clearly at k=3 — from 244.7 (k=2) to 152.9 (k=3), then diminishing returns</li>
+        <li><strong>Silhouette analysis:</strong> k=3 scores 0.508. While k=7 peaks marginally at 0.512, the 0.004 difference is negligible and k=7 with n=38 produces near-singleton clusters that are not business-actionable</li>
+        <li><strong>Sample-size heuristic:</strong> √(38/2) ≈ 4 — supports 3–4 clusters</li>
+      </ul>
+
+      <div class="cs-insight">
+        <p><strong>Decision: k=3.</strong> Interpretability and sample-size discipline outweigh a 0.004 silhouette gap at k=7. Three clusters produce three distinct, business-meaningful county segments.</p>
+      </div>
+
+      <h3>Step 4 — Stability Validation</h3>
+      <p>K-Means was re-run across 8 different random seeds. The Adjusted Rand Index (ARI) across all runs: mean = 1.000, min = 1.000, max = 1.000. This is a perfectly stable solution — every initialisation produces identical cluster assignments.</p>
+    </section>
+
+    <!-- CLUSTERS -->
+    <section class="cs-section" id="clusters">
+      <div class="cs-section-label">04 — Cluster Profiles</div>
+      <h2>The Three Market Segments</h2>
+
+      <div class="cluster-pills">
+        <div class="cpill c0"><div class="cpill-dot" style="background:#00e5b4;"></div>Cluster 0 — Established Hubs (n=10)</div>
+        <div class="cpill c1"><div class="cpill-dot" style="background:#ffa940;"></div>Cluster 1 — Emerging Markets (n=22)</div>
+        <div class="cpill c2"><div class="cpill-dot" style="background:#7c6ef5;"></div>Cluster 2 — Mega-Metros (n=6)</div>
+      </div>
+
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th class="badge-c0">Cluster 0 — Established Hubs</th>
+            <th class="badge-c1">Cluster 1 — Emerging Markets</th>
+            <th class="badge-c2">Cluster 2 — Mega-Metros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Counties</td><td class="mono">10</td><td class="mono">22</td><td class="mono">6</td></tr>
+          <tr><td>With existing network</td><td class="mono">6 / 10 (60%)</td><td class="mono">1 / 22 (5%)</td><td class="mono">3 / 6 (50%)</td></tr>
+          <tr><td>Mean population</td><td class="mono">1,197,700</td><td class="mono">1,022,091</td><td class="mono">5,172,833</td></tr>
+          <tr><td>Mean median income</td><td class="mono">$100,700</td><td class="mono">$62,636</td><td class="mono">$81,500</td></tr>
+          <tr><td>Mean EV adoption rate</td><td class="mono">3.0%</td><td class="mono">1.0%</td><td class="mono">1.0%</td></tr>
+          <tr><td>Silhouette (overall)</td><td class="mono" colspan="3">0.508 (stable across all 8 seeds)</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:20px;">Cluster 0 — Established Hubs</h3>
+      <p>The highest EV market maturity. High income ($100,700 median), 3% EV adoption rate, 60% already have networks. These are affluent, EV-progressive counties in coastal metros. <strong>Counties:</strong> Santa Clara, San Francisco, King (WA), Alameda, Marin, Boulder (CO), Fairfax (VA), Montgomery (MD), Middlesex (MA), Suffolk (MA).</p>
+
+      <h3>Cluster 1 — Emerging Markets</h3>
+      <p>The largest and most diverse group. Lower income ($62,636), 1% EV adoption, only 1 of 22 has a network. These markets are growing but not yet EV-mature. High variance within this cluster reflects a wide range of development stages. Strong expansion opportunity with the right market-entry timing.</p>
+
+      <h3>Cluster 2 — Mega-Metros</h3>
+      <p>Defined not by EV maturity but by sheer scale — average population over 5.1M, the largest counties by land area and highway miles. Despite mid-range income and only 1% EV adoption, 3 of 6 already have networks (LA, Orange, San Diego). The challenge here is <em>scale of infrastructure</em>, not market readiness.</p>
+    </section>
+
+    <!-- DASHBOARD LINK -->
+    <div class="dashboard-cta">
+      <div class="dashboard-cta-text">
+        <h4><i class="fas fa-chart-scatter" style="color:#00e5b4;margin-right:8px;"></i>Interactive Analytics Dashboard</h4>
+        <p>Explore the full scatter plot, elbow curve, PCA loadings, silhouette analysis, and priority rankings interactively.</p>
+      </div>
+      <a href="ev-dashboard.html" class="cs-btn-primary" style="white-space:nowrap;">
+        <i class="fas fa-external-link-alt"></i> Open Dashboard
+      </a>
+    </div>
+
+    <!-- INSIGHTS -->
+    <section class="cs-section" id="insights">
+      <div class="cs-section-label">05 — Insights</div>
+      <h2>Key Insights &amp; Business Interpretation</h2>
+      <ol>
+        <li><strong>Cluster 0 counties are the most investable — but also the most competitive.</strong> With 60% already having networks, the remaining 4 (Fairfax, Montgomery, Middlesex, Suffolk) represent high-probability, lower-risk expansion targets in already-proven markets. First-mover advantage is diminishing in these areas.</li>
+        <li><strong>Cluster 2 (Mega-Metros) requires a different strategy entirely.</strong> The 3 network-free mega-metros (Cook County/Chicago, Harris County/Houston, Maricopa County/Phoenix) have massive demand potential but require large-scale, phased infrastructure investment rather than the targeted deployments suited to Cluster 0.</li>
+        <li><strong>Cluster 1 is where strategic selection matters most.</strong> With 21 of 22 counties having no network, this cluster contains the most expansion opportunities — but also the most heterogeneity. Sub-segmenting or applying the priority scoring model within Cluster 1 is essential for investment discipline.</li>
+        <li><strong>EV adoption rate is the strongest real-world differentiator.</strong> The gap between Cluster 0 (3.0%) and Clusters 1 & 2 (1.0%) is the clearest signal of market readiness — and it aligns with the high correlations seen in the feature analysis.</li>
+        <li><strong>The perfectly stable solution (ARI=1.000) validates the clustering structure.</strong> This is not a fragile result sensitive to initialisation — the three segments are genuinely robust in the data.</li>
+      </ol>
+    </section>
+
+    <!-- PRIORITY -->
+    <section class="cs-section" id="priority">
+      <div class="cs-section-label">06 — Recommendations</div>
+      <h2>Expansion Priority Rankings</h2>
+      <p>The 28 counties without networks were ranked using a transparent weighted priority score combining five business-relevant factors:</p>
+      <ul>
+        <li>30% — Market Potential Score</li>
+        <li>25% — Infrastructure Readiness</li>
+        <li>20% — Charging Demand Index (rescaled)</li>
+        <li>15% — Economic Viability</li>
+        <li>10% — Renewable Energy % (ESG alignment)</li>
+      </ul>
+
+      <h3>Top Expansion Targets</h3>
+      <table class="mini-table">
+        <thead><tr><th>Rank</th><th>County</th><th>Cluster</th><th>Priority Score</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">#1</td><td>Fairfax County, VA</td><td class="badge-c0">Established Hub</td><td class="mono">45.66</td></tr>
+          <tr><td class="mono">#2</td><td>Middlesex County, MA</td><td class="badge-c0">Established Hub</td><td class="mono">43.29</td></tr>
+          <tr><td class="mono">#3</td><td>Suffolk County, MA</td><td class="badge-c0">Established Hub</td><td class="mono">41.80</td></tr>
+          <tr><td class="mono">#4</td><td>Montgomery County, MD</td><td class="badge-c0">Established Hub</td><td class="mono">40.12</td></tr>
+          <tr><td class="mono">#5</td><td>Loudoun County, VA</td><td class="badge-c1">Emerging Market</td><td class="mono">37.45</td></tr>
+        </tbody>
+      </table>
+      <p>All top 4 targets are Cluster 0 — confirming that the most EV-mature counties with existing ecosystems represent the highest-confidence first expansion wave. Cluster 1 entries begin at rank #5, representing the leading edge of the emerging market opportunity.</p>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="cs-section" id="results">
+      <div class="cs-section-label">07 — Outcomes</div>
+      <h2>Project Outcomes</h2>
+      <div class="cs-results-grid">
+        <div class="cs-result-card">
+          <div class="cs-result-num">3</div>
+          <div class="cs-result-label">Distinct market segments with clear strategic implications</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num" style="color:var(--gold);">0.508</div>
+          <div class="cs-result-label">Silhouette score — good cluster separation</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num">ARI 1.0</div>
+          <div class="cs-result-label">Perfect stability across 8 random seeds</div>
+        </div>
+        <div class="cs-result-card">
+          <div class="cs-result-num" style="color:var(--gold);">28</div>
+          <div class="cs-result-label">Counties prioritised for expansion with ranked scores</div>
+        </div>
+      </div>
+      <div class="cs-summary">
+        <p>This project demonstrates a complete, rigorous unsupervised ML pipeline applied to a real business problem. From principled feature selection and dimensionality reduction, through validated clustering, to actionable deployment recommendations — the analysis delivers a segmented market map that a real EV charging operator could use to make faster, more confident infrastructure investment decisions.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-card">
+      <h4>Table of Contents</h4>
+      <ul class="cs-toc-list">
+        <li><a href="#problem">The Challenge</a></li>
+        <li><a href="#data">Data &amp; Features</a></li>
+        <li><a href="#approach">Methodology</a></li>
+        <li><a href="#clusters">Cluster Profiles</a></li>
+        <li><a href="#insights">Key Insights</a></li>
+        <li><a href="#priority">Recommendations</a></li>
+        <li><a href="#results">Outcomes</a></li>
+      </ul>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Project Details</h4>
+      <div class="cs-meta-list">
+        <div class="cs-meta-item"><span class="cs-meta-key">Type</span><span class="cs-meta-val">Unsupervised ML</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-key">Algorithm</span><span class="cs-meta-val">K-Means (k=3)</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-key">Dim Reduction</span><span class="cs-meta-val">PCA — 2 PCs (81.5%)</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-key">Silhouette</span><span class="cs-meta-val">0.508</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-key">Stability</span><span class="cs-meta-val">ARI = 1.000</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-key">Dataset</span><span class="cs-meta-val">38 U.S. counties, 2024</span></div>
+        <div class="cs-meta-item"><span class="cs-meta-key">Context</span><span class="cs-meta-val">BI Lab 4 · Dalarna University</span></div>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Libraries Used</h4>
+      <div class="cs-tags">
+        <span class="cs-tag">Python</span>
+        <span class="cs-tag">Scikit-learn</span>
+        <span class="cs-tag">Pandas</span>
+        <span class="cs-tag">NumPy</span>
+        <span class="cs-tag">Matplotlib</span>
+        <span class="cs-tag">Seaborn</span>
+      </div>
+    </div>
+    <div class="cs-sidebar-card">
+      <h4>Interactive Dashboard</h4>
+      <a href="ev-dashboard.html" class="cs-btn-primary" style="justify-content:center;display:inline-flex;width:100%;box-sizing:border-box;margin-bottom:8px;">
+        <i class="fas fa-chart-scatter"></i> Open Dashboard
+      </a>
+      <a href="https://laurascodes.github.io/Portfolio/#contact" class="cs-btn-outline" style="justify-content:center;display:inline-flex;width:100%;box-sizing:border-box;">
+        <i class="fas fa-paper-plane"></i> Get In Touch
+      </a>
+    </div>
+  </aside>
+</div>
+
+<footer class="cs-footer">
+  <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
+  <p><a href="https://laurascodes.github.io/Portfolio/#projects">← All Projects</a></p>
+</footer>
+
+
+<script>
+// Fix all back/navigation links on case study pages
+document.addEventListener('DOMContentLoaded', function() {
+  // Back to projects button
+  var backBtns = document.querySelectorAll('.cs-nav-back, .cs-breadcrumb, .cs-footer a');
+  backBtns.forEach(function(btn) {
+    btn.style.cursor = 'pointer';
+    btn.style.pointerEvents = 'all';
+    btn.style.position = 'relative';
+    btn.style.zIndex = '99999';
+  });
+
+  // Ensure body cursor is visible on case study pages
+  document.body.style.cursor = 'auto';
+});
+</script>
+
+</body>
+</html>

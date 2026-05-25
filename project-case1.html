@@ -19,19 +19,17 @@
 
 <!-- NAV -->
 <nav class="cs-nav">
-  <a href="index.html" class="cs-nav-logo">LI<span>.</span></a>
-  <div class="cs-nav-right">
-    <a href="index.html#projects" class="cs-nav-back">
-      <i class="fas fa-arrow-left"></i> Back to Projects
-    </a>
-  </div>
+  <a href="https://laurascodes.github.io/Portfolio/" class="cs-nav-logo">LI<span>.</span></a>
+  <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-nav-back" >
+    <i class="fas fa-arrow-left"></i> Back to Projects
+  </a>
 </nav>
 
 <!-- HERO -->
 <section class="cs-hero">
   <div class="cs-hero-orb"></div>
 
-  <a href="index.html#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
+  <a href="https://laurascodes.github.io/Portfolio/#projects" class="cs-breadcrumb"><i class="fas fa-arrow-left"></i> <span>Portfolio</span> <span>/</span> <span>Case Studies</span></a>
 
   <div class="cs-hero-tag">Case Study · Retail Analytics</div>
 
@@ -265,8 +263,26 @@
 <footer class="cs-footer">
   <div class="cs-footer-logo">LI<span>.</span> Laura Ikwechegh</div>
   <p>© 2025 Laura Ikwechegh · <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a></p>
-  <p><a href="index.html#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
+  <p><a href="https://laurascodes.github.io/Portfolio/#projects"><i class="fas fa-arrow-left"></i> All Projects</a></p>
 </footer>
+
+
+<script>
+// Fix all back/navigation links on case study pages
+document.addEventListener('DOMContentLoaded', function() {
+  // Back to projects button
+  var backBtns = document.querySelectorAll('.cs-nav-back, .cs-breadcrumb, .cs-footer a');
+  backBtns.forEach(function(btn) {
+    btn.style.cursor = 'pointer';
+    btn.style.pointerEvents = 'all';
+    btn.style.position = 'relative';
+    btn.style.zIndex = '99999';
+  });
+
+  // Ensure body cursor is visible on case study pages
+  document.body.style.cursor = 'auto';
+});
+</script>
 
 </body>
 </html>
