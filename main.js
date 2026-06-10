@@ -48,6 +48,7 @@ window.addEventListener('scroll', () => {
 
   const nav = document.getElementById('navbar');
   nav.classList.toggle('scrolled', window.scrollY > 40);
+  updateNavTheme();
 
   // Reveal animations
   document.querySelectorAll('.reveal').forEach(el => {
@@ -87,6 +88,21 @@ function handleSubmit(e) {
 const sections = document.querySelectorAll('section[id]');
 const navAs    = document.querySelectorAll('.nav-links a');
 
+function updateNavTheme() {
+  const nav = document.getElementById('navbar');
+  const themeClasses = ['nav-theme-light', 'nav-theme-dark', 'nav-theme-primary'];
+  let currentSection = null;
+
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) currentSection = s;
+  });
+
+  nav.classList.remove(...themeClasses);
+  if (currentSection && currentSection.dataset.navTheme) {
+    nav.classList.add(`nav-theme-${currentSection.dataset.navTheme}`);
+  }
+}
+
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => {
@@ -97,6 +113,9 @@ window.addEventListener('scroll', () => {
     if (a.getAttribute('href') === '#' + current) a.classList.add('active');
   });
 });
+
+// Set the navbar theme on load
+updateNavTheme();
 
 /* ===========================
    HERO SLIDER
