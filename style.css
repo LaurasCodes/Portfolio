@@ -809,12 +809,25 @@ nav.nav-theme-primary{
 .skill-tag:hover{background:rgba(37,99,235,0.09);border-color:var(--primary-blue);color:var(--primary-blue);}
 
 /* ===========================
-   PROJECTS — Light Blue Background
+   PROJECTS — Navy Background
 =========================== */
 #projects{
-  background:#F1F5F9;
-  border-top:1px solid var(--border);
+  background:linear-gradient(135deg, #e8eff7 0%, #d9e8f3 100%);
+  border-top:1px solid rgba(255,255,255,0.12);
   padding:80px clamp(24px,7vw,100px);
+}
+#projects .section-label,
+#projects .section-title,
+#projects .section-sub{
+  color:var(--heading);
+}
+#projects .section-sub{opacity:.85;}
+#projects .section-title .teal-accent{
+  color:var(--primary-blue);background:none;
+}
+.projects-inner{
+  max-width:980px;
+  margin:0 auto;
 }
 .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px;}
 .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
@@ -824,7 +837,17 @@ nav.nav-theme-primary{
   cursor:pointer;box-shadow:var(--shadow-sm);
 }
 .project-card:hover{border-color:rgba(37,99,235,0.28);transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-.project-card:first-child{grid-column:span 2;}
+.project-card:first-child{grid-column:span 2; background:#FFFFFF; border-color:var(--border);}
+.project-card:first-child .project-body{color:var(--body-text);}
+.project-card:first-child .project-body h3{color:var(--heading);}
+.project-card:first-child .project-meta span{color:var(--slate-mid);}
+.project-card:first-child .project-meta i{color:var(--primary-blue);}
+.project-card:first-child .project-body p{color:var(--slate);}
+.project-card:first-child .project-links .p-link{color:var(--primary-blue);border-color:rgba(37,99,235,0.25);}
+.project-card:first-child .project-links .p-link:hover{background:rgba(37,99,235,0.08);}
+.project-card:first-child .project-links .p-link.secondary{color:var(--slate);border-color:var(--border-mid);}
+.project-card:first-child .project-tags-overlay .ptag{background:rgba(37,99,235,0.09);color:var(--primary-blue);}
+.project-card:first-child .project-tags-overlay .ptag:first-child{background:rgba(37,99,235,0.12);}
 .project-img-wrap{position:relative;overflow:hidden;height:210px;}
 .project-card:first-child .project-img-wrap{height:260px;}
 .project-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
