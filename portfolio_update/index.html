@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura Ikwechegh | Business Intelligence Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- SCROLL BAR -->
+<div id="scroll-bar"></div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-mobile" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="#sweden" onclick="closeMobileNav()">Sweden</a>
+  <a href="#projects" onclick="closeMobileNav()">Projects</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Testimonials</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">LI<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#sweden">Sweden</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="assets/img/portfolio/Laura_Ikwecheghs_Resume.pdf" class="nav-cta" target="_blank">Download CV</a>
+  <div class="hamburger" onclick="openMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section id="hero">
+  <div class="hero-slider" id="heroSlider">
+
+    <!-- SLIDE 1: Photo + Text -->
+    <div class="hero-slide slide-1">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+
+      <div class="slide-1-inner">
+
+        <!-- LEFT: Text -->
+        <div class="hero-text-col">
+          <div class="hero-badge">Stockholm-based · Open to BI &amp; data roles in Sweden and remote</div>
+
+          <h1 class="hero-title">
+            Turning data into<br>
+            <span class="primary-blue">decisions</span> that<br>
+            <span class="accent-blue">drive results.</span>
+          </h1>
+
+          <p class="hero-sub">
+            BI &amp; Data Analyst working in Power BI, DAX, SQL Server, SSIS and Python.
+            I build the pipelines, models and dashboards that turn messy operational data into clear decisions.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#projects" class="btn-primary">
+              <i class="fas fa-chart-bar"></i> View Projects
+            </a>
+            <a href="assets/img/portfolio/Laura_Ikwecheghs_Resume.pdf" class="btn-outline" target="_blank">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Photo -->
+        <div class="hero-photo-col">
+          <div class="hero-photo-frame">
+            <img src="assets/img/portfolio/my_image.jpeg" alt="Laura Ikwechegh">
+            <div class="hero-accent-card">
+              <div class="accent-card-title">Live Metrics</div>
+              <div class="accent-bars">
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+                <div class="accent-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end SLIDE 1 -->
+
+    <!-- SLIDE 2: Gradient -->
+    <div class="hero-slide slide-2">
+      <div class="slide-2-line"></div>
+
+      <div class="slide-2-inner">
+        <div class="slide-2-eyebrow">Business Intelligence · Power BI · SQL</div>
+
+        <h2 class="slide-2-title">
+          Where data meets<br>
+          <span class="s2-accent">strategic impact.</span>
+        </h2>
+
+        <p class="slide-2-desc">
+          From delivery-exception monitoring and procurement analysis to a series of dashboards
+          built on Swedish public data, my work connects analytics to the operational decisions behind it.
+        </p>
+
+        <div class="slide-2-ctas">
+          <a href="#about" class="btn-warm">
+            <i class="fas fa-user"></i> About Me
+          </a>
+          <a href="#contact" class="btn-warm-outline">
+            <i class="fas fa-paper-plane"></i> Get In Touch
+          </a>
+        </div>
+
+        <div class="slide-2-stats">
+          <div class="s2-stat">
+            <div class="s2-stat-num">4+</div>
+            <div class="s2-stat-label">Years<br>Experience</div>
+          </div>
+          <div class="s2-stat">
+            <div class="s2-stat-num">35+</div>
+            <div class="s2-stat-label">Report<br>Users Served</div>
+          </div>
+          <div class="s2-stat">
+            <div class="s2-stat-num">5</div>
+            <div class="s2-stat-label">Sweden Data<br>Projects</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-2-quote">
+        <span class="s2-quote-mark">"</span>
+        <p class="s2-quote-text">Data is the new oil — but only when refined into insight.</p>
+        <div class="s2-quote-author">BI Philosophy</div>
+      </div>
+
+    </div>
+    <!-- end SLIDE 2 -->
+
+  </div>
+
+  <!-- Dots -->
+  <div class="hero-nav-dots">
+    <button class="hero-dot active" aria-label="Slide 1"></button>
+    <button class="hero-dot" aria-label="Slide 2"></button>
+  </div>
+
+  <!-- Arrows -->
+  <button class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Previous slide">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="hero-arrow hero-arrow-right" id="heroNext" aria-label="Next slide">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="section about-section" data-nav-theme="light">
+  <div class="about-container">
+    <!-- LEFT: Story -->
+    <div class="about-left reveal">
+      <div class="section-label">Who I Am</div>
+      <h2 class="section-title">Data-driven strategist<br>focused on <span class="primary-blue">impact.</span></h2>
+      
+      <div class="about-content">
+        <p>My journey into data analytics began from a fundamental question: <strong>What can data reveal that words cannot?</strong></p>
+        
+        <p>I started in communication — a BA in Mass Communication and an MA in Communication Studies — and moved into analytics through procurement and supply chain work, where I saw how much a well-built report changes the decisions people make.</p>
+
+        <h4 class="about-subheading">At a glance</h4>
+        <ul class="about-list">
+          <li><strong>4+ years</strong> in data and BI roles: Power BI reporting, procurement and supply chain analysis</li>
+          <li><strong>MSc in Microdata Analysis</strong> (Business Intelligence), Dalarna University, Sweden — completed 2026</li>
+          <li><strong>End-to-end builds:</strong> SQL Server star schemas, SSIS ETL, Power Query, DAX, Python</li>
+          <li><strong>Based in Stockholm</strong>, learning Swedish through SFI</li>
+        </ul>
+
+        <p>Every dashboard I build starts with the question someone actually needs answered — and ends with <strong>a decision they can make faster.</strong></p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Skills & Highlights -->
+    <div class="about-right reveal">
+      <h3 class="about-highlight-title">Technical Skills</h3>
+      
+      <div class="skills-groups">
+        <div class="skill-group-simple">
+          <h5>BI & Visualization</h5>
+          <div class="skill-tags-simple">
+            <span class="skill-tag-simple">Power BI</span>
+            <span class="skill-tag-simple">DAX</span>
+            <span class="skill-tag-simple">Data Viz</span>
+            <span class="skill-tag-simple">Reporting</span>
+          </div>
+        </div>
+
+        <div class="skill-group-simple">
+          <h5>Data & Analytics</h5>
+          <div class="skill-tags-simple">
+            <span class="skill-tag-simple">SQL Server</span>
+            <span class="skill-tag-simple">SSIS / ETL</span>
+            <span class="skill-tag-simple">Star Schema</span>
+            <span class="skill-tag-simple">Power Query</span>
+            <span class="skill-tag-simple">Excel</span>
+          </div>
+        </div>
+
+        <div class="skill-group-simple">
+          <h5>Business Analysis</h5>
+          <div class="skill-tags-simple">
+            <span class="skill-tag-simple">Requirements</span>
+            <span class="skill-tag-simple">KPI Dev</span>
+            <span class="skill-tag-simple">Process Mapping</span>
+            <span class="skill-tag-simple">Strategy</span>
+          </div>
+        </div>
+
+        <div class="skill-group-simple">
+          <h5>Python &amp; Systems</h5>
+          <div class="skill-tags-simple">
+            <span class="skill-tag-simple">Python (pandas)</span>
+            <span class="skill-tag-simple">Scikit-learn</span>
+            <span class="skill-tag-simple">Forecasting</span>
+            <span class="skill-tag-simple">SAP / ERP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section id="experience" class="section exp-section" data-nav-theme="light">
+  <div class="section-label reveal">Experience</div>
+  <h2 class="section-title reveal">Where I've done the <span class="primary-blue">work.</span></h2>
+
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-head">
+        <div>
+          <h3>Power BI Analyst</h3>
+          <div class="exp-org">Zeon Global Technical Consult · Remote</div>
+        </div>
+      </div>
+      <ul>
+        <li>Built a delivery exception-monitoring dashboard comparing shipping milestones with ERP expected dates. It flagged a critical shipment running about 10 days late, so operations expedited it and reallocated safety stock.</li>
+        <li>Delivered around 10 Power BI reports across five client accounts, including one reporting environment serving 35+ users.</li>
+        <li>Procurement analysis for a supplier of materials to schools that surfaced a likely financial loss before it landed.</li>
+      </ul>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-head">
+        <div>
+          <h3>Data Analyst</h3>
+          <div class="exp-org">Synaegis Limited · Nigeria · Junior Data Analyst → Data Analyst</div>
+        </div>
+      </div>
+      <ul>
+        <li>Cut reporting turnaround by about 20% and got insights to decision-makers two days earlier.</li>
+        <li>Reduced tracking errors by over 90% through validation and reconciliation of operational datasets.</li>
+        <li>Built the retail pricing and marketing ROI dashboards featured below.</li>
+      </ul>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-head">
+        <div>
+          <h3>Procurement &amp; Supply Chain Analyst</h3>
+          <div class="exp-org">Otubtraco Limited · Construction</div>
+        </div>
+        <div class="exp-date">2017 – 2021</div>
+      </div>
+      <ul>
+        <li>Tracked stock levels, supplier lead times, delivery performance and material spend in SAP and Excel across about 10 suppliers and 10 material categories.</li>
+        <li>Followed up purchase orders and delays, raised supplier NCRs, qualified new suppliers and negotiated price and terms.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ========== SWEDEN JOURNEY ========== -->
+<section id="sweden" class="section journey-section" data-nav-theme="light">
+  <div class="journey-intro">
+    <div class="section-label reveal">My Journey in Sweden</div>
+    <h2 class="section-title reveal">Learning the country<br>from the <span class="primary-blue">ground up.</span></h2>
+    <p class="section-sub reveal">Alongside my master's I worked in Swedish hospitality: ski season in Dalarna, summer resort work and conference service in Stockholm. These jobs taught me how operations run here, how Swedish teams work and how to deliver under pressure. They also gave me the questions behind my Sweden Data Series.</p>
+  </div>
+
+  <ol class="timeline">
+    <li class="tl-item reveal">
+      <div class="tl-date">2025</div>
+      <div class="tl-card tl-study">
+        <span class="tl-tag">Study</span>
+        <h4>MSc Microdata Analysis (Business Intelligence)</h4>
+        <p class="tl-org">Dalarna University</p>
+        <p>Data warehousing, machine learning and BI on real Swedish and international datasets.</p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">Dec 2025 – Apr 2026</div>
+      <div class="tl-card">
+        <span class="tl-tag">Work</span>
+        <h4>Customer Service (seasonal)</h4>
+        <p class="tl-org">Romme Alpin, Dalarna</p>
+        <p>Kept service moving across several stations at peak ski-season volume, and kept food-safety records accurate on the kitchen's tracking template.</p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">2026</div>
+      <div class="tl-card tl-study">
+        <span class="tl-tag">Research</span>
+        <h4>Master's thesis: Making Invisible Data Visible</h4>
+        <p class="tl-org">Lake Hjälmaren case study · co-authored</p>
+        <p>NVivo thematic analysis and NMF topic modelling of stakeholder interviews on lake governance. <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:du-54227" target="_blank" rel="noopener">Read on DiVA →</a></p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">Jun – Aug 2026</div>
+      <div class="tl-card">
+        <span class="tl-tag">Work</span>
+        <h4>Customer Service (seasonal)</h4>
+        <p class="tl-org">Leksand Resort, Dalarna</p>
+        <p>Delivered consistent guest service through the summer peak, working closely with kitchen and front-of-house teams.</p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">Aug 2026 – Present</div>
+      <div class="tl-card">
+        <span class="tl-tag">Work</span>
+        <h4>Hospitality Operations</h4>
+        <p class="tl-org">Ellery Beach House</p>
+        <p>Meets room-readiness standards on a fixed schedule, with attention to detail and quality checks every shift.</p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">Oct 2026</div>
+      <div class="tl-card">
+        <span class="tl-tag">Work</span>
+        <h4>Conference &amp; Service Staff</h4>
+        <p class="tl-org">Radisson Waterfront, Stockholm</p>
+        <p>Set up conference rooms to spec, served multi-course meals and coordinated with service and restaurant teams through evening events.</p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">Oct 2026</div>
+      <div class="tl-card tl-study">
+        <span class="tl-tag">Milestone</span>
+        <h4>MSc completed</h4>
+        <p class="tl-org">Dalarna University</p>
+        <p>Now based in Stockholm and studying Swedish through SFI.</p>
+      </div>
+    </li>
+    <li class="tl-item reveal">
+      <div class="tl-date">Nov 2026 →</div>
+      <div class="tl-card tl-build">
+        <span class="tl-tag">Building</span>
+        <h4>Sweden Data Series</h4>
+        <p class="tl-org">Five Power BI projects on Swedish public data</p>
+        <p>Jobs, staffing, energy, tourism and retail: the questions I met as a job seeker and worker here, answered with data. <a href="#series">See the series →</a></p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ========== SWEDEN DATA SERIES ========== -->
+<section id="series" class="section series-section" data-nav-theme="primary">
+  <div class="projects-inner">
+    <div class="projects-header">
+      <div>
+        <div class="section-label reveal">Sweden Data Series</div>
+        <h2 class="section-title reveal">Real Swedish data.<br>Real questions.</h2>
+      </div>
+      <p class="section-sub reveal" style="margin-bottom:0;">Five end-to-end Power BI builds on public Swedish sources, with no invented numbers. Each one starts with a question a Swedish business would actually ask.</p>
+    </div>
+
+    <div class="projects-grid series-grid">
+
+      <div class="project-card series-card reveal">
+        <div class="series-cover sc-jobs">
+          <i class="fas fa-briefcase"></i>
+          <span class="series-status">Pipeline done · dashboard in build</span>
+        </div>
+        <div class="project-body">
+          <h3>Swedish Labour Market Intelligence</h3>
+          <div class="project-meta"><span><i class="fas fa-circle"></i> Recruitment demand</span><span><i class="fas fa-circle"></i> Arbetsförmedlingen</span></div>
+          <p><strong>Question:</strong> Where are Swedish employers hiring, for which occupations, and what do they ask for? 500 job ads and 327 requirement records go through an SSIS pipeline into a SQL Server star schema, then into Power BI.</p>
+          <div class="series-stack"><span>SQL Server</span><span>SSIS</span><span>Python</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="project-card series-card reveal">
+        <div class="series-cover sc-staff">
+          <i class="fas fa-people-group"></i>
+          <span class="series-status">In build</span>
+        </div>
+        <div class="project-body">
+          <h3>Staffing Industry Profitability</h3>
+          <div class="project-meta"><span><i class="fas fa-circle"></i> Bemanning</span><span><i class="fas fa-circle"></i> Company financials</span></div>
+          <p><strong>Question:</strong> Why do some Swedish staffing firms run at a loss while others stay profitable, and how does that track vacancy demand? Company-level public financials benchmarked against Arbetsförmedlingen vacancy trends.</p>
+          <div class="series-stack"><span>SQL</span><span>Power Query</span><span>DAX</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="project-card series-card reveal">
+        <div class="series-cover sc-energy">
+          <i class="fas fa-bolt"></i>
+          <span class="series-status">In build</span>
+        </div>
+        <div class="project-body">
+          <h3>Electricity Prices SE1–SE4</h3>
+          <div class="project-meta"><span><i class="fas fa-circle"></i> Energy</span><span><i class="fas fa-circle"></i> Day-ahead spot prices</span></div>
+          <p><strong>Question:</strong> How far apart are prices in northern and southern Sweden, when does the gap open, and what does volatility cost a business in SE4? Hourly prices by bidding zone, with time intelligence in DAX.</p>
+          <div class="series-stack"><span>Power Query (Web API)</span><span>DAX time intelligence</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="project-card series-card reveal">
+        <div class="series-cover sc-tour">
+          <i class="fas fa-mountain-sun"></i>
+          <span class="series-status">In build</span>
+        </div>
+        <div class="project-body">
+          <h3>Swedish Tourism &amp; Guest Nights</h3>
+          <div class="project-meta"><span><i class="fas fa-circle"></i> Hospitality</span><span><i class="fas fa-circle"></i> SCB accommodation statistics</span></div>
+          <p><strong>Question:</strong> Which regions depend most on one season, and on international guests? It started at Romme Alpin and Leksand: Dalarna's winter and summer peaks, compared across all regions.</p>
+          <div class="series-stack"><span>SCB PxWeb API</span><span>Power Query</span><span>DAX</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="project-card series-card reveal">
+        <div class="series-cover sc-retail">
+          <i class="fas fa-shirt"></i>
+          <span class="series-status">In build</span>
+        </div>
+        <div class="project-body">
+          <h3>Retail &amp; Clothing Import Supply Chain</h3>
+          <div class="project-meta"><span><i class="fas fa-circle"></i> Supply chain</span><span><i class="fas fa-circle"></i> SCB trade &amp; retail</span></div>
+          <p><strong>Question:</strong> Do clothing imports lead Swedish retail sales, and by how many months? Monthly import values by origin country set against the SCB retail trade index, built from a supply chain planner's point of view.</p>
+          <div class="series-stack"><span>SCB PxWeb API</span><span>Star schema</span><span>DAX</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="projects" class="section" data-nav-theme="primary">
+  <div class="projects-inner">
+    <div class="projects-header">
+      <div>
+        <div class="section-label reveal">My Work</div>
+        <h2 class="section-title reveal">More projects.</h2>
+      </div>
+      <p class="section-sub reveal" style="margin-bottom:0;">Earlier Power BI and machine-learning work, each written up as problem → analysis → outcome.</p>
+    </div>
+
+    <div class="projects-grid">
+
+    <!-- FEATURED: Retail -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/Retail Performance.jpg" alt="Retail Performance Dashboard" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">DAX</span>
+          <span class="ptag">SQL</span>
+          <span class="ptag">Featured</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>Retail Performance Dashboard</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Retail &amp; E-commerce</span>
+          <span><i class="fas fa-circle"></i> Pricing Analysis</span>
+        </div>
+        <p>Brought pricing, discount and margin data into one Power BI dashboard so management could see category profitability and the real cost of discounting in one place — the basis for pricing decisions on the product range.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/Retail%20Performance.mp4" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-play"></i> Watch Demo
+          </a>
+          <a href="project-case1.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- US Air Traffic -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/U.S international Powerbi project.jpg" alt="US Air Traffic Analysis" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">Forecasting</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>US Air Traffic Analysis</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Aviation</span>
+          <span><i class="fas fa-circle"></i> Capacity Planning</span>
+        </div>
+        <p>Trend analysis and forecasting on US international air traffic data — showing long-term passenger patterns by route and carrier, and how a capacity planner could read future demand.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/U.S international Powerbi project.jpg" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="project-case3.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Campaign -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/power BI Assignment 1.jpg" alt="Marketing Campaign Analysis" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">Excel</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>Marketing Campaign Analysis</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Marketing</span>
+          <span><i class="fas fa-circle"></i> ROI Analysis</span>
+        </div>
+        <p>Made campaign ROI and channel performance comparable across a multi-channel marketing operation, giving the team a clear basis for targeting and spend allocation.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/power BI Assignment 1.jpg" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="project-case4.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amazon -->
+    <div class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/img/portfolio/Amazon E-commerce 1.jpg" alt="Amazon E-commerce Analytics" loading="lazy">
+        <div class="project-overlay"></div>
+        <div class="project-tags-overlay">
+          <span class="ptag">Power BI</span>
+          <span class="ptag">Sales Analytics</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <h3>Amazon E-commerce Analytics</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> E-commerce</span>
+          <span><i class="fas fa-circle"></i> Customer Insights</span>
+        </div>
+        <p>Connected sales, customer behaviour and fulfilment metrics in one Power BI model, replacing inconsistent spreadsheets with a single view of category trends and order performance.</p>
+        <div class="project-links">
+          <a href="assets/img/portfolio/Amazon E-commerce 1.jpg" class="p-link" target="_blank" rel="noopener">
+            <i class="fas fa-chart-line"></i> View Dashboard
+          </a>
+          <a href="project-case5.html" class="p-link secondary">
+            <i class="fas fa-file-alt"></i> Case Study
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EV Clustering -->
+    <div class="project-card reveal">
+      <div class="series-cover sc-ev">
+        <i class="fas fa-charging-station"></i>
+      </div>
+      <div class="project-body">
+        <h3>EV Charging Network Clustering</h3>
+        <div class="project-meta">
+          <span><i class="fas fa-circle"></i> Machine Learning</span>
+          <span><i class="fas fa-circle"></i> Market Segmentation</span>
+        </div>
+        <p>K-Means clustering and PCA on 38 US counties to segment markets by EV maturity, infrastructure readiness and economic viability, producing a ranked expansion shortlist (k = 3, silhouette 0.508).</p>
+        <div class="project-links">
+          <a href="ev-dashboard.html" class="p-link"><i class="fas fa-chart-line"></i> View Dashboard</a>
+          <a href="project-case6.html" class="p-link secondary"><i class="fas fa-file-alt"></i> Case Study</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials" class="section" data-nav-theme="light">
+  <div class="section-label reveal">Social Proof</div>
+  <h2 class="section-title reveal">What colleagues say.</h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card reveal">
+      <p>Laura helped us sharpen campaign measurement and ROI reporting through clear Power BI dashboards and Excel analysis. Her work made channel performance transparent, improved targeting, and supported faster budget decisions for our marketing team.</p>
+      <div class="t-author">
+        <div class="t-avatar"><i class="fas fa-bullhorn"></i></div>
+        <div>
+          <div class="t-name">Chinyeaka Osondu</div>
+          <div class="t-role">Marketing Strategy Lead, Synaegis Limited</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card reveal">
+      <p>Working with Laura on our retail analytics was a turning point. Her Power BI and SQL work created pricing visibility we had never had before. The dashboard directly supported better pricing decisions and stronger margin outcomes across our product range.</p>
+      <div class="t-author">
+        <div class="t-avatar"><i class="fas fa-store"></i></div>
+        <div>
+          <div class="t-name">Samuel Odum-Igwe</div>
+          <div class="t-role">Retail Operations Manager, Synaegis Limited</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="section" data-nav-theme="light">
+  <div class="section-label reveal">Get In Touch</div>
+  <h2 class="section-title reveal">Let's work together.</h2>
+  <p class="section-sub reveal">Open to BI, data and supply chain analyst roles in Sweden, and fully remote roles elsewhere. Based in Stockholm, open to relocate.</p>
+
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-info-items">
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-envelope"></i></div>
+          <div class="c-text">
+            <h4>Email</h4>
+            <a href="mailto:lauraikwechegh@gmail.com">lauraikwechegh@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="c-text">
+            <h4>Location</h4>
+            <p>Stockholm, Sweden · Open to relocate</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-phone"></i></div>
+          <div class="c-text">
+            <h4>Phone</h4>
+            <a href="tel:+46761538102">+46 761 538 102</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="c-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="c-text">
+            <h4>Portfolio</h4>
+            <a href="https://laurascodes.github.io/Portfolio/" target="_blank">laurascodes.github.io/Portfolio</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/chidinma-laura-ikwechegh-4619a311b/" class="soc-btn" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/laurascodes" class="soc-btn" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:lauraikwechegh@gmail.com" class="soc-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fsubject">Subject</label>
+        <input type="text" id="fsubject" name="subject" placeholder="What is this about?" required>
+      </div>
+      <div class="form-group">
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" name="message" rows="6" placeholder="Tell me about the opportunity..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start;">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      <p id="form-msg" style="font-size:13px;color:var(--teal);display:none;margin-top:8px;">
+        ✓ Your email app should now open with your message ready to send.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">LI<span>.</span> Laura Ikwechegh</div>
+  <p>© 2026 Laura Ikwechegh · Stockholm, Sweden</p>
+  <p>
+    <a href="https://laurascodes.github.io/Portfolio/">Portfolio</a> ·
+    <a href="https://www.linkedin.com/in/chidinma-laura-ikwechegh-4619a311b/" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

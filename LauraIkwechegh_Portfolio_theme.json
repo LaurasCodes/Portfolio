@@ -1,0 +1,35 @@
+{
+  "name": "Laura Ikwechegh Portfolio",
+  "dataColors": ["#2563EB", "#F59E0B", "#10B981", "#EC4899", "#1E3A8A", "#60A5FA", "#64748B", "#0E7490"],
+  "background": "#FFFFFF",
+  "foreground": "#0F172A",
+  "tableAccent": "#2563EB",
+  "good": "#10B981",
+  "neutral": "#F59E0B",
+  "bad": "#DC2626",
+  "maximum": "#1E3A8A",
+  "center": "#60A5FA",
+  "minimum": "#DBEAFE",
+  "textClasses": {
+    "title":   {"fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#0F172A"},
+    "header":  {"fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#1E3A8A"},
+    "label":   {"fontFace": "Segoe UI", "fontSize": 10, "color": "#334155"},
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#0F172A"}
+  },
+  "visualStyles": {
+    "*": {"*": {
+      "background": [{"show": true, "color": {"solid": {"color": "#FFFFFF"}}, "transparency": 0}],
+      "border": [{"show": true, "color": {"solid": {"color": "#E2E8F0"}}, "radius": 10}],
+      "dropShadow": [{"show": false}],
+      "visualHeader": [{"show": true}],
+      "padding": [{"top": 12, "bottom": 12, "left": 14, "right": 14}]
+    }},
+    "page": {"*": {
+      "background": [{"color": {"solid": {"color": "#F1F5F9"}}, "transparency": 0}],
+      "outspacePane": [{"backgroundColor": {"solid": {"color": "#F8FAFC"}}}]
+    }},
+    "card": {"*": {"labels": [{"color": {"solid": {"color": "#0F172A"}}, "fontSize": 26}],
+                   "categoryLabels": [{"color": {"solid": {"color": "#64748B"}}, "fontSize": 10}]}},
+    "slicer": {"*": {"items": [{"fontColor": {"solid": {"color": "#334155"}}}]}}
+  }
+}
